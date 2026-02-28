@@ -28,8 +28,8 @@ export default function StaffingPage() {
   const worstGaps = Array.isArray(payload?.worst_gaps) ? payload!.worst_gaps as Record<string, unknown>[] : []
 
   const gapChartData = (branch ? worstGaps : topGaps).slice(0, 20).map(g => ({
-    label: `${String(g.branch ?? '').slice(0, 8)} ${String(g.day ?? '').slice(0, 3)} ${String(g.hour ?? '')}`,
-    gap: parseFloat(String(g.gap ?? g.staffing_gap ?? 0)),
+    label: `${String(g.branch ?? '').slice(0, 8)} ${String(g.day_of_week ?? g.day ?? '').slice(0, 3)} ${String(g.hour ?? '')}`,
+    gap: parseFloat(String(g.gap_base ?? g.gap ?? g.staffing_gap ?? 0)),
   }))
 
   return (
@@ -125,11 +125,11 @@ export default function StaffingPage() {
                 </thead>
                 <tbody>
                   {(branch ? worstGaps : topGaps).slice(0, 30).map((g, i) => {
-                    const gap = parseFloat(String(g.gap ?? g.staffing_gap ?? 0))
+                    const gap = parseFloat(String(g.gap_base ?? g.gap ?? g.staffing_gap ?? 0))
                     return (
                       <tr key={i} className="border-b border-gray-50">
                         <td className="py-2">{String(g.branch ?? '')}</td>
-                        <td className="py-2">{String(g.day ?? '')}</td>
+                        <td className="py-2">{String(g.day_of_week ?? g.day ?? '')}</td>
                         <td className="py-2">{String(g.hour ?? '')}</td>
                         <td className="py-2 text-right font-mono">{fmt2(gap)}</td>
                         <td className="py-2">

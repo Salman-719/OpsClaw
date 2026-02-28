@@ -112,14 +112,17 @@ class AgentStack(Stack):
                 )
             )
 
-        # Bedrock invoke access
+        # Bedrock invoke access (foundation models + cross-region inference profiles)
         agent_role.add_to_policy(
             iam.PolicyStatement(
                 actions=[
                     "bedrock:InvokeModel",
                     "bedrock:InvokeModelWithResponseStream",
                 ],
-                resources=["arn:aws:bedrock:*::foundation-model/*"],
+                resources=[
+                    "arn:aws:bedrock:*::foundation-model/*",
+                    "arn:aws:bedrock:*:*:inference-profile/*",
+                ],
             )
         )
 
@@ -183,7 +186,7 @@ class AgentStack(Stack):
             f'  -e LOCAL_MODE=false \\',
             f'  -e S3_DATA_BUCKET={bucket_name} \\',
             f'  -e STATE_MACHINE_ARN={sfn_arn_str} \\',
-            f'  -e BEDROCK_MODEL_ID=anthropic.claude-sonnet-4-20250514-v1:0 \\',
+            f'  -e BEDROCK_MODEL_ID=eu.amazon.nova-pro-v1:0 \\',
             "  opsclaw-agent",
             "",
             "echo 'OpsClaw Agent started successfully'",

@@ -49,7 +49,7 @@ export default function GrowthPage() {
 
   const chartData = ranking.map(r => ({
     branch: String(r.branch ?? r.pk ?? ''),
-    score: parseFloat(String(r.growth_potential_score ?? r.score ?? 0)),
+    score: parseFloat(String(r.potential_score ?? r.growth_potential_score ?? r.score ?? 0)),
     tier: String(r.tier ?? r.growth_tier ?? ''),
   }))
 

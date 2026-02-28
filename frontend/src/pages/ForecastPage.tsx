@@ -23,7 +23,7 @@ export default function ForecastPage() {
   // For all-branches view, show only primary (period 1, base)
   const primaryRows = branch
     ? rows
-    : rows.filter(r => r.is_primary === true && r.scenario === 'base')
+    : rows.filter(r => (r.is_primary === true || r.is_primary === 1 || r.is_primary === 1.0) && r.scenario === 'base')
 
   const chartData = primaryRows.map(r => ({
     branch: String(r.branch ?? ''),
