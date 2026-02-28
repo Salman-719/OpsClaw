@@ -191,7 +191,7 @@ class AgentStack(Stack):
         instance = ec2.Instance(
             self,
             "AgentInstance",
-            instance_type=ec2.InstanceType("t3.medium"),
+            instance_type=ec2.InstanceType("t3.small"),
             machine_image=ec2.AmazonLinuxImage(
                 generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2023,
             ),

@@ -55,22 +55,13 @@ class FrontendStack(Stack):
             auto_delete_objects=(env_name != "prod"),
         )
 
-        # ── CloudFront OAI ──────────────────────────────────────────────
-        oai = cloudfront.OriginAccessIdentity(
-            self,
-            "OAI",
-            comment=f"OAI for {project}-frontend-{env_name}",
-        )
-        site_bucket.grant_read(oai)
-
         # ── CloudFront Distribution ─────────────────────────────────────
         distribution = cloudfront.Distribution(
             self,
             "FrontendCDN",
             default_behavior=cloudfront.BehaviorOptions(
-                origin=origins.S3Origin(
+                origin=origins.S3BucketOrigin.with_origin_access_control(
                     site_bucket,
-                    origin_access_identity=oai,
                 ),
                 viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                 cache_policy=cloudfront.CachePolicy.CACHING_OPTIMIZED,
