@@ -12,7 +12,7 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from pipelines.business_model_4_staffing_estimation.config import DEFAULT_OUTPUT_DIR
+from .config import DEFAULT_OUTPUT_DIR
 
 
 def _load_tables(output_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame]:

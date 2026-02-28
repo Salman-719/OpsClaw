@@ -280,11 +280,11 @@ def run_query(out_dir: str | Path, query_type: str, branch: str | None = None) -
 
 def _build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="python -m pipelines.feature_3.run",
+        prog="python -m analytics.expansion.run",
         description=(
             "Feature 3 – Expansion Feasibility Pipeline\n\n"
             "Run the full pipeline:\n"
-            "  python -m pipelines.feature_3.run --data_dir conut_bakery_scaled_data\n\n"
+            "  python -m analytics.expansion.run --data_dir conut_bakery_scaled_data\n\n"
             "Run an agent query (requires prior pipeline run):\n"
             "  python -m pipelines.feature_3.run --query expansion_recommendation\n"
             "  python -m pipelines.feature_3.run --query feasibility_explanation --branch tyre\n"

@@ -12,7 +12,7 @@ DAY_ORDER = [
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = PACKAGE_ROOT.parent.parent
-PIPELINES_OUTPUT_DIR = PACKAGE_ROOT.parent / "output"
+PIPELINES_OUTPUT_DIR = PROJECT_ROOT / "pipelines" / "output"
 DEFAULT_OUTPUT_DIR = PACKAGE_ROOT / "output"
 
 MIN_DELIVERY_SHARE = 0.005

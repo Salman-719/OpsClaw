@@ -4,7 +4,7 @@ from datetime import timedelta
 
 import pandas as pd
 
-from pipelines.business_model_4_staffing_estimation.config import DAY_ORDER
+from .config import DAY_ORDER
 
 
 def _shift_datetimes(row: pd.Series) -> tuple[pd.Timestamp, pd.Timestamp]:

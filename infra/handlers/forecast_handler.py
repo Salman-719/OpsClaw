@@ -197,7 +197,7 @@ def handler(event: dict, context: Any = None) -> dict:
         logger.info("Downloaded %d files.", len(downloaded))
 
         # 2. Patch the forecast's input path to read from our temp dir
-        from pipelines.demand_forecast import prepare, run_forecast
+        from analytics.forecast import prepare, run_forecast
 
         original_output_dir = prepare._OUTPUT_DIR
         prepare._OUTPUT_DIR = processed_dir
@@ -251,10 +251,10 @@ def run_local() -> dict:
     -------
     dict  with keys: status, total_rows, output_dir
     """
-    from pipelines.demand_forecast.run_forecast import run as forecast_run
+    from analytics.forecast.run_forecast import run as forecast_run
 
     df = forecast_run()
-    output_dir = str(PROJECT_ROOT / "pipelines" / "demand_forecast" / "output")
+    output_dir = str(PROJECT_ROOT / "analytics" / "forecast" / "output")
     return {
         "status": "success",
         "total_rows": len(df),

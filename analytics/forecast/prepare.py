@@ -14,7 +14,8 @@ import numpy as np
 import pandas as pd
 
 # ── paths ────────────────────────────────────────────────────────────────
-_OUTPUT_DIR = pathlib.Path(__file__).resolve().parent.parent / "output"
+_PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+_OUTPUT_DIR = _PROJECT_ROOT / "pipelines" / "output"
 
 # ── configuration ────────────────────────────────────────────────────────
 ANOMALY_MOM_THRESHOLD_UP = 1.5     # flag if MoM growth > +150 %
