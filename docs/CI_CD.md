@@ -1,59 +1,154 @@
-# CI/CD — GitHub Actions
+# CI/CD Pipeline
+
+> GitHub Actions workflow with OIDC-based AWS authentication, automated testing, and 4-phase CDK deployment.
+
+---
 
 ## Overview
 
-Every push to `main` triggers a two-stage pipeline:
+The CI/CD pipeline uses **GitHub Actions** with **AWS OIDC federation** for secure, passwordless deployments. No AWS access keys are stored — authentication uses short-lived tokens via OpenID Connect.
+
+### Pipeline Flow
 
 ```
-Push → [Unit Tests] → (all pass?) → [CDK Deploy] → AWS
+Push to main / PR to main
+         │
+         ▼
+┌──────────────────────────┐
+│ Job 1: Unit Tests        │
+│  ├── Install Python deps │
+│  ├── Install Node deps   │
+│  ├── Build frontend      │
+│  └── Run pytest          │
+└──────────┬───────────────┘
+           │ (pass + push to main)
+           ▼
+┌──────────────────────────────────┐
+│ Job 2: CDK Deploy                │
+│  ├── Configure AWS (OIDC)        │
+│  ├── CDK Bootstrap               │
+│  ├── Phase 1: Pipeline + Agent   │
+│  ├── Phase 2: Build frontend     │
+│  ├── Phase 3: Deploy Frontend    │
+│  └── Phase 4: Cache invalidation │
+└──────────────────────────────────┘
 ```
-
-Pull requests run tests only — no deploy.
 
 ---
 
-## Pipeline Stages
+## Workflow File
 
-### Stage 1 — Unit Tests
+**`.github/workflows/ci-cd.yml`**
 
-| What | Detail |
-|------|--------|
-| Trigger | Every push & PR to `main` |
-| Runner | `ubuntu-latest` |
-| Python | 3.13 |
-| Node | 20 |
-| Tests | 29 tests across 2 suites |
+### Triggers
 
-**Test suites:**
+| Event | Branch | Action |
+|-------|--------|--------|
+| `push` | `main` | Run tests + deploy |
+| `pull_request` | `main` | Run tests only |
 
-- `tests/test_pipeline.py` — ETL parsers, report type detection, full pipeline integration
-- `tests/test_agent.py` — FastAPI routes (health, chat, dashboard, upload), Pydantic models, config
+### Environment Variables
 
-**Run locally:**
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `AWS_REGION` | `eu-west-1` | AWS deployment region |
+| `PYTHON_VERSION` | `3.13` | Python version for CI |
+| `NODE_VERSION` | `20` | Node.js version for CI |
+
+### Permissions
+
+```yaml
+permissions:
+  id-token: write   # Required for OIDC federation
+  contents: read     # Required for checkout
+```
+
+---
+
+## Job 1: Unit Tests
+
+Runs on **every push and PR** to `main`.
+
+### Steps
+
+1. **Checkout code** — `actions/checkout@v4`
+2. **Set up Python 3.13** — `actions/setup-python@v5` with pip caching
+3. **Install Python deps** — `requirements.txt` + `agent/requirements.txt` + pytest + httpx
+4. **Set up Node.js 20** — `actions/setup-node@v4` with npm caching
+5. **Install frontend deps** — `npm ci`
+6. **Build frontend** — `npm run build` (validates TypeScript + Vite build)
+7. **Run pytest** — `tests/test_pipeline.py` + `tests/test_agent.py` with `LOCAL_MODE=true`
+
+### Test Environment
+
+| Variable | Value | Purpose |
+|----------|-------|---------|
+| `LOCAL_MODE` | `true` | Agent reads from CSV files, not DynamoDB |
+
+---
+
+## Job 2: CDK Deploy
+
+Runs **only on push to `main`** after tests pass.
+
+### Phase 1: Deploy Pipeline + Agent
 
 ```bash
-source .venv/bin/activate
-LOCAL_MODE=true python -m pytest tests/test_pipeline.py tests/test_agent.py -v
+cdk deploy ConutPipeline-dev ConutAgent-dev \
+  --require-approval never \
+  --app "python3 infra/app.py"
 ```
 
-### Stage 2 — CDK Deploy
+Deploys:
+- S3 data bucket
+- 5 DynamoDB tables
+- 6 Docker Lambda functions (built from ECR)
+- Step Functions state machine
+- VPC + EC2 + ALB
+- IAM roles
 
-| What | Detail |
-|------|--------|
-| Trigger | Only on push to `main`, after tests pass |
-| Auth | AWS OIDC (no long-lived keys) |
-| Stacks | `ConutPipeline-dev` → `ConutAgent-dev` → `ConutFrontend-dev` |
+### Phase 2: Build Frontend
 
-Deploys all three stacks in dependency order:
-1. **Pipeline** — S3, DynamoDB (5 tables), Lambda (6 functions), Step Functions
-2. **Agent** — VPC, EC2 (t3.small), ALB, IAM roles
-3. **Frontend** — S3 + CloudFront CDN
+```bash
+cd frontend && npm run build
+```
+
+Frontend is built **after** Pipeline + Agent deploy because CloudFront needs the ALB DNS name. The frontend uses same-origin requests (no `VITE_API_URL`), so no environment variables are needed.
+
+### Phase 3: Deploy Frontend
+
+```bash
+cdk deploy ConutFrontend-dev \
+  --require-approval never \
+  --app "python3 infra/app.py" \
+  --outputs-file cdk-outputs.json
+```
+
+Deploys:
+- S3 bucket for static assets
+- CloudFront distribution with `/api/*` proxy to ALB
+- Uploads `frontend/dist/` to S3
+
+### Phase 4: CloudFront Cache Invalidation
+
+```bash
+DIST_ID=$(aws cloudformation describe-stacks \
+  --stack-name ConutFrontend-dev \
+  --query 'Stacks[0].Outputs[?OutputKey==`DistributionId`].OutputValue' \
+  --output text)
+
+aws cloudfront create-invalidation \
+  --distribution-id "$DIST_ID" --paths "/*" \
+  --query 'Invalidation.Status' --output text
+```
+
+Ensures users see the latest frontend immediately after deployment.
 
 ---
 
-## Setup Instructions
+## AWS OIDC Setup (One-Time)
 
-### 1. Create OIDC Identity Provider (one-time per AWS account)
+### Step 1: Create OIDC Identity Provider
 
 ```bash
 aws iam create-open-id-connect-provider \
@@ -62,14 +157,15 @@ aws iam create-open-id-connect-provider \
   --thumbprint-list 6938fd4d98bab03faadb97b34396831e3780aea1
 ```
 
-### 2. Create the Deploy Role
+### Step 2: Create IAM Role
 
-```bash
-aws iam create-role \
-  --role-name github-opsclaw-deploy \
-  --assume-role-policy-document '{
-    "Version": "2012-10-17",
-    "Statement": [{
+Create `trust-policy.json`:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
       "Effect": "Allow",
       "Principal": {
         "Federated": "arn:aws:iam::<ACCOUNT_ID>:oidc-provider/token.actions.githubusercontent.com"
@@ -80,71 +176,83 @@ aws iam create-role \
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:Salman-719/OpsClaw:*"
+          "token.actions.githubusercontent.com:sub": "repo:<GITHUB_ORG>/<REPO_NAME>:*"
         }
       }
-    }]
-  }'
+    }
+  ]
+}
 ```
 
-> Replace `<ACCOUNT_ID>` with your AWS account ID (e.g. `692461731658`).
-
-### 3. Attach Permissions
+> Replace `<ACCOUNT_ID>`, `<GITHUB_ORG>`, and `<REPO_NAME>` with your values.
 
 ```bash
+aws iam create-role \
+  --role-name GitHubActions-OpsClaw-Deploy \
+  --assume-role-policy-document file://trust-policy.json
+
 aws iam attach-role-policy \
-  --role-name github-opsclaw-deploy \
+  --role-name GitHubActions-OpsClaw-Deploy \
   --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
 ```
 
-> For production, scope this down to CloudFormation, S3, EC2, Lambda, DynamoDB, etc.
+> For production, replace `AdministratorAccess` with a least-privilege policy covering CloudFormation, S3, DynamoDB, Lambda, ECR, EC2, ELB, CloudFront, IAM, Step Functions, and Bedrock.
 
-### 4. Add GitHub Secret
+### Step 3: Add GitHub Repository Secret
 
-1. Go to **GitHub → Repo → Settings → Secrets and variables → Actions**
-2. Click **New repository secret**
-3. Name: `AWS_DEPLOY_ROLE_ARN`
-4. Value: `arn:aws:iam::<ACCOUNT_ID>:role/github-opsclaw-deploy`
+1. Go to **GitHub → Repository → Settings → Secrets and variables → Actions**
+2. Click **"New repository secret"**
+3. Add:
 
----
+| Secret Name | Value |
+|-------------|-------|
+| `AWS_DEPLOY_ROLE_ARN` | `arn:aws:iam::<ACCOUNT_ID>:role/GitHubActions-OpsClaw-Deploy` |
 
-## Workflow File
-
-Located at `.github/workflows/ci-cd.yml`.
-
-### Key Design Decisions
-
-| Decision | Rationale |
-|----------|-----------|
-| OIDC auth (no access keys) | More secure — short-lived tokens, no stored credentials |
-| Tests skip CDK synth | CDK synth builds Docker images (~5 min); pipeline + agent tests run in ~1s |
-| `--require-approval never` | Automated deploy — no manual review gates |
-| Frontend built in both jobs | Test job validates build; deploy job needs `dist/` for CDK |
-
-### Environment Variables
-
-| Variable | Where | Purpose |
-|----------|-------|---------|
-| `AWS_REGION` | Workflow env | `eu-west-1` |
-| `LOCAL_MODE` | Test step | Forces agent to use CSV fallback |
-| `AWS_DEPLOY_ROLE_ARN` | GitHub secret | IAM role for OIDC auth |
+This is the **only secret** needed. OIDC handles all authentication.
 
 ---
 
-## Troubleshooting
+## GitHub Secrets Summary
 
-**Tests fail locally but pass in CI:**
-- Ensure `LOCAL_MODE=true` is set
-- Run from project root: `cd /path/to/Hackathon && python -m pytest ...`
+| Secret | Required | Description |
+|--------|----------|-------------|
+| `AWS_DEPLOY_ROLE_ARN` | **Yes** | IAM role ARN that GitHub Actions assumes via OIDC |
 
-**Deploy fails with "Bootstrap required":**
-- The workflow runs `cdk bootstrap` automatically
-- If it persists, run manually: `cdk bootstrap aws://<ACCOUNT_ID>/eu-west-1`
+No AWS access keys, no secret access keys — just the role ARN.
 
-**Deploy fails with "Free Tier" error:**
-- EC2 instance is `t3.small` — ensure your account allows it
-- If restricted, change `instance_type` in `infra/agent_stack.py` to `t2.micro`
+---
 
-**OIDC fails with "Not authorized to perform sts:AssumeRoleWithWebIdentity":**
-- Verify the trust policy `sub` condition matches your repo name
-- Check the OIDC provider thumbprint is correct
+## Monitoring
+
+### Check Workflow Status
+
+1. Go to **GitHub → Repository → Actions tab**
+2. Click on the latest workflow run
+3. Expand each step to see logs
+
+### Common Failures
+
+| Failure | Cause | Fix |
+|---------|-------|-----|
+| OIDC auth failed | Missing/wrong `AWS_DEPLOY_ROLE_ARN` | Verify the secret value matches the IAM role ARN |
+| CDK bootstrap failed | Region mismatch | Ensure `AWS_REGION` matches your setup |
+| Docker build failed | ECR throttling | Retry, or check Docker build logs |
+| Frontend build failed | TypeScript errors | Fix errors locally first |
+| Tests failed | Missing dependencies | Check `requirements.txt` |
+| Cache invalidation failed | Missing CloudFront output | Ensure Frontend stack exports `DistributionId` |
+
+---
+
+## Local Script Alternative
+
+If you prefer not to use GitHub Actions, use the `deploy.sh` script:
+
+```bash
+# Deploy everything
+./deploy.sh
+
+# Tear down
+./deploy.sh --destroy
+```
+
+This runs the same 4-phase deployment locally using your AWS CLI credentials.
