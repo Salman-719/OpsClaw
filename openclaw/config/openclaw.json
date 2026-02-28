@@ -1,0 +1,39 @@
+{
+  "// NOTE": "REFERENCE COPY. The actual config lives at ~/.openclaw/openclaw.json",
+  "// MANAGED VIA": "openclaw config set ... CLI commands. Do NOT deploy this directly.",
+
+  "auth": {
+    "profiles": {
+      "openai:manual": {
+        "provider": "openai",
+        "mode": "token"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/gpt-4o"
+      },
+      "workspace": "<ABSOLUTE_PATH_TO>/OpsClaw",
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "allowFrom": ["*"],
+      "groupPolicy": "allowlist",
+      "streaming": "off"
+    }
+  },
+  "gateway": {
+    "mode": "local"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  }
+}

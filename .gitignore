@@ -40,3 +40,12 @@ Thumbs.db
 # CDK
 cdk.out/
 .cdk.staging/
+
+# OpenClaw workspace state (auto-generated, not part of the project)
+.openclaw/
+openclaw/AGENTS.md
+openclaw/HEARTBEAT.md
+openclaw/IDENTITY.md
+openclaw/SOUL.md
+openclaw/TOOLS.md
+openclaw/USER.md
