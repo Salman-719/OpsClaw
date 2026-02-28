@@ -112,15 +112,9 @@ jobs:
             --require-approval never \
             --app "python3 infra/app.py"
 
-      # Phase 2: Rebuild frontend with the real ALB URL
-      - name: Build frontend with API URL
-        run: |
-          ALB_URL=$(aws cloudformation describe-stacks \
-            --stack-name ConutAgent-dev \
-            --query 'Stacks[0].Outputs[?OutputKey==`AgentALBUrl`].OutputValue' \
-            --output text)
-          echo "Agent API URL: $ALB_URL"
-          cd frontend && VITE_API_URL="$ALB_URL" npm run build
+      # Phase 2: Build frontend (CloudFront proxies /api/* to ALB)
+      - name: Build frontend
+        run: cd frontend && npm run build
 
       # Phase 3: Deploy Frontend (S3 + CloudFront)
       - name: Deploy Frontend
@@ -129,6 +123,17 @@ jobs:
             --require-approval never \
             --app "python3 infra/app.py" \
             --outputs-file cdk-outputs.json
+
+      # Phase 4: Invalidate CloudFront cache
+      - name: Invalidate CloudFront cache
+        run: |
+          DIST_ID=$(aws cloudformation describe-stacks \
+            --stack-name ConutFrontend-dev \
+            --query 'Stacks[0].Outputs[?OutputKey==`DistributionId`].OutputValue' \
+            --output text)
+          aws cloudfront create-invalidation \
+            --distribution-id "$DIST_ID" --paths "/*" \
+            --query 'Invalidation.Status' --output text
 
       - name: Print stack outputs
         if: success()

@@ -61,17 +61,10 @@ else
         --require-approval never --app "python3 infra/app.py"
     ok "Pipeline + Agent deployed"
 
-    # Grab the ALB URL from the Agent stack outputs
-    ALB_URL=$(aws cloudformation describe-stacks \
-        --stack-name ConutAgent-dev --region "${AWS_REGION:-eu-west-1}" \
-        --query 'Stacks[0].Outputs[?OutputKey==`AgentALBUrl`].OutputValue' \
-        --output text)
-    info "Agent ALB URL: $ALB_URL"
-
-    # Phase 2: Rebuild frontend with the real API URL
-    info "Phase 2 — Building frontend with VITE_API_URL=$ALB_URL …"
+    # Phase 2: Build frontend (CloudFront proxies /api/* to ALB, no VITE_API_URL needed)
+    info "Phase 2 — Building frontend …"
     pushd frontend >/dev/null
-    VITE_API_URL="$ALB_URL" npm run build
+    npm run build
     popd >/dev/null
     ok "Frontend built → frontend/dist/"
 
@@ -79,7 +72,19 @@ else
     info "Phase 3 — Deploying Frontend …"
     "$CDK_CMD" deploy ConutFrontend-dev \
         --require-approval never --app "python3 infra/app.py"
-    ok "All stacks deployed 🎉"
+    ok "Frontend stack deployed"
+
+    # Phase 4: Invalidate CloudFront cache
+    info "Phase 4 — Invalidating CloudFront cache …"
+    DIST_ID=$(aws cloudformation describe-stacks \
+        --stack-name ConutFrontend-dev --region "${AWS_REGION:-eu-west-1}" \
+        --query 'Stacks[0].Outputs[?OutputKey==`DistributionId`].OutputValue' \
+        --output text)
+    aws cloudfront create-invalidation \
+        --distribution-id "$DIST_ID" --paths "/*" \
+        --region "${AWS_REGION:-eu-west-1}" \
+        --query 'Invalidation.Status' --output text
+    ok "All stacks deployed & cache invalidated 🎉"
 
     echo ""
     echo "Stack outputs:"
