@@ -1,0 +1,5 @@
+pandas>=2.0
+numpy>=1.26
+aws-cdk-lib>=2.100
+constructs>=10.0
+boto3>=1.28
