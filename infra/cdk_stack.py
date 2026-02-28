@@ -53,6 +53,18 @@ class ConutPipelineStack(Stack):
             versioned=True,
             removal_policy=RemovalPolicy.RETAIN if env_name == "prod" else RemovalPolicy.DESTROY,
             auto_delete_objects=(env_name != "prod"),
+            cors=[
+                s3.CorsRule(
+                    allowed_methods=[
+                        s3.HttpMethods.GET,
+                        s3.HttpMethods.PUT,
+                        s3.HttpMethods.POST,
+                    ],
+                    allowed_origins=["*"],
+                    allowed_headers=["*"],
+                    max_age=3600,
+                ),
+            ],
             lifecycle_rules=[
                 s3.LifecycleRule(
                     id="ExpireOldVersions",
