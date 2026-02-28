@@ -26,6 +26,14 @@ from .ensemble import ensemble_forecast, ForecastRow
 OUTPUT_DIR = _THIS_DIR / "output"
 BY_BRANCH_DIR = OUTPUT_DIR / "demand_forecast_by_branch"
 
+
+def _rel(path: pathlib.Path) -> pathlib.Path:
+    """Safely display *path* relative to _THIS_DIR; fall back to name."""
+    try:
+        return path.relative_to(_THIS_DIR)
+    except ValueError:
+        return path
+
 # ── branch-name → safe filename ─────────────────────────────────────────
 _SAFE_NAMES = {
     "Conut": "conut",
@@ -115,14 +123,14 @@ def run() -> pd.DataFrame:
     # combined CSV
     all_path = OUTPUT_DIR / "demand_forecast_all.csv"
     df.to_csv(all_path, index=False)
-    print(f"  ✓ {all_path.relative_to(_THIS_DIR)}")
+    print(f"  ✓ {_rel(all_path)}")
 
     # per-branch CSVs
     for branch_name in df["branch"].unique():
         safe = _SAFE_NAMES.get(branch_name, branch_name.lower().replace(" ", "_"))
         branch_path = BY_BRANCH_DIR / f"{safe}.csv"
         df[df["branch"] == branch_name].to_csv(branch_path, index=False)
-        print(f"  ✓ {branch_path.relative_to(_THIS_DIR)}")
+        print(f"  ✓ {_rel(branch_path)}")
 
     # metadata JSON
     meta = {
@@ -150,7 +158,7 @@ def run() -> pd.DataFrame:
     }
     meta_path = OUTPUT_DIR / "forecast_metadata.json"
     meta_path.write_text(json.dumps(meta, indent=2, default=str))
-    print(f"  ✓ {meta_path.relative_to(_THIS_DIR)}")
+    print(f"  ✓ {_rel(meta_path)}")
 
     print(f"\nDone — {len(df)} total forecast rows.")
     return df

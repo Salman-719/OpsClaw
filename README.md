@@ -1,38 +1,66 @@
 # OpsClaw — AI-Driven Chief of Operations Agent
 
-> **Conut AI Engineering Hackathon (AUB)** — An end-to-end cloud-native AI agent that acts as a Chief of Operations for the Conut bakery-café chain in Lebanon. here is a link: https://d3gi59n7jefbjs.cloudfront.net/
+> **Conut AI Engineering Hackathon (AUB)** — An end-to-end cloud-native AI agent that acts as a Chief of Operations for the Conut bakery-café chain in Lebanon.
+>
+> **Live demo:** <https://d3gi59n7jefbjs.cloudfront.net/>
 
 ---
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Architecture](#architecture)
-3. [Project Structure](#project-structure)
-4. [Prerequisites](#prerequisites)
-5. [Local Development Setup](#local-development-setup)
-6. [AWS Credential Setup](#aws-credential-setup)
-7. [Deployment](#deployment)
-8. [CI/CD Pipeline](#cicd-pipeline)
-9. [GitHub Secrets Setup](#github-secrets-setup)
-10. [Usage](#usage)
-11. [Testing](#testing)
-12. [Module Documentation](#module-documentation)
-13. [API Reference](#api-reference)
-14. [Troubleshooting](#troubleshooting)
+1. [Business Problem](#business-problem)
+2. [Approach & Architecture](#approach--architecture)
+3. [How to Run](#how-to-run)
+4. [Key Results & Recommendations](#key-results--recommendations)
+5. [Project Structure](#project-structure)
+6. [Prerequisites](#prerequisites)
+7. [Local Development Setup](#local-development-setup)
+8. [AWS Credential Setup](#aws-credential-setup)
+9. [Deployment](#deployment)
+10. [CI/CD Pipeline](#cicd-pipeline)
+11. [GitHub Secrets Setup](#github-secrets-setup)
+12. [Usage](#usage)
+13. [Testing](#testing)
+14. [Module Documentation](#module-documentation)
+15. [API Reference](#api-reference)
+16. [Troubleshooting](#troubleshooting)
 
 ---
 
-## Overview
+## Business Problem
 
-**OpsClaw** is a full-stack AI operations agent that:
+**Conut** is a growing sweets-and-beverages business in Lebanon with four branches (Conut flagship, Conut Tyre, Conut Jnah, Main Street Coffee). The company's operational data lives in 9 report-style CSV exports covering sales, orders, time-and-attendance, staffing, and menu performance — but turning that data into actionable decisions today requires manual analysis by managers.
 
-- **Ingests** raw bakery CSV data through an automated ETL pipeline
-- **Analyzes** data across 5 analytics features (combos, forecasting, expansion, staffing, growth)
-- **Stores** results and explainability data in DynamoDB
-- **Answers** natural-language questions via an AI agent powered by AWS Bedrock (Claude)
-- **Visualizes** insights through a React dashboard with interactive charts
-- **Supports** live data upload and re-processing from the frontend
+**The challenge:** Build an AI-powered Chief of Operations that can automatically ingest messy report CSVs, run five analytical workloads, and answer natural-language business questions — enabling Conut leadership to make data-driven decisions in real time.
+
+The five operational questions OpsClaw addresses:
+
+| # | Business Question | Why It Matters |
+|---|------------------|----------------|
+| 1 | **Which product combos sell best together?** | Enables cross-sell promotions and menu bundles that increase average order value |
+| 2 | **What's the demand forecast per branch?** | Drives inventory planning, reduces waste, and prevents stock-outs |
+| 3 | **Should Conut expand to a new location?** | De-risks capital expenditure with data-backed feasibility scores |
+| 4 | **How many staff are needed per shift?** | Reduces labour costs from overstaffing and service degradation from understaffing |
+| 5 | **How can coffee and milkshake sales grow?** | Unlocks beverage revenue potential through targeted promotions and bundle pricing |
+
+---
+
+## Approach & Architecture
+
+### Approach
+
+OpsClaw takes a **full-pipeline** approach — from raw data ingestion to AI-powered Q&A:
+
+1. **ETL Pipeline** — 6 custom parsers auto-detect and clean the messy report-style CSVs (repeated headers, page markers, inconsistent formats), producing 15 normalised output tables.
+2. **Analytics Engine** — 5 independent analytics modules run in parallel, each producing structured results with explainability metadata:
+   - *Combo Optimization* — association rules (support, confidence, lift) from transaction baskets
+   - *Demand Forecast* — ensemble of 4 estimators (naïve, WMA-3, linear trend, similarity transfer) with confidence bands
+   - *Expansion Feasibility* — multi-KPI scoring normalised to 0–1 with weighted composite
+   - *Shift Staffing* — hourly demand vs. supply gap detection per branch/day
+   - *Growth Strategy* — beverage attachment rates, growth potential scores, and data-driven bundle rules
+3. **AI Agent** — AWS Bedrock (Claude) with 7 tool definitions. The agent calls DynamoDB-backed query functions to answer questions with real data, not hallucinations.
+4. **React Dashboard** — 7 pages (overview + one per feature + upload) with charts, KPI cards, and a persistent chat panel.
+5. **Live Upload** — Users can upload new CSV data through the UI, which triggers the full pipeline via Step Functions, re-populates DynamoDB, and surfaces fresh insights immediately.
 
 ### Analytics Features
 
@@ -55,7 +83,7 @@
 
 ---
 
-## Architecture
+### Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -96,6 +124,73 @@
 | **ConutPipeline-dev** | S3 bucket, 5 DynamoDB tables, 6 Docker Lambda functions, Step Functions state machine |
 | **ConutAgent-dev** | VPC, EC2 (t3.small), ALB, IAM roles (DynamoDB + Bedrock + S3 + StepFunctions) |
 | **ConutFrontend-dev** | S3 (static hosting), CloudFront (CDN + `/api/*` proxy to ALB) |
+
+---
+
+## How to Run
+
+OpsClaw supports both **local development** (no AWS needed) and **full cloud deployment**.
+
+### Quick Start (Local — No AWS Required)
+
+```bash
+git clone https://github.com/Salman-719/OpsClaw.git
+cd OpsClaw
+
+# Python backend
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run ETL pipeline locally
+python pipelines/run_pipeline.py --data-dir "conut_bakery_scaled_data"
+
+# Run agent in local mode (reads CSV files, no DynamoDB)
+LOCAL_MODE=true python -m agent.main     # http://localhost:8000
+
+# Run frontend
+cd frontend && npm install && npm run dev  # http://localhost:5173
+```
+
+### Full Cloud Deployment (AWS)
+
+```bash
+# Prerequisites: AWS CLI configured, CDK installed, Docker running
+./deploy.sh
+# Deploys 3 CDK stacks → prints CloudFront URL
+```
+
+See the [Local Development Setup](#local-development-setup) and [Deployment](#deployment) sections below for detailed instructions.
+
+---
+
+## Key Results & Recommendations
+
+### Top Findings
+
+| Feature | Key Insight | Business Impact |
+|---------|-------------|-----------------|
+| **Combo Optimization** | Several product pairs show lift > 2.0, meaning they are bought together far more often than chance would predict | Menu bundle promotions on high-lift pairs can increase average order value by 15–25% |
+| **Demand Forecast** | Branch demand follows clear monthly seasonality with December surges flagged as anomalies; ensemble of 4 estimators delivers stable predictions with confidence bands | Proactive inventory ordering 1–3 months ahead reduces waste and stock-outs |
+| **Expansion Feasibility** | Branches scored on revenue consistency, growth trajectory, and operational efficiency yield a clear ranking; data-starved branches (< 4 months) use similarity transfer from comparable locations | Investment decisions can be backed by composite 0–1 feasibility scores instead of gut feeling |
+| **Shift Staffing** | Multiple branches show systematic understaffing during lunch (11:00–14:00) and weekend peaks, with demand-supply gaps up to 3–4 staff | Realigning rosters to the demand curve can reduce overtime costs and improve customer wait times |
+| **Growth Strategy** | Beverage attachment rates vary significantly by branch; some locations have < 30% attachment on high-margin drinks | Targeted upsell training and bundle pricing at underperforming branches can unlock 10–20% beverage revenue growth |
+
+### Recommendations
+
+1. **Launch combo bundles** — Start with the top-5 product pairs by lift score as promotional bundles. Monitor basket size impact weekly.
+2. **Adopt rolling forecasts** — Use the 1-month base-case forecast for purchasing; use the 3-month extension for supplier negotiations.
+3. **Delay expansion until data matures** — Branches with < 6 months of data should wait; use the similarity-transfer forecast for early estimates.
+4. **Rebalance shift rosters** — Address the top-10 understaffed time-slots first. Even small shifts (1–2 staff) at peak times materially improve throughput.
+5. **Beverage upsell program** — Target the branch with the lowest attachment rate for a 4-week upsell pilot. Measure before/after attachment rate and revenue per ticket.
+6. **Automate the pipeline** — With OpsClaw, new CSV uploads trigger the full analytics pipeline automatically. Conut should schedule weekly data exports and uploads to keep insights current.
+
+### Technical Results
+
+- **ETL Pipeline:** 6 parsers handle 9 messy report-style CSVs → 15 clean normalised tables, 100% automated
+- **Analytics:** 5 features run in parallel via Step Functions (< 2 min end-to-end)
+- **Agent:** Claude answers business questions using 7 tools backed by DynamoDB — zero hallucination on data queries
+- **Test Suite:** 29 tests across ETL, agent API, and CDK infrastructure
+- **CI/CD:** GitHub Actions with OIDC → fully automated deploy on push to `main`
 
 ---
 

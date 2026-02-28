@@ -141,6 +141,8 @@ class AgentStack(Stack):
 
         # Step Functions — start + describe executions
         sfn_arn = state_machine.state_machine_arn if state_machine else f"arn:aws:states:*:*:stateMachine:{project}-pipeline-{env_name}"
+        # Execution ARNs use a different format: arn:aws:states:REGION:ACCOUNT:execution:SM_NAME:EXEC_NAME
+        exec_arn_pattern = sfn_arn.replace(":stateMachine:", ":execution:") if state_machine else f"arn:aws:states:*:*:execution:{project}-pipeline-{env_name}"
         agent_role.add_to_policy(
             iam.PolicyStatement(
                 actions=[
@@ -148,7 +150,7 @@ class AgentStack(Stack):
                     "states:DescribeExecution",
                     "states:ListExecutions",
                 ],
-                resources=[sfn_arn, f"{sfn_arn}:*"],
+                resources=[sfn_arn, f"{sfn_arn}:*", f"{exec_arn_pattern}:*"],
             )
         )
 
@@ -181,7 +183,7 @@ class AgentStack(Stack):
             f'  -e LOCAL_MODE=false \\',
             f'  -e S3_DATA_BUCKET={bucket_name} \\',
             f'  -e STATE_MACHINE_ARN={sfn_arn_str} \\',
-            f'  -e BEDROCK_MODEL_ID=anthropic.claude-sonnet-4-20250514 \\',
+            f'  -e BEDROCK_MODEL_ID=anthropic.claude-sonnet-4-20250514-v1:0 \\',
             "  opsclaw-agent",
             "",
             "echo 'OpsClaw Agent started successfully'",
