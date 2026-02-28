@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from pipelines.business_model_4_staffing_estimation.config import (
+from .config import (
     HIGH_CONFIDENCE_SHARE_SPREAD,
     LOW_CONFIDENCE_SHARE_SPREAD,
     LOW_CONFIDENCE_SALES_UPLIFT_CAP,

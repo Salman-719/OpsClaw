@@ -17,15 +17,10 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-# The package must be importable as a sub-package of pipelines.
-# When run directly, fix sys.path so relative imports work.
-import sys
 _THIS_DIR = pathlib.Path(__file__).resolve().parent
-if str(_THIS_DIR.parent) not in sys.path:
-    sys.path.insert(0, str(_THIS_DIR.parent))
 
-from demand_forecast.prepare import prepare_all, BranchSeries
-from demand_forecast.ensemble import ensemble_forecast, ForecastRow
+from .prepare import prepare_all, BranchSeries
+from .ensemble import ensemble_forecast, ForecastRow
 
 # ── output paths ─────────────────────────────────────────────────────────
 OUTPUT_DIR = _THIS_DIR / "output"

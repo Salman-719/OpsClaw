@@ -12,25 +12,25 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from pipelines.business_model_4_staffing_estimation.config import (
+from .config import (
     DEFAULT_OUTPUT_DIR,
     PIPELINES_OUTPUT_DIR,
 )
-from pipelines.business_model_4_staffing_estimation.demand import (
+from .demand import (
     build_branch_demand_multipliers,
     build_delivery_demand_shape,
     estimate_total_hourly_demand,
 )
-from pipelines.business_model_4_staffing_estimation.loaders import (
+from .loaders import (
     infer_overlap_window,
     load_input_tables,
 )
-from pipelines.business_model_4_staffing_estimation.model import (
+from .model import (
     build_target_productivity_reference,
     estimate_required_staff,
     summarize_staffing_findings,
 )
-from pipelines.business_model_4_staffing_estimation.supply import (
+from .supply import (
     build_attendance_hourly_supply,
     build_supply_profile,
 )

@@ -174,9 +174,13 @@ def _write_summary_md(
 # PIPELINE RUNNER
 # ──────────────────────────────────────────────────────────────────────────────
 
+_PACKAGE_DIR = Path(__file__).resolve().parent
+_DEFAULT_OUTPUT_DIR = _PACKAGE_DIR / "output"
+
+
 def run_pipeline(
     data_dir: str | Path,
-    out_dir:  str | Path = "outputs/feature_3",
+    out_dir:  str | Path | None = None,
 ) -> dict:
     """
     Execute the full Feature 3 pipeline.
@@ -186,7 +190,7 @@ def run_pipeline(
     dict with keys: branch_kpis, feasibility_scores, recommendation
     """
     data_dir = Path(data_dir)
-    out_dir  = Path(out_dir)
+    out_dir  = Path(out_dir) if out_dir is not None else _DEFAULT_OUTPUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info("=" * 60)
@@ -280,11 +284,11 @@ def run_query(out_dir: str | Path, query_type: str, branch: str | None = None) -
 
 def _build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="python -m pipelines.feature_3.run",
+        prog="python -m analytics.expansion.run",
         description=(
             "Feature 3 – Expansion Feasibility Pipeline\n\n"
             "Run the full pipeline:\n"
-            "  python -m pipelines.feature_3.run --data_dir conut_bakery_scaled_data\n\n"
+            "  python -m analytics.expansion.run --data_dir conut_bakery_scaled_data\n\n"
             "Run an agent query (requires prior pipeline run):\n"
             "  python -m pipelines.feature_3.run --query expansion_recommendation\n"
             "  python -m pipelines.feature_3.run --query feasibility_explanation --branch tyre\n"
@@ -296,8 +300,8 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Directory containing raw Conut CSV exports (default: conut_bakery_scaled_data)",
     )
     p.add_argument(
-        "--out_dir", default="outputs/feature_3",
-        help="Output directory for CSVs, JSON, and Markdown (default: outputs/feature_3)",
+        "--out_dir", default=None,
+        help="Output directory for CSVs, JSON, and Markdown (default: analytics/expansion/output/)",
     )
     p.add_argument(
         "--query",
@@ -328,7 +332,8 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.query:
         # Query-only mode: read pre-computed outputs
-        run_query(args.out_dir, args.query, branch=args.branch)
+        query_dir = args.out_dir if args.out_dir else str(_DEFAULT_OUTPUT_DIR)
+        run_query(query_dir, args.query, branch=args.branch)
     else:
         # Full pipeline
         run_pipeline(data_dir=args.data_dir, out_dir=args.out_dir)

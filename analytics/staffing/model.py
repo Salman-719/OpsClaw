@@ -4,7 +4,7 @@ import math
 
 import pandas as pd
 
-from pipelines.business_model_4_staffing_estimation.config import (
+from .config import (
     LOW_CONFIDENCE_MIN_TARGET_SLOTS,
     LOW_CONFIDENCE_TARGET_CAP_MULTIPLE,
     MIN_PRODUCTIVITY_TARGET,

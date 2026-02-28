@@ -252,8 +252,7 @@ def handler(event: dict, context: Any = None) -> dict:
             }
 
         # 2. Run combo optimization
-        sys.path.insert(0, str(PROJECT_ROOT / "pipelines" / "feature 1"))
-        from src.features.combo_optimization import run as combo_run
+        from analytics.combo.combo_optimization import run as combo_run
 
         out_baskets = output_dir / "order_baskets.csv"
         out_pairs = output_dir / "combo_pairs.csv"
@@ -329,13 +328,12 @@ def run_local() -> dict:
     import pandas as pd
 
     input_path = PROJECT_ROOT / "pipelines" / "output" / "transaction_baskets_raw_lines.csv"
-    output_dir = PROJECT_ROOT / "pipelines" / "feature 1" / "data"
+    output_dir = PROJECT_ROOT / "analytics" / "combo" / "data"
 
     if not input_path.exists():
         return {"status": "error", "message": f"Input not found: {input_path}"}
 
-    sys.path.insert(0, str(PROJECT_ROOT / "pipelines" / "feature 1"))
-    from src.features.combo_optimization import run as combo_run
+    from analytics.combo.combo_optimization import run as combo_run
 
     baskets_df, pairs_df = combo_run(
         in_path=str(input_path),

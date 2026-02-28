@@ -5,8 +5,9 @@ FROM public.ecr.aws/lambda/python:3.13 AS base
 COPY requirements.txt ${LAMBDA_TASK_ROOT}/
 RUN pip install --no-cache-dir -r ${LAMBDA_TASK_ROOT}/requirements.txt
 
-# Copy the full project (pipelines + infra)
+# Copy the full project (pipelines + analytics + infra)
 COPY pipelines/ ${LAMBDA_TASK_ROOT}/pipelines/
+COPY analytics/ ${LAMBDA_TASK_ROOT}/analytics/
 COPY infra/ ${LAMBDA_TASK_ROOT}/infra/
 
 
