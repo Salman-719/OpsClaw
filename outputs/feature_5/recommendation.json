@@ -1,0 +1,34 @@
+{
+  "strategy": "Coffee & Milkshake Combo Uplift",
+  "objective": "Increase beverage attachment rate across branches via targeted cross-sell",
+  "key_findings": [
+    "Highest growth potential: Conut Jnah (potential_score=1.000, current attachment=0.1531)",
+    "Best beverage branch benchmark: Main Street Coffee (attachment_rate=0.286)"
+  ],
+  "branch_actions": [
+    {
+      "branch": "Conut Jnah",
+      "potential_score": 1.0,
+      "current_attachment_rate": 0.1531,
+      "beverage_gap_to_best": 0.1326,
+      "recommended_bundle": "hot chocolate combo → oreo milkshake (lift=98.00)",
+      "action": "Priority cross-sell: promote beverage bundles at checkout"
+    },
+    {
+      "branch": "Conut - Tyre",
+      "potential_score": 0.1676,
+      "current_attachment_rate": 0.2222,
+      "beverage_gap_to_best": 0.0635,
+      "recommended_bundle": "conut the one → mocha frappe (lift=9.00)",
+      "action": "Maintain existing bundle promotions and monitor"
+    },
+    {
+      "branch": "Main Street Coffee",
+      "potential_score": 0.0488,
+      "current_attachment_rate": 0.2857,
+      "beverage_gap_to_best": 0.0,
+      "recommended_bundle": "hot chocolate → double chocolate milkshake (lift=14.00)",
+      "action": "Maintain existing bundle promotions and monitor"
+    }
+  ]
+}
