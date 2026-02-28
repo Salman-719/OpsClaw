@@ -3,9 +3,9 @@ CDK Stack — Conut AI Operations Pipeline
 =========================================
 Defines all AWS resources:
   - S3 bucket  (raw input + processed + results)
-  - DynamoDB tables  (forecast + combo results for agent queries)
-  - Lambda functions  (ETL + Forecast + Combo, Docker-based)
-  - Step Functions state machine  (ETL → Forecast & Combo in parallel)
+  - DynamoDB tables  (forecast + combo + expansion + staffing + growth)
+  - Lambda functions  (ETL + Forecast + Combo + Expansion + Staffing + Growth)
+  - Step Functions state machine  (ETL → all 5 analytics in parallel)
   - S3 event trigger  (auto-kicks pipeline on CSV upload)
 """
 
@@ -92,6 +92,51 @@ class ConutPipelineStack(Stack):
             removal_policy=RemovalPolicy.DESTROY if env_name != "prod" else RemovalPolicy.RETAIN,
         )
 
+        # ── DynamoDB: Expansion Table ────────────────────────────────────
+        expansion_table = dynamodb.Table(
+            self,
+            "ExpansionTable",
+            table_name=f"{project}-expansion-{env_name}",
+            partition_key=dynamodb.Attribute(
+                name="pk", type=dynamodb.AttributeType.STRING   # branch or "recommendation"
+            ),
+            sort_key=dynamodb.Attribute(
+                name="sk", type=dynamodb.AttributeType.STRING   # "kpi" | "feasibility" | "expansion"
+            ),
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            removal_policy=RemovalPolicy.DESTROY if env_name != "prod" else RemovalPolicy.RETAIN,
+        )
+
+        # ── DynamoDB: Staffing Table ─────────────────────────────────────
+        staffing_table = dynamodb.Table(
+            self,
+            "StaffingTable",
+            table_name=f"{project}-staffing-{env_name}",
+            partition_key=dynamodb.Attribute(
+                name="pk", type=dynamodb.AttributeType.STRING   # branch
+            ),
+            sort_key=dynamodb.Attribute(
+                name="sk", type=dynamodb.AttributeType.STRING   # "findings" | "gap#<day>#<hour>"
+            ),
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            removal_policy=RemovalPolicy.DESTROY if env_name != "prod" else RemovalPolicy.RETAIN,
+        )
+
+        # ── DynamoDB: Growth Table ───────────────────────────────────────
+        growth_table = dynamodb.Table(
+            self,
+            "GrowthTable",
+            table_name=f"{project}-growth-{env_name}",
+            partition_key=dynamodb.Attribute(
+                name="pk", type=dynamodb.AttributeType.STRING   # branch or "recommendation"
+            ),
+            sort_key=dynamodb.Attribute(
+                name="sk", type=dynamodb.AttributeType.STRING   # "growth_potential" | "beverage_kpi" | "rule#..." | "growth"
+            ),
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            removal_policy=RemovalPolicy.DESTROY if env_name != "prod" else RemovalPolicy.RETAIN,
+        )
+
         # ── Shared Lambda environment ────────────────────────────────────
         common_env = {
             "S3_BUCKET": data_bucket.bucket_name,
@@ -100,6 +145,9 @@ class ConutPipelineStack(Stack):
             "S3_RESULTS_PREFIX": "results/forecast/",
             "DYNAMODB_TABLE": forecast_table.table_name,
             "DYNAMODB_COMBO_TABLE": combo_table.table_name,
+            "DYNAMODB_EXPANSION_TABLE": expansion_table.table_name,
+            "DYNAMODB_STAFFING_TABLE": staffing_table.table_name,
+            "DYNAMODB_GROWTH_TABLE": growth_table.table_name,
         }
 
         # ── ETL Lambda (Docker image) ───────────────────────────────────
@@ -147,12 +195,59 @@ class ConutPipelineStack(Stack):
             environment=common_env,
         )
 
+        # ── Expansion Lambda (Docker image) ─────────────────────────────
+        expansion_fn = _lambda.DockerImageFunction(
+            self,
+            "ExpansionFunction",
+            function_name=f"{project}-expansion-{env_name}",
+            code=_lambda.DockerImageCode.from_image_asset(
+                directory=str(PROJECT_ROOT),
+                file="infra/Dockerfile",
+                target="expansion",
+            ),
+            timeout=Duration.minutes(15),
+            memory_size=1024,
+            environment=common_env,
+        )
+
+        # ── Staffing Lambda (Docker image) ──────────────────────────────
+        staffing_fn = _lambda.DockerImageFunction(
+            self,
+            "StaffingFunction",
+            function_name=f"{project}-staffing-{env_name}",
+            code=_lambda.DockerImageCode.from_image_asset(
+                directory=str(PROJECT_ROOT),
+                file="infra/Dockerfile",
+                target="staffing",
+            ),
+            timeout=Duration.minutes(15),
+            memory_size=1024,
+            environment=common_env,
+        )
+
+        # ── Growth Lambda (Docker image) ────────────────────────────────
+        growth_fn = _lambda.DockerImageFunction(
+            self,
+            "GrowthFunction",
+            function_name=f"{project}-growth-{env_name}",
+            code=_lambda.DockerImageCode.from_image_asset(
+                directory=str(PROJECT_ROOT),
+                file="infra/Dockerfile",
+                target="growth",
+            ),
+            timeout=Duration.minutes(15),
+            memory_size=1024,
+            environment=common_env,
+        )
+
         # ── IAM: grant S3 + DynamoDB access ─────────────────────────────
-        data_bucket.grant_read_write(etl_fn)
-        data_bucket.grant_read_write(forecast_fn)
-        data_bucket.grant_read_write(combo_fn)
+        for fn in [etl_fn, forecast_fn, combo_fn, expansion_fn, staffing_fn, growth_fn]:
+            data_bucket.grant_read_write(fn)
         forecast_table.grant_read_write_data(forecast_fn)
         combo_table.grant_read_write_data(combo_fn)
+        expansion_table.grant_read_write_data(expansion_fn)
+        staffing_table.grant_read_write_data(staffing_fn)
+        growth_table.grant_read_write_data(growth_fn)
 
         # ── Step Functions: ETL → (Forecast + Combo) in parallel ─────────
         etl_task = tasks.LambdaInvoke(
@@ -202,13 +297,64 @@ class ConutPipelineStack(Stack):
             output_path="$",
         )
 
-        # Forecast and Combo run in parallel after ETL
+        expansion_task = tasks.LambdaInvoke(
+            self,
+            "RunExpansion",
+            lambda_function=expansion_fn,
+            payload=sfn.TaskInput.from_object(
+                {
+                    "s3_bucket": data_bucket.bucket_name,
+                    "s3_input_prefix": "input/",
+                    "s3_results_prefix": "results/expansion/",
+                    "dynamodb_table": expansion_table.table_name,
+                }
+            ),
+            result_path="$.expansion_result",
+            output_path="$",
+        )
+
+        staffing_task = tasks.LambdaInvoke(
+            self,
+            "RunStaffing",
+            lambda_function=staffing_fn,
+            payload=sfn.TaskInput.from_object(
+                {
+                    "s3_bucket": data_bucket.bucket_name,
+                    "s3_processed_prefix": "processed/",
+                    "s3_results_prefix": "results/staffing/",
+                    "dynamodb_table": staffing_table.table_name,
+                }
+            ),
+            result_path="$.staffing_result",
+            output_path="$",
+        )
+
+        growth_task = tasks.LambdaInvoke(
+            self,
+            "RunGrowth",
+            lambda_function=growth_fn,
+            payload=sfn.TaskInput.from_object(
+                {
+                    "s3_bucket": data_bucket.bucket_name,
+                    "s3_processed_prefix": "processed/",
+                    "s3_results_prefix": "results/growth/",
+                    "dynamodb_table": growth_table.table_name,
+                }
+            ),
+            result_path="$.growth_result",
+            output_path="$",
+        )
+
+        # All 5 analytics run in parallel after ETL
         analytics_parallel = sfn.Parallel(
             self, "RunAnalytics",
             result_path="$.analytics_results",
         )
         analytics_parallel.branch(forecast_task)
         analytics_parallel.branch(combo_task)
+        analytics_parallel.branch(expansion_task)
+        analytics_parallel.branch(staffing_task)
+        analytics_parallel.branch(growth_task)
 
         pipeline_chain = etl_task.next(analytics_parallel)
 
@@ -231,7 +377,13 @@ class ConutPipelineStack(Stack):
         cdk.CfnOutput(self, "DataBucketName", value=data_bucket.bucket_name)
         cdk.CfnOutput(self, "ForecastTableName", value=forecast_table.table_name)
         cdk.CfnOutput(self, "ComboTableName", value=combo_table.table_name)
+        cdk.CfnOutput(self, "ExpansionTableName", value=expansion_table.table_name)
+        cdk.CfnOutput(self, "StaffingTableName", value=staffing_table.table_name)
+        cdk.CfnOutput(self, "GrowthTableName", value=growth_table.table_name)
         cdk.CfnOutput(self, "EtlFunctionArn", value=etl_fn.function_arn)
         cdk.CfnOutput(self, "ForecastFunctionArn", value=forecast_fn.function_arn)
         cdk.CfnOutput(self, "ComboFunctionArn", value=combo_fn.function_arn)
+        cdk.CfnOutput(self, "ExpansionFunctionArn", value=expansion_fn.function_arn)
+        cdk.CfnOutput(self, "StaffingFunctionArn", value=staffing_fn.function_arn)
+        cdk.CfnOutput(self, "GrowthFunctionArn", value=growth_fn.function_arn)
         cdk.CfnOutput(self, "StateMachineArn", value=state_machine.state_machine_arn)
