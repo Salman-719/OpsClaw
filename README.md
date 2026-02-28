@@ -1,6 +1,6 @@
 # OpsClaw — AI-Driven Chief of Operations Agent
 
-> **Conut AI Engineering Hackathon (AUB)** — An end-to-end cloud-native AI agent that acts as a Chief of Operations for the Conut bakery-café chain in Lebanon.
+> **Conut AI Engineering Hackathon (AUB)** — An end-to-end cloud-native AI agent that acts as a Chief of Operations for the Conut bakery-café chain in Lebanon. here is a link: https://d3gi59n7jefbjs.cloudfront.net/
 
 ---
 
