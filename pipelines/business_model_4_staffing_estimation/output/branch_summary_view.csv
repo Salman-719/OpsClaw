@@ -1,0 +1,4 @@
+branch,staffed_slots,avg_active_employees,avg_required_employees,avg_gap,peak_required_employees,peak_gap,demand_confidence,understaffed_slots,balanced_slots,overstaffed_slots,worst_understaffed_slot,worst_overstaffed_slot,recommendation
+Conut - Tyre,96,2.1,1.41,-0.7,5,2.75,high,7,42,47,Friday 23:00,Sunday 15:00,Increase staffing around the highest-gap slots before widening other shifts.
+Conut Jnah,111,1.5,2.11,0.6,6,5.0,low,33,63,15,Monday 21:00,Friday 13:00,Increase staffing around the highest-gap slots before widening other shifts.
+Main Street Coffee,132,1.98,2.75,0.77,15,12.5,low,65,60,7,Sunday 23:00,Saturday 16:00,Increase staffing around the highest-gap slots before widening other shifts.

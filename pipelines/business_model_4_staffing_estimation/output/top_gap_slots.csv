@@ -1,0 +1,31 @@
+branch,day_of_week,hour,avg_active_employees,required_employees_base,delivery_orders_est,total_orders_est_base,gap_base,status
+Conut - Tyre,Friday,23,2.25,5,2.1905,86.4263,2.75,understaffed
+Conut - Tyre,Sunday,15,3.5,1,0.0,0.0,-2.5,overstaffed
+Conut - Tyre,Sunday,16,3.5,1,0.0,0.0,-2.5,overstaffed
+Conut - Tyre,Saturday,17,3.25,1,0.0,0.0,-2.25,overstaffed
+Conut - Tyre,Saturday,21,2.75,5,2.1905,86.4263,2.25,understaffed
+Conut - Tyre,Sunday,17,3.25,1,0.0,0.0,-2.25,overstaffed
+Conut - Tyre,Sunday,20,3.25,1,0.0,0.0,-2.25,overstaffed
+Conut - Tyre,Sunday,21,3.25,1,0.0,0.0,-2.25,overstaffed
+Conut - Tyre,Sunday,22,3.25,1,0.0,0.0,-2.25,overstaffed
+Conut - Tyre,Sunday,23,3.25,1,0.0,0.0,-2.25,overstaffed
+Conut Jnah,Monday,21,1.0,6,7.1553,147.3401,5.0,understaffed
+Conut Jnah,Friday,18,1.25,6,7.1553,147.3401,4.75,understaffed
+Conut Jnah,Tuesday,22,1.25,6,7.1553,147.3401,4.75,understaffed
+Conut Jnah,Tuesday,16,1.5,6,3.5776,73.67,4.5,understaffed
+Conut Jnah,Tuesday,19,1.5,6,8.3478,171.8968,4.5,understaffed
+Conut Jnah,Tuesday,20,1.5,6,8.3478,171.8968,4.5,understaffed
+Conut Jnah,Wednesday,19,1.5,6,7.1553,147.3401,4.5,understaffed
+Conut Jnah,Wednesday,15,1.75,6,3.5776,73.67,4.25,understaffed
+Conut Jnah,Monday,20,1.0,5,5.9627,122.7834,4.0,understaffed
+Conut Jnah,Saturday,21,1.25,5,5.9627,122.7834,3.75,understaffed
+Main Street Coffee,Sunday,23,2.5,15,0.2575,180.2299,12.5,understaffed
+Main Street Coffee,Sunday,17,2.75,15,0.2575,180.2299,12.25,understaffed
+Main Street Coffee,Sunday,18,2.75,15,0.2575,180.2299,12.25,understaffed
+Main Street Coffee,Saturday,16,3.75,2,0.0483,33.7931,-1.75,overstaffed
+Main Street Coffee,Friday,0,1.5,3,0.0483,33.7931,1.5,understaffed
+Main Street Coffee,Friday,16,3.5,2,0.0483,33.7931,-1.5,overstaffed
+Main Street Coffee,Sunday,16,3.5,2,0.0483,33.7931,-1.5,overstaffed
+Main Street Coffee,Thursday,17,1.5,3,0.0483,33.7931,1.5,understaffed
+Main Street Coffee,Thursday,18,1.5,3,0.0483,33.7931,1.5,understaffed
+Main Street Coffee,Thursday,19,1.5,3,0.0483,33.7931,1.5,understaffed

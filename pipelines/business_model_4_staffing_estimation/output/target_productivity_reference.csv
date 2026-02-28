@@ -1,0 +1,17 @@
+branch,shift_bucket,slot_count,median_observed_orders_per_employee,target_orders_per_employee,reference_level,confidence
+Conut - Tyre,afternoon,3,0.0,32.4911,branch_shift,high
+Conut - Tyre,all_day,18,0.0,20.6245,branch_all_day,high
+Conut - Tyre,evening,15,0.0,19.2059,branch_shift,high
+Conut - Tyre,morning,0,0.0,,branch_shift,high
+Conut - Tyre,overnight,0,0.0,,branch_shift,high
+Conut Jnah,afternoon,15,0.0,14.7046,branch_shift,low
+Conut Jnah,all_day,59,12.2784,28.9655,branch_all_day,low
+Conut Jnah,evening,43,49.1133,28.9655,branch_shift,low
+Conut Jnah,morning,1,0.0,,branch_shift,low
+Conut Jnah,overnight,0,0.0,,branch_shift,low
+Main Street Coffee,afternoon,35,19.3103,19.3103,branch_shift,low
+Main Street Coffee,all_day,132,19.3103,19.3103,branch_all_day,low
+Main Street Coffee,evening,49,13.5172,12.6429,branch_shift,low
+Main Street Coffee,morning,34,33.7931,28.9655,branch_shift,low
+Main Street Coffee,overnight,14,16.1285,16.1285,branch_shift,low
+__global__,all_day,209,12.2884,19.3103,global,
