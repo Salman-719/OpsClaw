@@ -120,18 +120,20 @@ openclaw config get agents.defaults.model.primary
 
 ## 5. Set the Agent Workspace
 
-The workspace tells OpenClaw which directory the agent can read files from. This is where your analytics outputs, BOOTSTRAP.md, and skills live.
+The workspace tells OpenClaw which directory the agent can read files from. Point it to the `openclaw/` subfolder inside the project — this is where BOOTSTRAP.md and skills live.
 
 ```bash
-openclaw config set agents.defaults.workspace "/absolute/path/to/OpsClaw"
+openclaw config set agents.defaults.workspace "/absolute/path/to/OpsClaw/openclaw"
 ```
 
 **Windows example:**
 ```powershell
-openclaw config set agents.defaults.workspace "C:\Users\YourName\path\to\OpsClaw"
+openclaw config set agents.defaults.workspace "C:\Users\YourName\path\to\OpsClaw\openclaw"
 ```
 
-The agent gets `read` tool access to this directory and all subdirectories.
+The agent gets `read` tool access to this directory and all subdirectories (including `../analytics/` via relative paths in BOOTSTRAP.md).
+
+> **Why `openclaw/` and not the project root?** This keeps all OpenClaw-specific files (BOOTSTRAP.md, skills, config templates, scripts) in one folder, separate from the analytics code.
 
 ---
 
@@ -200,9 +202,9 @@ openclaw config set session.dmScope per-channel-peer
 
 ## 9. Create BOOTSTRAP.md (System Prompt)
 
-Create a file called `BOOTSTRAP.md` in the **workspace root** (the directory you set in Step 5). This is automatically loaded as the agent's system prompt for every conversation.
+Create a file called `BOOTSTRAP.md` in the **workspace root** (the `openclaw/` directory you set in Step 5). This is automatically loaded as the agent's system prompt for every conversation.
 
-**File: `OpsClaw/BOOTSTRAP.md`**
+**File: `OpsClaw/openclaw/BOOTSTRAP.md`**
 
 ```markdown
 # Conut Bakery — Chief of Operations Agent
@@ -219,31 +221,33 @@ Do NOT invent file paths — only use the exact paths listed here.
 ## Exact File Paths
 
 ### Combos (menu item pairings)
-- `analytics/combo/data/artifacts/combo_pairs_explained.csv`
+- `../analytics/combo/data/artifacts/combo_pairs_explained.csv`
 
 ### Demand Forecasting
-- `analytics/forecast/output/demand_forecast_all.csv`
+- `../analytics/forecast/output/demand_forecast_all.csv`
 
 ### Branch Expansion
-- `analytics/expansion/output/recommendation.json`
-- `analytics/expansion/output/feasibility_scores.csv`
-- `analytics/expansion/output/branch_kpis.csv`
+- `../analytics/expansion/output/recommendation.json`
+- `../analytics/expansion/output/feasibility_scores.csv`
+- `../analytics/expansion/output/branch_kpis.csv`
 
 ### Staffing
-- `analytics/staffing/output/branch_summary_view.csv`
-- `analytics/staffing/output/staffing_gap_hourly.csv`
-- `analytics/staffing/output/top_gap_slots.csv`
-- `analytics/staffing/output/branch_staffing_findings.csv`
+- `../analytics/staffing/output/branch_summary_view.csv`
+- `../analytics/staffing/output/staffing_gap_hourly.csv`
+- `../analytics/staffing/output/top_gap_slots.csv`
+- `../analytics/staffing/output/branch_staffing_findings.csv`
 
 ### Beverage Growth (coffee & milkshake)
-- `analytics/growth/output/branch_beverage_kpis.csv`
-- `analytics/growth/output/branch_growth_potential.csv`
-- `analytics/growth/output/recommendation.json`
-- `analytics/growth/output/assoc_rules_by_branch.csv`
+- `../analytics/growth/output/branch_beverage_kpis.csv`
+- `../analytics/growth/output/branch_growth_potential.csv`
+- `../analytics/growth/output/recommendation.json`
+- `../analytics/growth/output/assoc_rules_by_branch.csv`
+
+> **Note:** Paths use `../` because the workspace is `openclaw/` and analytics live in the parent project directory.
 
 ## How to Answer
 1. Classify the question (combos / forecast / expansion / staffing / beverages)
-2. Use the `read` tool to open the EXACT file path from the list above
+2. Use the `read` tool to open the EXACT file path from the list above (note: paths start with `../`)
 3. Parse the CSV/JSON and extract relevant data
 4. Reply: direct answer → 2-4 data points → one actionable takeaway
 5. Keep replies under 300 words. Use *bold* and numbered lists (Telegram format).
@@ -254,7 +258,7 @@ Do NOT invent file paths — only use the exact paths listed here.
 - Never ask what system the user uses — you know it's Conut Bakery
 ```
 
-> **How it works:** OpenClaw detects `BOOTSTRAP.md` in the workspace root and injects it as the system prompt. Run `openclaw status` to verify — look for "1 bootstrap file present".
+> **How it works:** OpenClaw detects `BOOTSTRAP.md` in the workspace root (`openclaw/`) and injects it as the system prompt. Run `openclaw status` to verify — look for "1 bootstrap file present".
 
 ---
 
@@ -266,39 +270,34 @@ Skills are `SKILL.md` files that provide domain-specific instructions to the age
 
 ```
 OpsClaw/
-└── skills/
-    └── conut-ops-agent/
-        └── SKILL.md
+└── openclaw/                    ← workspace root
+    ├── BOOTSTRAP.md
+    └── skills/
+        └── conut-ops-agent/
+            └── SKILL.md
 ```
 
 Create the directory:
 
 ```bash
-mkdir -p skills/conut-ops-agent
+mkdir -p openclaw/skills/conut-ops-agent
 ```
 
 **Windows PowerShell:**
 ```powershell
-New-Item -Path "skills\conut-ops-agent" -ItemType Directory -Force
+New-Item -Path "openclaw\skills\conut-ops-agent" -ItemType Directory -Force
 ```
 
 ### Create SKILL.md
 
-**File: `OpsClaw/skills/conut-ops-agent/SKILL.md`**
+**File: `OpsClaw/openclaw/skills/conut-ops-agent/SKILL.md`**
 
 The skill file uses YAML frontmatter for metadata and markdown for instructions:
 
 ````markdown
 ---
 name: conut-ops-agent
-description: >
-  Conut Bakery Chief of Operations AI Agent. Handles questions about branch
-  performance, sales, staffing, combos, beverages, demand forecasting, and
-  branch expansion. Covers five business objectives:
-  (1) Combo Optimization (2) Demand Forecasting (3) Branch Expansion
-  (4) Staffing Estimation (5) Coffee & Milkshake Growth Strategy.
-  Trigger on: sales, branch, staffing, scheduling, combos, menu, beverage,
-  expansion, demand, forecast, KPI, underperforming, growth potential.
+description: "Conut Bakery Chief of Operations AI Agent. Handles questions about branch performance, sales, staffing, combos, beverages, demand forecasting, and branch expansion. Covers five business objectives: (1) Combo Optimization (2) Demand Forecasting (3) Branch Expansion (4) Staffing Estimation (5) Coffee & Milkshake Growth Strategy. Trigger on: sales, branch, staffing, scheduling, combos, menu, beverage, expansion, demand, forecast, KPI, underperforming, growth potential."
 ---
 
 # Conut Ops Agent
@@ -317,7 +316,14 @@ You are the Chief of Operations Agent for **Conut Bakery**.
 
 ## Data File Paths
 
-(Same paths as listed in BOOTSTRAP.md — refer to Section 9)
+Use `../analytics/...` paths (relative to the workspace root `openclaw/`):
+- `../analytics/combo/data/artifacts/combo_pairs_explained.csv`
+- `../analytics/forecast/output/demand_forecast_all.csv`
+- `../analytics/expansion/output/recommendation.json`
+- `../analytics/staffing/output/branch_summary_view.csv`
+- `../analytics/growth/output/branch_beverage_kpis.csv`
+
+(See BOOTSTRAP.md for the full list)
 
 ## Response Format
 - Lead with the direct answer
@@ -326,7 +332,9 @@ You are the Chief of Operations Agent for **Conut Bakery**.
 - Keep under 300 words for Telegram
 ````
 
-> **How skills work:** OpenClaw scans `skills/*/SKILL.md` in the workspace at startup. The skill appears as a `/conut_ops_agent` command in Telegram. The agent also activates it automatically when keywords match.
+> **How skills work:** OpenClaw scans `skills/*/SKILL.md` in the workspace (`openclaw/`) at startup. The skill appears as a `/conut_ops_agent` command in Telegram. The agent also activates it automatically when keywords match.
+
+> **Important:** The `description` field must be a single quoted string on one line. OpenClaw does NOT support YAML multi-line syntax (`>` or `|`). Using multi-line will cause parse errors.
 
 ---
 
@@ -335,7 +343,7 @@ You are the Chief of Operations Agent for **Conut Bakery**.
 The agent reads pre-computed CSV/JSON files — it does NOT run Python at query time. Generate all outputs before starting the gateway:
 
 ```bash
-cd OpsClaw
+cd OpsClaw   # project root, NOT openclaw/
 python infra/local_test.py
 ```
 
@@ -433,11 +441,12 @@ Open Telegram, find your bot by username, and send:
 │  └──────────────┘    └─────────┬──────────┘    └──────────────┘ │
 │                                │                                │
 │                    ┌───────────▼──────────┐                     │
-│                    │  Workspace (OpsClaw/) │                     │
+│                    │  Workspace           │                     │
+│                    │  (OpsClaw/openclaw/)  │                     │
 │                    │                      │                     │
 │                    │  BOOTSTRAP.md        │  ← system prompt    │
 │                    │  skills/SKILL.md     │  ← domain skill     │
-│                    │  analytics/*/output/ │  ← pre-computed     │
+│                    │  ../analytics/output/ │  ← pre-computed     │
 │                    │    *.csv, *.json     │     data files      │
 │                    └─────────────────────┘                     │
 └─────────────────────────────────────────────────────────────────┘
@@ -459,7 +468,7 @@ Flow:
 | **Gateway** | Long-running process that bridges Telegram ↔ LLM agent |
 | **BOOTSTRAP.md** | Always-loaded system prompt in workspace root |
 | **Skill (SKILL.md)** | Domain-specific instructions in `skills/<name>/SKILL.md` |
-| **Workspace** | Directory the agent can read files from via `read` tool |
+| **Workspace** | Directory the agent can read files from via `read` tool (`openclaw/` subfolder) |
 | **Session** | Conversation state per user (stored in `~/.openclaw/agents/main/sessions/`) |
 
 ### What skills are NOT
@@ -485,7 +494,7 @@ openclaw config set --json <key> '<json_value>'     # Set array/object
 | Setting | CLI command | Purpose |
 |---|---|---|
 | LLM model | `openclaw config set agents.defaults.model.primary openai/gpt-4o` | Which model to use |
-| Workspace | `openclaw config set agents.defaults.workspace "/path/to/OpsClaw"` | Agent file access |
+| Workspace | `openclaw config set agents.defaults.workspace "/path/to/OpsClaw/openclaw"` | Agent file access |
 | Telegram DM policy | `openclaw config set channels.telegram.dmPolicy open` | Allow DMs |
 | Telegram allow list | `openclaw config set --json channels.telegram.allowFrom '["*"]'` | Who can DM |
 | Session scope | `openclaw config set session.dmScope per-channel-peer` | Per-user sessions |
@@ -542,7 +551,7 @@ openclaw gateway run --auth none --verbose
 **Fix:**
 1. Verify BOOTSTRAP.md exists in workspace root
 2. Check `openclaw status` — should show "1 bootstrap file present"
-3. Check `openclaw config get agents.defaults.workspace` — must point to the directory containing BOOTSTRAP.md
+3. Check `openclaw config get agents.defaults.workspace` — must point to the `openclaw/` directory containing BOOTSTRAP.md
 4. Clear old sessions: delete `~/.openclaw/agents/main/sessions/*.jsonl` and `sessions.json`
 5. Restart gateway
 
@@ -567,8 +576,8 @@ echo "sk-proj-NEW_KEY" | openclaw models auth paste-token --provider openai
 ### Skill not loading
 
 **Checklist:**
-1. File must be at `<workspace>/skills/<skill-name>/SKILL.md`
-2. Must have YAML frontmatter with `name` and `description`
+1. File must be at `<workspace>/skills/<skill-name>/SKILL.md` (i.e. `openclaw/skills/conut-ops-agent/SKILL.md`)
+2. Must have YAML frontmatter with `name` and `description` (description must be a single quoted line — DO NOT use `>` or `|` multi-line YAML)
 3. Look for `[skills] Sanitized skill command name` in gateway startup logs
 4. Try invoking directly: `/conut_ops_agent your question`
 
@@ -602,7 +611,7 @@ echo "YOUR_OPENAI_KEY" | openclaw models auth paste-token --provider openai
 openclaw config set agents.defaults.model.primary openai/gpt-4o
 
 # 5. Workspace
-openclaw config set agents.defaults.workspace "/path/to/OpsClaw"
+openclaw config set agents.defaults.workspace "/path/to/OpsClaw/openclaw"
 
 # 6. Telegram
 openclaw channels add telegram --token "YOUR_BOT_TOKEN"
@@ -612,7 +621,7 @@ openclaw config set --json channels.telegram.allowFrom '["*"]'
 # 7. Sessions
 openclaw config set session.dmScope per-channel-peer
 
-# 8. Create BOOTSTRAP.md and skills/conut-ops-agent/SKILL.md (see Sections 9-10)
+# 8. Create openclaw/BOOTSTRAP.md and openclaw/skills/conut-ops-agent/SKILL.md (see Sections 9-10)
 
 # 9. Generate analytics outputs
 cd OpsClaw && python infra/local_test.py
