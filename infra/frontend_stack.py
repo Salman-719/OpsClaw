@@ -2,10 +2,14 @@
 CDK Stack — OpsClaw Frontend (S3 + CloudFront)
 ===============================================
 Deploys the React dashboard to S3, served via CloudFront CDN.
+
+NOTE: Run ``cd frontend && npm install && npm run build`` before
+      ``cdk deploy`` so that ``frontend/dist/`` exists.
 """
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import aws_cdk as cdk
@@ -90,16 +94,25 @@ class FrontendStack(Stack):
         )
 
         # ── Deploy built frontend to S3 ────────────────────────────────
-        s3deploy.BucketDeployment(
-            self,
-            "DeployFrontend",
-            sources=[
-                s3deploy.Source.asset(str(PROJECT_ROOT / "frontend" / "dist")),
-            ],
-            destination_bucket=site_bucket,
-            distribution=distribution,
-            distribution_paths=["/*"],
-        )
+        dist_path = PROJECT_ROOT / "frontend" / "dist"
+        if dist_path.is_dir():
+            s3deploy.BucketDeployment(
+                self,
+                "DeployFrontend",
+                sources=[
+                    s3deploy.Source.asset(str(dist_path)),
+                ],
+                destination_bucket=site_bucket,
+                distribution=distribution,
+                distribution_paths=["/*"],
+            )
+        else:
+            import warnings
+            warnings.warn(
+                f"frontend/dist not found at {dist_path}. "
+                "Run 'cd frontend && npm install && npm run build' before deploying.",
+                stacklevel=2,
+            )
 
         # ── Outputs ─────────────────────────────────────────────────────
         cdk.CfnOutput(

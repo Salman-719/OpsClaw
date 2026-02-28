@@ -373,6 +373,10 @@ class ConutPipelineStack(Stack):
             s3.NotificationKeyFilter(prefix="input/", suffix=".csv"),
         )
 
+        # ── Expose for cross-stack references ─────────────────────────
+        self.data_bucket = data_bucket
+        self.state_machine = state_machine
+
         # ── Outputs ──────────────────────────────────────────────────────
         cdk.CfnOutput(self, "DataBucketName", value=data_bucket.bucket_name)
         cdk.CfnOutput(self, "ForecastTableName", value=forecast_table.table_name)

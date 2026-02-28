@@ -39,6 +39,26 @@ export interface HealthStatus {
   model: string;
 }
 
+export interface PresignResponse {
+  upload_url: string;
+  s3_key: string;
+  bucket: string;
+  expires_in: number;
+}
+
+export interface TriggerResponse {
+  execution_arn: string;
+  status: string;
+  started_at: string;
+}
+
+export interface PipelineStatus {
+  execution_arn: string;
+  status: string;
+  started_at: string | null;
+  stopped_at: string | null;
+}
+
 // ── Endpoints ───────────────────────────────────────────────────────────
 
 export const api = {
@@ -67,4 +87,35 @@ export const api = {
 
   growth: (branch?: string) =>
     fetchJSON<DashboardSection>(branch ? `/api/dashboard/growth/${encodeURIComponent(branch)}` : '/api/dashboard/growth'),
+
+  // Upload + Pipeline
+  presignUpload: (filename: string) =>
+    fetchJSON<PresignResponse>('/api/upload/presign', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename }),
+    }),
+
+  uploadFileToS3: async (presignedUrl: string, file: File) => {
+    const res = await fetch(presignedUrl, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'text/csv' },
+      body: file,
+    });
+    if (!res.ok) throw new Error(`S3 upload failed: ${res.status}`);
+  },
+
+  triggerPipeline: (s3Key?: string) =>
+    fetchJSON<TriggerResponse>('/api/upload/trigger', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ s3_key: s3Key ?? '' }),
+    }),
+
+  pipelineStatus: (executionArn: string) =>
+    fetchJSON<PipelineStatus>('/api/upload/status', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ execution_arn: executionArn }),
+    }),
 };

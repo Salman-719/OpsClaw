@@ -58,6 +58,8 @@ agent_stack = AgentStack(
     app,
     f"ConutAgent-{env_name}",
     env_name=env_name,
+    data_bucket=pipeline_stack.data_bucket,
+    state_machine=pipeline_stack.state_machine,
     env=aws_env,
 )
 # Agent depends on pipeline (needs DynamoDB tables to exist)

@@ -6,9 +6,10 @@ import ComboPage from './pages/ComboPage'
 import ExpansionPage from './pages/ExpansionPage'
 import StaffingPage from './pages/StaffingPage'
 import GrowthPage from './pages/GrowthPage'
+import UploadPage from './pages/UploadPage'
 import ChatPanel from './components/ChatPanel'
 
-export type Page = 'overview' | 'forecast' | 'combo' | 'expansion' | 'staffing' | 'growth'
+export type Page = 'overview' | 'forecast' | 'combo' | 'expansion' | 'staffing' | 'growth' | 'upload'
 
 export default function App() {
   const [page, setPage] = useState<Page>('overview')
@@ -22,6 +23,7 @@ export default function App() {
       case 'expansion': return <ExpansionPage />
       case 'staffing': return <StaffingPage />
       case 'growth': return <GrowthPage />
+      case 'upload': return <UploadPage />
     }
   }
 

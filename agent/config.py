@@ -20,7 +20,10 @@ COMBO_TABLE     = os.getenv("DYNAMODB_COMBO_TABLE",      f"{PROJECT}-combo-{ENV_
 EXPANSION_TABLE = os.getenv("DYNAMODB_EXPANSION_TABLE",  f"{PROJECT}-expansion-{ENV_NAME}")
 STAFFING_TABLE  = os.getenv("DYNAMODB_STAFFING_TABLE",   f"{PROJECT}-staffing-{ENV_NAME}")
 GROWTH_TABLE    = os.getenv("DYNAMODB_GROWTH_TABLE",     f"{PROJECT}-growth-{ENV_NAME}")
-
+# ── S3 + Step Functions (for upload → pipeline trigger) ────────────
+S3_DATA_BUCKET = os.getenv("S3_DATA_BUCKET", f"{PROJECT}-data-{ENV_NAME}")
+S3_INPUT_PREFIX = os.getenv("S3_INPUT_PREFIX", "input/")
+STATE_MACHINE_ARN = os.getenv("STATE_MACHINE_ARN", "")
 # ── Bedrock ──────────────────────────────────────────────────────────────
 BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "anthropic.claude-sonnet-4-20250514")
 BEDROCK_MAX_TOKENS = int(os.getenv("BEDROCK_MAX_TOKENS", "4096"))

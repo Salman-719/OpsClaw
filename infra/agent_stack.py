@@ -2,7 +2,7 @@
 CDK Stack — OpsClaw Agent Service (EC2 + ALB)
 ==============================================
 Deploys the FastAPI agent on an EC2 instance behind an ALB,
-with IAM roles for DynamoDB + Bedrock access.
+with IAM roles for DynamoDB + Bedrock + S3 + Step Functions access.
 """
 
 from __future__ import annotations
@@ -18,7 +18,8 @@ from aws_cdk import (
     aws_iam as iam,
     aws_elasticloadbalancingv2 as elbv2,
     aws_elasticloadbalancingv2_targets as targets,
-    aws_autoscaling as autoscaling,
+    aws_s3 as s3,
+    aws_stepfunctions as sfn,
 )
 from constructs import Construct
 
@@ -34,6 +35,8 @@ class AgentStack(Stack):
         construct_id: str,
         *,
         env_name: str = "dev",
+        data_bucket: s3.IBucket | None = None,
+        state_machine: sfn.IStateMachine | None = None,
         **kwargs,
     ) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -117,7 +120,35 @@ class AgentStack(Stack):
             )
         )
 
+        # S3 data bucket — upload (PutObject) + read for presigned URLs
+        bucket_name = data_bucket.bucket_name if data_bucket else f"{project}-data-{env_name}"
+        bucket_arn = data_bucket.bucket_arn if data_bucket else f"arn:aws:s3:::{project}-data-{env_name}"
+        agent_role.add_to_policy(
+            iam.PolicyStatement(
+                actions=[
+                    "s3:PutObject",
+                    "s3:GetObject",
+                    "s3:ListBucket",
+                ],
+                resources=[bucket_arn, f"{bucket_arn}/*"],
+            )
+        )
+
+        # Step Functions — start + describe executions
+        sfn_arn = state_machine.state_machine_arn if state_machine else f"arn:aws:states:*:*:stateMachine:{project}-pipeline-{env_name}"
+        agent_role.add_to_policy(
+            iam.PolicyStatement(
+                actions=[
+                    "states:StartExecution",
+                    "states:DescribeExecution",
+                    "states:ListExecutions",
+                ],
+                resources=[sfn_arn, f"{sfn_arn}:*"],
+            )
+        )
+
         # ── User Data (bootstrap script) ────────────────────────────────
+        sfn_arn_str = state_machine.state_machine_arn if state_machine else ""
         user_data = ec2.UserData.for_linux()
         user_data.add_commands(
             "#!/bin/bash",
@@ -143,6 +174,8 @@ class AgentStack(Stack):
             f'  -e AWS_REGION=eu-west-1 \\',
             f'  -e ENV_NAME={env_name} \\',
             f'  -e LOCAL_MODE=false \\',
+            f'  -e S3_DATA_BUCKET={bucket_name} \\',
+            f'  -e STATE_MACHINE_ARN={sfn_arn_str} \\',
             f'  -e BEDROCK_MODEL_ID=anthropic.claude-sonnet-4-20250514 \\',
             "  opsclaw-agent",
             "",

@@ -14,6 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from agent import config
 from agent.routes import router as chat_router
 from agent.routes.dashboard import router as dashboard_router
+from agent.routes.upload import router as upload_router
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -49,6 +50,7 @@ app.add_middleware(
 # Routes
 app.include_router(chat_router)
 app.include_router(dashboard_router)
+app.include_router(upload_router)
 
 
 @app.get("/api/health")

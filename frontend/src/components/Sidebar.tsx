@@ -7,6 +7,7 @@ const NAV: { key: Page; label: string; icon: string }[] = [
   { key: 'expansion', label: 'Expansion',  icon: '🏗️' },
   { key: 'staffing',  label: 'Staffing',   icon: '👥' },
   { key: 'growth',    label: 'Growth',     icon: '☕' },
+  { key: 'upload',    label: 'Upload',     icon: '📁' },
 ]
 
 interface Props {
