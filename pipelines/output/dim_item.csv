@@ -1,0 +1,326 @@
+canonical_item_name,division,group,category,modifier_flag,beverage_flag
+ADD ICE CREAM,Extras and Sides,Extras and Sides,core_food,False,False
+AFFOGATO,CONUT''S FAVORITE,CONUT''S FAVORITE,core_food,False,False
+AMERICAN COFFEE,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+ARGENTINA,Holder,Holders,modifier,True,False
+BALKIS LEMONADE,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+BLUEBERRIES (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"BLUEBERRIES , (P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+BLUEBERRIES .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+"BLUEBERRIES, (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+BLUEBERRIES.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+BOSTON CHEESECAKE CHIMNEY,ITEMS,ITEMS,modifier,True,False
+BOSTON CHEESECAKE CONUT,ITEMS,ITEMS,modifier,True,False
+BOSTON CHEESECAKE MINI,ITEMS,ITEMS,modifier,True,False
+BROWNIES (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"BROWNIES , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+BROWNIES . (R),FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"BROWNIES,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+BROWNIES.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+CAFE MOCHA,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+CAFFE AMERICANO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+CAFFE LATTE,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+CAPPUCCINO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+"CARAMEL  SAUCE,",Bev Add-ons,Bev Add-ons,core_food,False,False
+CARAMEL DIP (R),EXTRA DIP,EXTRA DIP,core_food,False,False
+CARAMEL DIP.(R),free dip,free dip,modifier,True,False
+CARAMEL FRAPPE,Frappes,Frappes,coffee_cold,False,True
+CARAMEL MACHIATO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+CARAMEL MOCHA FRAPPE,Frappes,Frappes,coffee_cold,False,True
+"CARAMEL SAUCE  ,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+CARAMEL SAUCE (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"CARAMEL SAUCE , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"CARAMEL SAUCE, (R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+CARAMEL SAUCE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+CHERRY JAM (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"CHERRY JAM ,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+CHERRY JAM .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+CHERRY JAM DIP (P),EXTRA DIP,EXTRA DIP,core_food,False,False
+CHERRY JAM DIP.(P),free dip,free dip,core_food,False,False
+"CHERRY JAM, (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+CHERRY JAM.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+CHIMNEY BERRY MIX,ITEMS,ITEMS,core_food,False,False
+CHIMNEY BOSTON CHEESECAKE,ITEMS,ITEMS,core_food,False,False
+CHIMNEY COMBO.,ITEMS,ITEMS,core_food,False,False
+CHIMNEY PISTACHIO,ITEMS,ITEMS,core_food,False,False
+CHIMNEY THE ONE,ITEMS,ITEMS,core_food,False,False
+CHIMNEY THE ORIGINAL,ITEMS,ITEMS,core_food,False,False
+CHIMNEY TRIPLE CHOCOLATE,ITEMS,ITEMS,core_food,False,False
+CHOCOLATE CHIPS RINGS,ITEMS,ITEMS,core_food,False,False
+CHOCOLATE SAUCE,Bev Add-ons,Bev Add-ons,core_food,False,False
+CINNAMON SUGAR RINGS,ITEMS,ITEMS,core_food,False,False
+CLASSIC CHIMNEY,ITEMS,ITEMS,core_food,False,False
+CONUT BERRY MIX,ITEMS,ITEMS,core_food,False,False
+CONUT BITES,ITEMS,ITEMS,core_food,False,False
+CONUT BOSTON CHEESECAKE,ITEMS,ITEMS,core_food,False,False
+CONUT COMBO,ITEMS,ITEMS,core_food,False,False
+CONUT PISTACHIO,ITEMS,ITEMS,core_food,False,False
+CONUT THE ONE,ITEMS,ITEMS,core_food,False,False
+CONUT THE ORIGINAL,ITEMS,ITEMS,core_food,False,False
+CONUT TRIPLE CHOCOLATE,ITEMS,ITEMS,core_food,False,False
+CRISPY CREPE (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"CRISPY CREPE ,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+CRISPY CREPE . (R),FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"CRISPY CREPE,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+CRISPY CREPE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+CRUSHED LOTUS (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"CRUSHED LOTUS , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+CRUSHED LOTUS .(R),FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"CRUSHED LOTUS,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+CRUSHED LOTUS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+CRUSHED OREO (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"CRUSHED OREO ,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+CRUSHED OREO .(R),FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"CRUSHED OREO, (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+CRUSHED OREO.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+DARK CHOCOLATE CHIPS (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"DARK CHOCOLATE CHIPS ,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+DARK CHOCOLATE CHIPS .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+"DARK CHOCOLATE CHIPS, (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+DARK CHOCOLATE CHIPS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+DARK CHOCOLATE DIP (R),EXTRA DIP,EXTRA DIP,core_food,False,False
+DARK CHOCOLATE DIP.(R),free dip,free dip,modifier,True,False
+DARK CHOCOLATE SAUCE (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"DARK CHOCOLATE SAUCE , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+DARK CHOCOLATE SAUCE .(R),FREE MINI TOP,FREE MINI TOP,modifier,True,False
+"DARK CHOCOLATE SAUCE,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+DARK CHOCOLATE SAUCE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+DECAF,coffee type,coffee type,modifier,True,False
+DELIVERY CHARGE,Delivery Service,Delivery,core_food,False,False
+DONT SEND CUTLERY,Delivery Service,Delivery,modifier,True,False
+DOUBLE CHOCOLATE MILKSHAKE,Shakes,Shakes,milkshake,False,True
+DOUBLE ESPRESSO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+EARL GREY,Hot and Cold Drinks,TEA FLAVORS,other_beverage,False,True
+ENGLAND HOLDER,Holder,Holders,modifier,True,False
+ENGLISH BREAKFAST,Hot and Cold Drinks,TEA FLAVORS,other_beverage,False,True
+ESPRESSO FRAPPE,Frappes,Frappes,coffee_cold,False,True
+ESPRESSO MACCHIATO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+EXTRA DECAF ESPRESSO SHOT,Bev Add-ons,Bev Add-ons,core_food,False,False
+EXTRA ESPRESSO SHOT,Bev Add-ons,Bev Add-ons,core_food,False,False
+FLAT WHITE,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+FRUIT LOOPS (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"FRUIT LOOPS ,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+FRUIT LOOPS . (R),FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+FRUIT LOOPS MILKSHAKE,Shakes,Shakes,milkshake,False,True
+"FRUIT LOOPS,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+FRUIT LOOPS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+FULL FAT MILK,MILK OPTIONS,MILK OPTIONS,modifier,True,False
+GRANOLA BERRIES (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"GRANOLA BERRIES ,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+GRANOLA BERRIES .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+GRANOLA BERRIES MILKSHAKE,Shakes,Shakes,milkshake,False,True
+"GRANOLA BERRIES, (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+GRANOLA BERRIES.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+GREEN TEA,Hot and Cold Drinks,TEA FLAVORS,other_beverage,False,True
+GUMMY BEARS (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"GUMMY BEARS ,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+GUMMY BEARS . (R),FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"GUMMY BEARS,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+GUMMY BEARS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+HAZELNUT FRAPPE,Frappes,Frappes,coffee_cold,False,True
+HAZELNUT MOCHA FRAPPE,Frappes,Frappes,coffee_cold,False,True
+HAZELNUT SYRUP,Bev Add-ons,Bev Add-ons,core_food,False,False
+HOT,DRINK TYPE,DRINK TYPE,other_beverage,True,True
+HOT CHOCOLATE,CONUT''S FAVORITE,CONUT''S FAVORITE,core_food,False,False
+HOT CHOCOLATE COMBO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+HOT MILK,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+ICE CREAM BOWL,ITEMS,ITEMS,core_food,False,False
+ICE CREAM ON THE SIDE,Hot-Coffee Based,OPTIONS ICE CREAM,coffee_hot,True,True
+ICE CREAM ON TOP,Hot-Coffee Based,OPTIONS ICE CREAM,coffee_hot,True,True
+ICED,DRINK TYPE,DRINK TYPE,other_beverage,True,True
+ICED CHOCOLATE,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+ICED SHAKEN ESPRESSO,CONUT''S FAVORITE,CONUT''S FAVORITE,core_food,False,False
+LACTOSE FREE MILK.,MILK OPTIONS,MILK OPTIONS,modifier,True,False
+LOTUS DIP (R),EXTRA DIP,EXTRA DIP,core_food,False,False
+LOTUS DIP.(R),free dip,free dip,modifier,True,False
+LOTUS SAUCE (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"LOTUS SAUCE , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+LOTUS SAUCE .(R),FREE MINI TOP,FREE MINI TOP,modifier,True,False
+"LOTUS SAUCE,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+LOTUS SAUCE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+LOTUS SPREAD CHIMNEY,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,core_food,False,False
+LOTUS SPREAD CHIMNEY.,Free Chimney Cake Spreads,Free Chimney Cake Spreads,modifier,True,False
+LOTUS SPREAD CONUT,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,core_food,False,False
+LOTUS SPREAD CONUT.,Free Conut Spreads,Free Conut Spreads,modifier,True,False
+LOTUS SPREAD MINI,EXTRA MINI SPREAD,EXTRA MINI SPREAD,core_food,False,False
+LOTUS SPREAD MINI.,free mini spread,FREE MINI SPREAD,modifier,True,False
+MANGO PASSION,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+MARSHMALLOWS (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"MARSHMALLOWS , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+MARSHMALLOWS .(R),FREE MINI TOP,FREE MINI TOP,modifier,True,False
+"MARSHMALLOWS,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+MARSHMALLOWS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+MATCHA FRAPPE,Frappes,Frappes,coffee_cold,False,True
+MATCHA LATTE,CONUT''S FAVORITE,CONUT''S FAVORITE,core_food,False,False
+MATCHA MILKSHAKE,Shakes,Shakes,milkshake,False,True
+MELON PASSION,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+MILK OPTIONS,MILK OPTIONS,MILK OPTIONS,modifier,True,False
+MINI BERRY MIX,ITEMS,ITEMS,core_food,False,False
+MINI BOSTON CHEESECAKE,ITEMS,ITEMS,core_food,False,False
+MINI PISTACHIO,ITEMS,ITEMS,core_food,False,False
+MINI THE ONE,ITEMS,ITEMS,core_food,False,False
+MINI THE ORIGINAL,ITEMS,ITEMS,core_food,False,False
+MINI TRIPLE CHOCOLATE,ITEMS,ITEMS,core_food,False,False
+MOCHA FRAPPE,Frappes,Frappes,coffee_cold,False,True
+NO CINNAMON,Conuts,Conuts,modifier,True,False
+NO DIP,free dip,free dip,modifier,True,False
+NO MARSHMALLLOWS,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,modifier,True,False
+NO SPREAD,Free Chimney Cake Spreads,Free Chimney Cake Spreads,modifier,True,False
+NO SPREAD .,free mini spread,FREE MINI SPREAD,modifier,True,False
+"NO SPREAD,,",EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,modifier,True,False
+"NO SPREAD,.",EXTRA MINI SPREAD,EXTRA MINI SPREAD,modifier,True,False
+NO SPREAD.,Free Conut Spreads,Free Conut Spreads,modifier,True,False
+NO SPREAD..,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,modifier,True,False
+NO TOPPINGS,FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"NO TOPPINGS ,",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+NO TOPPINGS.,FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+NO WHIPPED CREAM,Hot-Coffee Based,Free Whipped Cream,coffee_hot,True,True
+NUTELLA DIP (R),EXTRA DIP,EXTRA DIP,core_food,False,False
+NUTELLA DIP.(R),free dip,free dip,modifier,True,False
+NUTELLA SAUCE (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"NUTELLA SAUCE ,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+NUTELLA SAUCE . (R),FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"NUTELLA SAUCE,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+NUTELLA SAUCE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+NUTELLA SPREAD CHIMNEY,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,core_food,False,False
+NUTELLA SPREAD CHIMNEY.,Free Chimney Cake Spreads,Free Chimney Cake Spreads,modifier,True,False
+NUTELLA SPREAD CONUT,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,core_food,False,False
+NUTELLA SPREAD CONUT.,Free Conut Spreads,Free Conut Spreads,modifier,True,False
+NUTELLA SPREAD MINI,EXTRA MINI SPREAD,EXTRA MINI SPREAD,core_food,False,False
+NUTELLA SPREAD MINI.,free mini spread,FREE MINI SPREAD,modifier,True,False
+OREO MILKSHAKE,Shakes,Shakes,milkshake,False,True
+PASSION FRUIT DIP (P),EXTRA DIP,EXTRA DIP,core_food,False,False
+PASSION FRUIT SAUCE (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"PASSION FRUIT SAUCE,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+PASSION FRUITS DIP.(P),free dip,free dip,core_food,False,False
+"PASSION FRUITS SAUCE ,(P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+PASSION FRUITS SAUCE .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+PEACH ICED TEA,Hot and Cold Drinks,TEA FLAVORS,other_beverage,False,True
+"PEANUT BUTTER CUP , (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+PEANUT BUTTER CUP .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+PEANUT BUTTER CUPS (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"PEANUT BUTTER CUPS,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+PEANUT BUTTER CUPS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+PEANUT BUTTER MILKSHAKE,Shakes,Shakes,milkshake,False,True
+PEPPERMINT TEA,Hot and Cold Drinks,TEA FLAVORS,other_beverage,False,True
+PISTACHIO CHIMNEY,ITEMS,ITEMS,modifier,True,False
+PISTACHIO CONUT,ITEMS,ITEMS,modifier,True,False
+PISTACHIO DIP (P),EXTRA DIP,EXTRA DIP,core_food,False,False
+PISTACHIO DIP.(P),free dip,free dip,core_food,False,False
+PISTACHIO LATTE,CONUT''S FAVORITE,CONUT''S FAVORITE,core_food,False,False
+PISTACHIO MILKSHAKE,Shakes,Shakes,milkshake,False,True
+PISTACHIO MINI,ITEMS,ITEMS,modifier,True,False
+PISTACHIO SAUCE (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"PISTACHIO SAUCE ,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+PISTACHIO SAUCE . (P),FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+"PISTACHIO SAUCE,(P)",FREE MINI TOP,FREE MINI TOP,core_food,False,False
+PISTACHIO SAUCE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+PISTACHIO SPREAD CHIMNEY,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,core_food,False,False
+PISTACHIO SPREAD CHIMNEY.,Free Chimney Cake Spreads,Free Chimney Cake Spreads,core_food,False,False
+PISTACHIO SPREAD CONUT,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,core_food,False,False
+PISTACHIO SPREAD CONUT.,Free Conut Spreads,Free Conut Spreads,core_food,False,False
+PISTACHIO SPREAD MINI,EXTRA MINI SPREAD,EXTRA MINI SPREAD,core_food,False,False
+PISTACHIO SPREAD MINI.,free mini spread,FREE MINI SPREAD,core_food,False,False
+PISTACHIO TOPPING,FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"PISTACHIO TOPPING,",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+PISTACHIO TOPPING.,FREE MINI TOP,FREE MINI TOP,modifier,True,False
+PRESSED,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,coffee_hot,True,True
+RASPBERRIES (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"RASPBERRIES ,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+RASPBERRIES .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+"RASPBERRIES, (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+RASPBERRIES.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+RASPBERRY ICED TEA,Hot and Cold Drinks,TEA FLAVORS,other_beverage,False,True
+RASPBERRY JAM (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"RASPBERRY JAM , (P)",FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+RASPBERRY JAM .(P),FREE MINI TOP,FREE MINI TOP,core_food,False,False
+RASPBERRY JAM DIP (P),EXTRA DIP,EXTRA DIP,core_food,False,False
+"RASPBERRY JAM,(P)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+RASPBERRY JAM.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+REGULAR,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,coffee_hot,True,True
+REGULAR.,coffee type,coffee type,modifier,True,False
+SALTED CARAMEL DIP (R),EXTRA DIP,EXTRA DIP,core_food,False,False
+SALTED CARAMEL DIP.(R),free dip,free dip,modifier,True,False
+SALTED CARAMEL FRAPPE,Frappes,Frappes,coffee_cold,False,True
+SALTED CARAMEL MILKSHAKE,Shakes,Shakes,milkshake,False,True
+SALTED CARAMEL SAUCE  .(R),FREE MINI TOP,FREE MINI TOP,modifier,True,False
+SALTED CARAMEL SAUCE (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+SALTED CARAMEL SAUCE . (R),FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"SALTED CARAMEL SAUCE,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+SALTED CARAMEL SAUCE.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+SALTED CARAMEL SYRUP,Bev Add-ons,Bev Add-ons,core_food,False,False
+SALTED PRETZELS (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"SALTED PRETZELS , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+"SALTED PRETZELS,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+SALTED PRETZELS.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+SEND CUTLERY,Delivery Service,Delivery,modifier,True,False
+SINGLE ESPRESSO,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+SKIMMED MILK.,MILK OPTIONS,MILK OPTIONS,modifier,True,False
+SPRINKLES (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"SPRINKLES , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+SPRINKLES .(R),FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"SPRINKLES,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+SPRINKLES.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+STRAWBERRIES (R),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+"STRAWBERRY , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+STRAWBERRY .(R),FREE MINI TOP,FREE MINI TOP,modifier,True,False
+STRAWBERRY DRESSING,Bev Add-ons,Bev Add-ons,core_food,False,False
+STRAWBERRY MILKSHAKE,Shakes,Shakes,milkshake,False,True
+"STRAWBERRY,(R)",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+STRAWBERRY.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+SWEETENED CREAM,Bev Add-ons,Bev Add-ons,core_food,False,False
+SWITCH TO ICE CREAM,FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+"SWITCH TO ICE CREAM,",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+TAKE AWAY,Delivery Service,Delivery,modifier,True,False
+THE ONE CHIMNEY,ITEMS,ITEMS,modifier,True,False
+THE ONE CONUT,ITEMS,ITEMS,modifier,True,False
+THE ONE MINI,ITEMS,ITEMS,modifier,True,False
+THE SHARING BOX.,ITEMS,ITEMS,core_food,False,False
+TIRAMISU CHIMNEY,ITEMS,ITEMS,core_food,False,False
+TIRAMISU CONUT,ITEMS,ITEMS,core_food,False,False
+TIRAMISU MINI CONUT,ITEMS,ITEMS,core_food,False,False
+TOASTED MARSHMALLOWS,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,core_food,False,False
+TOFFEE NUT FRAPPE,Frappes,Frappes,coffee_cold,False,True
+TOFFEE NUT MILKSHAKE,Shakes,Shakes,milkshake,False,True
+TRIPLE CHOCOLATE CHIMNEY,ITEMS,ITEMS,modifier,True,False
+TRIPLE CHOCOLATE CONUT,ITEMS,ITEMS,modifier,True,False
+TRIPLE CHOCOLATE MINI,ITEMS,ITEMS,modifier,True,False
+VANILLA FRAPPE,Frappes,Frappes,coffee_cold,False,True
+VANILLA MILKSHAKE,Shakes,Shakes,milkshake,False,True
+VANILLA SYRUP,Bev Add-ons,Bev Add-ons,core_food,False,False
+VIA SPARKLING WATER,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+WATER,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+WHIPPED  CREAM (P),MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+WHIPPED  CREAM.,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,core_food,False,False
+WHIPPED CREAM,Bev Add-ons,Bev Add-ons,core_food,False,False
+"WHIPPED CREAM   ,",FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"WHIPPED CREAM  ,",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+WHIPPED CREAM  .,FREE MINI TOP,FREE MINI TOP,modifier,True,False
+"WHIPPED CREAM ,(P)",FREE MINI TOP,FREE MINI TOP,core_food,False,False
+WHIPPED CREAM . (P),FREE CONUT TOP,FREE CONUT TOP,core_food,False,False
+"WHIPPED CREAM,",FREE CHIMNEY TOP,FREE CHIMNEY TOP,core_food,False,False
+WHIPPED CREAM...,Hot-Coffee Based,Free Whipped Cream,coffee_hot,True,True
+WHITE CHOCOLATE DIP (R),EXTRA DIP,EXTRA DIP,core_food,False,False
+WHITE CHOCOLATE DIP.(R),free dip,free dip,modifier,True,False
+WHITE CHOCOLATE FLAVOUR,Bev Add-ons,Bev Add-ons,core_food,False,False
+WHITE CHOCOLATE SAUCE,Bev Add-ons,Bev Add-ons,core_food,False,False
+"WHITE CHOCOLATE SAUCE  ,(R)",FREE MINI TOP,FREE MINI TOP,modifier,True,False
+"WHITE CHOCOLATE SAUCE , (R)",FREE CONUT TOP,FREE CONUT TOP,modifier,True,False
+WHITE CHOCOLATE SAUCE .(R),FREE CHIMNEY TOP,FREE CHIMNEY TOP,modifier,True,False
+"WHITE CHOCOLATE SAUCE, (R)",MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,core_food,False,False
+WHITE CHOCOLATE SPREAD CHIMNEY,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,core_food,False,False
+WHITE CHOCOLATE SPREAD CHIMNEY.,Free Chimney Cake Spreads,Free Chimney Cake Spreads,modifier,True,False
+WHITE CHOCOLATE SPREAD CONUT,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,core_food,False,False
+WHITE CHOCOLATE SPREAD CONUT.,Free Conut Spreads,Free Conut Spreads,modifier,True,False
+WHITE CHOCOLATE SPREAD MINI.,free mini spread,FREE MINI SPREAD,modifier,True,False
+WHITE MOCHA,Hot-Coffee Based,Hot-Coffee Based,coffee_hot,False,True
+WHITE MOCHA FRAPPE,Frappes,Frappes,coffee_cold,False,True
+WILD BERRIES,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+WILD BERRIES PASSION,Hot and Cold Drinks,Hot and Cold Drinks,other_beverage,False,True
+[CARAMEL DRESSING],Hot-Coffee Based,Free Dressing,coffee_hot,True,True
+[CHOCOLATE DRESSING],Hot-Coffee Based,Free Dressing,coffee_hot,True,True
+[NO DRESSING],Hot-Coffee Based,Free Dressing,coffee_hot,True,True
+[NO SPREAD],Free Conut Spreads,Free Conut Spreads,modifier,True,False
+[SALTED CARAMEL DRESSING],Hot-Coffee Based,Free Dressing,coffee_hot,True,True
+[STRAWBERRY DRESSING],Hot-Coffee Based,Free Dressing,coffee_hot,True,True
+switch to ice cream.,FREE MINI TOP,FREE MINI TOP,core_food,False,False

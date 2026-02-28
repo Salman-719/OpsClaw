@@ -1,0 +1,1159 @@
+branch,division,group,item,qty,amount,is_modifier,category,item_sales_share_within_branch,item_rank_within_branch,item_rank_within_division
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,AMERICAN COFFEE,8.0,2860540.5,False,coffee_hot,0.00052,59.0,7.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,CAPPUCCINO,1.0,417162.16,False,coffee_hot,7.6e-05,93.0,10.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,CAFFE LATTE,47.0,19606621.36,False,coffee_hot,0.003561,33.0,1.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,CAFE MOCHA,5.0,2536081.12,False,coffee_hot,0.000461,61.0,8.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,CARAMEL MACHIATO,7.0,3754459.41,False,coffee_hot,0.000682,52.0,5.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,CAFFE AMERICANO,4.0,953513.5,False,coffee_hot,0.000173,80.0,9.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,SINGLE ESPRESSO,29.0,6912972.88,False,coffee_hot,0.001256,46.0,4.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,DOUBLE ESPRESSO,55.0,18063783.51,False,coffee_hot,0.003281,34.0,2.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,ESPRESSO MACCHIATO,1.0,328432.43,False,coffee_hot,6e-05,98.0,12.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,WHITE MOCHA,6.0,3043297.34,False,coffee_hot,0.000553,57.0,6.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,FLAT WHITE,1.0,388027.02,False,coffee_hot,7e-05,95.0,11.0
+Conut - Tyre,Hot-Coffee Based,Hot-Coffee Based,HOT CHOCOLATE COMBO,20.0,13243243.23,False,coffee_hot,0.002405,35.0,3.0
+Conut - Tyre,Hot-Coffee Based,Free Dressing,[CARAMEL DRESSING],69.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,Free Dressing,[CHOCOLATE DRESSING],34.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,Free Dressing,[NO DRESSING],57.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,Free Dressing,[STRAWBERRY DRESSING],5.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,Free Dressing,[SALTED CARAMEL DRESSING],1.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,Free Whipped Cream,WHIPPED CREAM...,73.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,Free Whipped Cream,NO WHIPPED CREAM,107.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,PRESSED,292.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,REGULAR,9.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON TOP,128.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON THE SIDE,195.0,0.0,True,coffee_hot,,,
+Conut - Tyre,Bev Add-ons,Bev Add-ons,"CARAMEL  SAUCE,",2.0,180108.1,False,core_food,3.3e-05,105.0,2.0
+Conut - Tyre,Bev Add-ons,Bev Add-ons,VANILLA SYRUP,3.0,270162.16,False,core_food,4.9e-05,100.0,1.0
+Conut - Tyre,Frappes,Frappes,MOCHA FRAPPE,14.0,7508918.82,False,coffee_cold,0.001364,43.0,2.0
+Conut - Tyre,Frappes,Frappes,CARAMEL MOCHA FRAPPE,10.0,5363513.44,False,coffee_cold,0.000974,49.0,3.0
+Conut - Tyre,Frappes,Frappes,HAZELNUT MOCHA FRAPPE,3.0,1609054.03,False,coffee_cold,0.000292,72.0,8.0
+Conut - Tyre,Frappes,Frappes,CARAMEL FRAPPE,51.0,27353918.55,False,coffee_cold,0.004968,30.0,1.0
+Conut - Tyre,Frappes,Frappes,VANILLA FRAPPE,2.0,1072702.69,False,coffee_cold,0.000195,79.0,9.0
+Conut - Tyre,Frappes,Frappes,WHITE MOCHA FRAPPE,5.0,2681756.72,False,coffee_cold,0.000487,60.0,5.0
+Conut - Tyre,Frappes,Frappes,HAZELNUT FRAPPE,2.0,1072702.69,False,coffee_cold,0.000195,79.0,9.0
+Conut - Tyre,Frappes,Frappes,MATCHA FRAPPE,3.0,1879216.23,False,coffee_cold,0.000341,67.0,7.0
+Conut - Tyre,Frappes,Frappes,SALTED CARAMEL FRAPPE,2.0,1072702.69,False,coffee_cold,0.000195,79.0,9.0
+Conut - Tyre,Frappes,Frappes,ESPRESSO FRAPPE,5.0,2238108.08,False,coffee_cold,0.000406,64.0,6.0
+Conut - Tyre,Frappes,Frappes,TOFFEE NUT FRAPPE,6.0,3218108.07,False,coffee_cold,0.000584,55.0,4.0
+Conut - Tyre,Shakes,Shakes,VANILLA MILKSHAKE,18.0,9654324.2,False,milkshake,0.001753,39.0,2.0
+Conut - Tyre,Shakes,Shakes,OREO MILKSHAKE,28.0,20023783.93,False,milkshake,0.003637,31.0,1.0
+Conut - Tyre,Shakes,Shakes,STRAWBERRY MILKSHAKE,12.0,8581621.68,False,milkshake,0.001559,41.0,3.0
+Conut - Tyre,Shakes,Shakes,MATCHA MILKSHAKE,2.0,1787837.84,False,milkshake,0.000325,69.0,6.0
+Conut - Tyre,Shakes,Shakes,SALTED CARAMEL MILKSHAKE,4.0,3098918.94,False,milkshake,0.000563,56.0,5.0
+Conut - Tyre,Shakes,Shakes,PISTACHIO MILKSHAKE,8.0,7151351.37,False,milkshake,0.001299,44.0,4.0
+Conut - Tyre,Shakes,Shakes,GRANOLA BERRIES MILKSHAKE,1.0,774729.73,False,milkshake,0.000141,83.0,8.0
+Conut - Tyre,Shakes,Shakes,DOUBLE CHOCOLATE MILKSHAKE,2.0,1549459.47,False,milkshake,0.000281,73.0,7.0
+Conut - Tyre,Shakes,Shakes,FRUIT LOOPS MILKSHAKE,1.0,774729.73,False,milkshake,0.000141,83.0,8.0
+Conut - Tyre,Shakes,Shakes,TOFFEE NUT MILKSHAKE,1.0,774729.73,False,milkshake,0.000141,83.0,8.0
+Conut - Tyre,Hot and Cold Drinks,Hot and Cold Drinks,WATER,473.0,37584321.76,False,other_beverage,0.006826,26.0,1.0
+Conut - Tyre,Hot and Cold Drinks,Hot and Cold Drinks,BALKIS LEMONADE,1.0,238378.38,False,other_beverage,4.3e-05,102.0,5.0
+Conut - Tyre,Hot and Cold Drinks,Hot and Cold Drinks,MANGO PASSION,10.0,4171621.57,False,other_beverage,0.000758,51.0,3.0
+Conut - Tyre,Hot and Cold Drinks,Hot and Cold Drinks,MELON PASSION,3.0,1251486.47,False,other_beverage,0.000227,77.0,4.0
+Conut - Tyre,Hot and Cold Drinks,Hot and Cold Drinks,WILD BERRIES,3.0,1251486.47,False,other_beverage,0.000227,77.0,4.0
+Conut - Tyre,Hot and Cold Drinks,Hot and Cold Drinks,WILD BERRIES PASSION,3.0,1251486.47,False,other_beverage,0.000227,77.0,4.0
+Conut - Tyre,Hot and Cold Drinks,TEA FLAVORS,PEACH ICED TEA,29.0,12097702.54,False,other_beverage,0.002197,36.0,2.0
+Conut - Tyre,Hot and Cold Drinks,TEA FLAVORS,RASPBERRY ICED TEA,10.0,4171621.57,False,other_beverage,0.000758,51.0,3.0
+Conut - Tyre,Conuts,Conuts,NO CINNAMON,9.0,0.0,True,modifier,,,
+Conut - Tyre,Extras and Sides,Extras and Sides,ADD ICE CREAM,183.0,87246485.32,False,core_food,0.015846,19.0,1.0
+Conut - Tyre,Delivery Service,Delivery,DELIVERY CHARGE,83.0,19785405.14,False,core_food,0.003594,32.0,1.0
+Conut - Tyre,Delivery Service,Delivery,SEND CUTLERY,2.0,0.0,True,modifier,,,
+Conut - Tyre,Delivery Service,Delivery,DONT SEND CUTLERY,3.0,0.0,True,modifier,,,
+Conut - Tyre,Delivery Service,Delivery,TAKE AWAY,20.0,0.0,True,modifier,,,
+Conut - Tyre,Free Conut Spreads,Free Conut Spreads,NUTELLA SPREAD CONUT.,1271.0,0.0,True,modifier,,,
+Conut - Tyre,Free Conut Spreads,Free Conut Spreads,LOTUS SPREAD CONUT.,17.0,0.0,True,modifier,,,
+Conut - Tyre,Free Conut Spreads,Free Conut Spreads,WHITE CHOCOLATE SPREAD CONUT.,399.0,0.0,True,modifier,,,
+Conut - Tyre,Free Conut Spreads,Free Conut Spreads,[NO SPREAD],1.0,0.0,True,modifier,,,
+Conut - Tyre,Free Conut Spreads,Free Conut Spreads,PISTACHIO SPREAD CONUT.,4.0,121837.83,False,core_food,2.2e-05,107.0,1.0
+Conut - Tyre,Free Conut Spreads,Free Conut Spreads,NO SPREAD.,18.0,0.0,True,modifier,,,
+Conut - Tyre,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NUTELLA SPREAD CHIMNEY.,1080.0,0.0,True,modifier,,,
+Conut - Tyre,Free Chimney Cake Spreads,Free Chimney Cake Spreads,LOTUS SPREAD CHIMNEY.,43.0,0.0,True,modifier,,,
+Conut - Tyre,Free Chimney Cake Spreads,Free Chimney Cake Spreads,WHITE CHOCOLATE SPREAD CHIMNEY.,222.0,0.0,True,modifier,,,
+Conut - Tyre,Free Chimney Cake Spreads,Free Chimney Cake Spreads,PISTACHIO SPREAD CHIMNEY.,11.0,655540.53,False,core_food,0.000119,88.0,1.0
+Conut - Tyre,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NO SPREAD,32.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,CLASSIC CHIMNEY,301.0,179379731.76,False,core_food,0.03258,9.0,9.0
+Conut - Tyre,ITEMS,ITEMS,MINI THE ONE,254.0,128832920.78,False,core_food,0.023399,12.0,12.0
+Conut - Tyre,ITEMS,ITEMS,MINI THE ORIGINAL,184.0,87723242.07,False,core_food,0.015933,18.0,18.0
+Conut - Tyre,ITEMS,ITEMS,CONUT THE ORIGINAL,380.0,328617838.79,False,core_food,0.059686,5.0,5.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY THE ORIGINAL,140.0,166864864.7,False,core_food,0.030307,10.0,10.0
+Conut - Tyre,ITEMS,ITEMS,CONUT THE ONE,680.0,607864866.76,False,core_food,0.110404,2.0,2.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY THE ONE,635.0,794693917.66,False,core_food,0.144337,1.0,1.0
+Conut - Tyre,ITEMS,ITEMS,MINI PISTACHIO,134.0,83938325.09,False,core_food,0.015245,20.0,19.0
+Conut - Tyre,ITEMS,ITEMS,CONUT PISTACHIO,326.0,330273243.63,False,core_food,0.059986,4.0,4.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY PISTACHIO,227.0,324671350.36,False,core_food,0.058969,6.0,6.0
+Conut - Tyre,ITEMS,ITEMS,MINI BOSTON CHEESECAKE,61.0,32717432.0,False,core_food,0.005942,27.0,25.0
+Conut - Tyre,ITEMS,ITEMS,CONUT BOSTON CHEESECAKE,121.0,111849783.99,False,core_food,0.020315,13.0,13.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY BOSTON CHEESECAKE,60.0,78664864.7,False,core_food,0.014288,21.0,20.0
+Conut - Tyre,ITEMS,ITEMS,MINI BERRY MIX,102.0,51736054.8,False,core_food,0.009397,25.0,24.0
+Conut - Tyre,ITEMS,ITEMS,CONUT BERRY MIX,228.0,203813514.15,False,core_food,0.037018,8.0,8.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY BERRY MIX,86.0,107627837.67,False,core_food,0.019548,15.0,15.0
+Conut - Tyre,ITEMS,ITEMS,ICE CREAM BOWL,266.0,158521623.42,False,core_food,0.028792,11.0,11.0
+Conut - Tyre,ITEMS,ITEMS,CONUT BITES,114.0,74731622.3,False,core_food,0.013573,22.0,21.0
+Conut - Tyre,ITEMS,ITEMS,CINNAMON SUGAR RINGS,22.0,9177567.45,False,core_food,0.001667,40.0,27.0
+Conut - Tyre,ITEMS,ITEMS,CHOCOLATE CHIPS RINGS,5.0,2383783.75,False,core_food,0.000433,63.0,29.0
+Conut - Tyre,ITEMS,ITEMS,CONUT TRIPLE CHOCOLATE,422.0,390087676.4,False,core_food,0.07085,3.0,3.0
+Conut - Tyre,ITEMS,ITEMS,MINI TRIPLE CHOCOLATE,169.0,90643377.17,False,core_food,0.016463,16.0,16.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY TRIPLE CHOCOLATE,225.0,294993242.62,False,core_food,0.053579,7.0,7.0
+Conut - Tyre,ITEMS,ITEMS,CHIMNEY COMBO.,18.0,70798378.86,False,core_food,0.012859,23.0,22.0
+Conut - Tyre,ITEMS,ITEMS,CONUT COMBO,33.0,90464594.36,False,core_food,0.016431,17.0,17.0
+Conut - Tyre,ITEMS,ITEMS,THE SHARING BOX.,66.0,110130811.28,False,core_food,0.020003,14.0,14.0
+Conut - Tyre,ITEMS,ITEMS,THE ONE CONUT,33.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,THE ONE MINI,66.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,THE ONE CHIMNEY,18.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,PISTACHIO CONUT,33.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,PISTACHIO MINI,66.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,PISTACHIO CHIMNEY,18.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,TRIPLE CHOCOLATE CONUT,33.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,TRIPLE CHOCOLATE MINI,66.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,TRIPLE CHOCOLATE CHIMNEY,18.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,BOSTON CHEESECAKE CONUT,33.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,BOSTON CHEESECAKE MINI,66.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,BOSTON CHEESECAKE CHIMNEY,18.0,0.0,True,modifier,,,
+Conut - Tyre,ITEMS,ITEMS,TIRAMISU MINI CONUT,14.0,8343243.34,False,core_food,0.001515,42.0,28.0
+Conut - Tyre,ITEMS,ITEMS,TIRAMISU CONUT,33.0,31465946.01,False,core_food,0.005715,28.0,26.0
+Conut - Tyre,ITEMS,ITEMS,TIRAMISU CHIMNEY,43.0,56376486.37,False,core_food,0.010239,24.0,23.0
+Conut - Tyre,EXTRA MINI SPREAD,EXTRA MINI SPREAD,NUTELLA SPREAD MINI,6.0,357567.56,False,core_food,6.5e-05,97.0,1.0
+Conut - Tyre,EXTRA MINI SPREAD,EXTRA MINI SPREAD,"NO SPREAD,.",129.0,0.0,True,modifier,,,
+Conut - Tyre,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NUTELLA SPREAD CONUT,16.0,1440864.84,False,core_food,0.000262,75.0,1.0
+Conut - Tyre,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,LOTUS SPREAD CONUT,3.0,270162.16,False,core_food,4.9e-05,100.0,2.0
+Conut - Tyre,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,WHITE CHOCOLATE SPREAD CONUT,2.0,180108.1,False,core_food,3.3e-05,105.0,3.0
+Conut - Tyre,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,PISTACHIO SPREAD CONUT,1.0,119189.19,False,core_food,2.2e-05,108.0,4.0
+Conut - Tyre,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NO SPREAD..,427.0,0.0,True,modifier,,,
+Conut - Tyre,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,NUTELLA SPREAD CHIMNEY,16.0,2860540.5,False,core_food,0.00052,59.0,1.0
+Conut - Tyre,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,LOTUS SPREAD CHIMNEY,11.0,1966621.6,False,core_food,0.000357,65.0,2.0
+Conut - Tyre,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,WHITE CHOCOLATE SPREAD CHIMNEY,2.0,357567.56,False,core_food,6.5e-05,97.0,4.0
+Conut - Tyre,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,PISTACHIO SPREAD CHIMNEY,2.0,476756.75,False,core_food,8.7e-05,91.0,3.0
+Conut - Tyre,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,"NO SPREAD,,",271.0,0.0,True,modifier,,,
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED OREO (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BROWNIES (R),8.0,720432.42,False,core_food,0.000131,85.0,2.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRISPY CREPE (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,STRAWBERRIES (R),17.0,1530918.89,False,core_food,0.000278,74.0,1.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BLUEBERRIES (P),2.0,238378.38,False,core_food,4.3e-05,102.0,7.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRIES (P),3.0,357567.56,False,core_food,6.5e-05,97.0,5.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SPRINKLES (R),4.0,360216.21,False,core_food,6.5e-05,96.0,4.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,DARK CHOCOLATE SAUCE (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CARAMEL SAUCE (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PASSION FRUIT SAUCE (P),2.0,238378.38,False,core_food,4.3e-05,102.0,7.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SALTED CARAMEL SAUCE (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,NUTELLA SAUCE (R),3.0,270162.16,False,core_food,4.9e-05,100.0,6.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PISTACHIO SAUCE (P),1.0,119189.19,False,core_food,2.2e-05,108.0,8.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,"WHITE CHOCOLATE SAUCE, (R)",1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,LOTUS SAUCE (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,FRUIT LOOPS (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CHERRY JAM (P),2.0,238378.38,False,core_food,4.3e-05,102.0,7.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GUMMY BEARS (R),1.0,90054.05,False,core_food,1.6e-05,109.0,9.0
+Conut - Tyre,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,MARSHMALLOWS (R),6.0,540324.31,False,core_food,9.8e-05,89.0,3.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED OREO.,30.0,5363513.44,False,core_food,0.000974,49.0,6.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED LOTUS.,14.0,2502972.94,False,core_food,0.000455,62.0,11.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRISPY CREPE.,4.0,715135.13,False,core_food,0.00013,86.0,16.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BROWNIES.,36.0,6436216.13,False,core_food,0.001169,47.0,4.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,STRAWBERRY.,168.0,30035675.28,False,core_food,0.005455,29.0,1.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SPRINKLES.,8.0,1430270.25,False,core_food,0.00026,76.0,14.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BLUEBERRIES.,43.0,10250270.13,False,core_food,0.001862,38.0,3.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,RASPBERRIES.,15.0,3575675.63,False,core_food,0.000649,53.0,8.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PEANUT BUTTER CUPS.,2.0,476756.75,False,core_food,8.7e-05,91.0,17.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE SAUCE.,9.0,1609054.03,False,core_food,0.000292,72.0,13.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,NUTELLA SAUCE.,65.0,11620945.79,False,core_food,0.002111,37.0,2.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,LOTUS SAUCE.,19.0,3396891.85,False,core_food,0.000617,54.0,9.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,WHIPPED  CREAM.,8.0,1907027.0,False,core_food,0.000346,66.0,12.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CARAMEL SAUCE.,4.0,715135.13,False,core_food,0.00013,86.0,16.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PISTACHIO SAUCE.,25.0,5959459.38,False,core_food,0.001082,48.0,5.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE CHIPS.,8.0,1907027.0,False,core_food,0.000346,66.0,12.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,FRUIT LOOPS.,5.0,893918.91,False,core_food,0.000162,81.0,15.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GRANOLA BERRIES.,2.0,476756.75,False,core_food,8.7e-05,91.0,17.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,RASPBERRY JAM.,1.0,238378.38,False,core_food,4.3e-05,102.0,19.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CHERRY JAM.,1.0,238378.38,False,core_food,4.3e-05,102.0,19.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GUMMY BEARS.,16.0,2860540.5,False,core_food,0.00052,59.0,10.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,MARSHMALLOWS.,29.0,5184729.66,False,core_food,0.000942,50.0,7.0
+Conut - Tyre,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SALTED PRETZELS.,2.0,357567.56,False,core_food,6.5e-05,97.0,18.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,NUTELLA DIP (R),6.0,715135.13,False,core_food,0.00013,86.0,2.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,LOTUS DIP (R),1.0,119189.19,False,core_food,2.2e-05,108.0,6.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,WHITE CHOCOLATE DIP (R),2.0,238378.38,False,core_food,4.3e-05,102.0,5.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,CARAMEL DIP (R),2.0,238378.38,False,core_food,4.3e-05,102.0,5.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,DARK CHOCOLATE DIP (R),3.0,357567.56,False,core_food,6.5e-05,97.0,4.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,PISTACHIO DIP (P),5.0,1191891.88,False,core_food,0.000216,78.0,1.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,RASPBERRY JAM DIP (P),1.0,238378.38,False,core_food,4.3e-05,102.0,5.0
+Conut - Tyre,EXTRA DIP,EXTRA DIP,CHERRY JAM DIP (P),2.0,476756.75,False,core_food,8.7e-05,91.0,3.0
+Conut - Tyre,free mini spread,FREE MINI SPREAD,NUTELLA SPREAD MINI.,526.0,0.0,True,modifier,,,
+Conut - Tyre,free mini spread,FREE MINI SPREAD,LOTUS SPREAD MINI.,8.0,0.0,True,modifier,,,
+Conut - Tyre,free mini spread,FREE MINI SPREAD,WHITE CHOCOLATE SPREAD MINI.,158.0,0.0,True,modifier,,,
+Conut - Tyre,free mini spread,FREE MINI SPREAD,PISTACHIO SPREAD MINI.,4.0,121837.83,False,core_food,2.2e-05,107.0,1.0
+Conut - Tyre,free mini spread,FREE MINI SPREAD,NO SPREAD .,85.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"STRAWBERRY , (R)",1221.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"BLUEBERRIES, (P)",58.0,1766648.59,False,core_food,0.000321,70.0,3.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED OREO, (R)",46.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED LOTUS , (R)",167.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"SPRINKLES , (R)",55.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"BROWNIES , (R)",824.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,SALTED CARAMEL SAUCE . (R),1.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,WHIPPED CREAM . (P),8.0,243675.67,False,core_food,4.4e-05,101.0,9.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"LOTUS SAUCE , (R)",47.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"WHITE CHOCOLATE SAUCE , (R)",6.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"CARAMEL SAUCE , (R)",586.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,NO TOPPINGS.,75.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRIES, (P)",15.0,456891.88,False,core_food,8.3e-05,92.0,6.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE CHIPS, (P)",25.0,761486.46,False,core_food,0.000138,84.0,4.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"GRANOLA BERRIES, (P)",22.0,670108.08,False,core_food,0.000122,87.0,5.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"PEANUT BUTTER CUP , (P)",4.0,121837.83,False,core_food,2.2e-05,107.0,11.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO SAUCE . (P),95.0,2893648.55,False,core_food,0.000526,58.0,2.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"PASSION FRUITS SAUCE ,(P)",9.0,274135.13,False,core_food,5e-05,99.0,8.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRY JAM , (P)",13.0,395972.96,False,core_food,7.2e-05,94.0,7.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"CHERRY JAM, (P)",6.0,182756.75,False,core_food,3.3e-05,104.0,10.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,GUMMY BEARS . (R),46.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"MARSHMALLOWS , (R)",68.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,CRISPY CREPE . (R),16.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"SALTED PRETZELS , (R)",1.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,NUTELLA SAUCE . (R),1216.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE SAUCE , (R)",4.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,FRUIT LOOPS . (R),15.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,"WHIPPED CREAM  ,",175.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,SWITCH TO ICE CREAM,20.0,7151351.26,False,core_food,0.001299,45.0,1.0
+Conut - Tyre,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO TOPPING,266.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"STRAWBERRY,(R)",869.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,BROWNIES . (R),370.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED OREO .(R),16.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED LOTUS .(R),54.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,SPRINKLES .(R),6.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"NUTELLA SAUCE,(R)",577.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"LOTUS SAUCE,(R)",16.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,WHITE CHOCOLATE SAUCE .(R),11.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CARAMEL SAUCE, (R)",432.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,NO TOPPINGS,30.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"BLUEBERRIES , (P)",27.0,1609054.03,False,core_food,0.000292,72.0,3.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRIES ,(P)",4.0,238378.38,False,core_food,4.3e-05,102.0,5.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE CHIPS ,(P)",7.0,417162.16,False,core_food,7.6e-05,93.0,4.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"GRANOLA BERRIES ,(P)",1.0,59594.59,False,core_food,1.1e-05,111.0,8.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM,",3.0,178783.78,False,core_food,3.2e-05,106.0,6.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO SAUCE ,(P)",63.0,3754459.41,False,core_food,0.000682,52.0,1.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PASSION FRUIT SAUCE,(P)",1.0,59594.59,False,core_food,1.1e-05,111.0,8.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRY JAM,(P)",4.0,238378.38,False,core_food,4.3e-05,102.0,5.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CHERRY JAM ,(P)",2.0,119189.19,False,core_food,2.2e-05,108.0,7.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"GUMMY BEARS ,(R)",3.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"MARSHMALLOWS,(R)",10.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CRISPY CREPE,(R)",2.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE SAUCE,(R)",7.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"FRUIT LOOPS,(R)",1.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM   ,",70.0,0.0,True,modifier,,,
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SWITCH TO ICE CREAM,",7.0,1668648.63,False,core_food,0.000303,71.0,2.0
+Conut - Tyre,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO TOPPING,",155.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"NUTELLA SAUCE ,(R)",444.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,BLUEBERRIES .(P),9.0,243675.67,False,core_food,4.4e-05,101.0,3.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,RASPBERRIES .(P),2.0,60918.92,False,core_food,1.1e-05,110.0,5.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE CHIPS .(P),7.0,213216.21,False,core_food,3.9e-05,103.0,4.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,GRANOLA BERRIES .(P),0.0,0.0,False,core_food,0.0,113.0,7.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"WHIPPED CREAM ,(P)",1.0,30459.46,False,core_food,6e-06,112.0,6.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"PISTACHIO SAUCE,(P)",27.0,791945.92,False,core_food,0.000144,82.0,2.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,CHERRY JAM .(P),2.0,30459.46,False,core_food,6e-06,112.0,6.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"GUMMY BEARS,(R)",8.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,MARSHMALLOWS .(R),15.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"CRISPY CREPE ,(R)",2.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"SALTED PRETZELS,(R)",1.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,STRAWBERRY .(R),465.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"BROWNIES,(R)",310.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"CRUSHED OREO ,(R)",13.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"CRUSHED LOTUS,(R)",72.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"SPRINKLES,(R)",11.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,LOTUS SAUCE .(R),12.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"CARAMEL SAUCE  ,(R)",200.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE SAUCE .(R),1.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"FRUIT LOOPS ,(R)",2.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,"NO TOPPINGS ,",29.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,WHIPPED CREAM  .,85.0,0.0,True,modifier,,,
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,switch to ice cream.,4.0,1430270.25,False,core_food,0.00026,76.0,1.0
+Conut - Tyre,FREE MINI TOP,FREE MINI TOP,PISTACHIO TOPPING.,109.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,NUTELLA DIP.(R),100.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,LOTUS DIP.(R),7.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,WHITE CHOCOLATE DIP.(R),6.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,CARAMEL DIP.(R),6.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,SALTED CARAMEL DIP.(R),6.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,DARK CHOCOLATE DIP.(R),7.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,NO DIP,1.0,0.0,True,modifier,,,
+Conut - Tyre,free dip,free dip,CHERRY JAM DIP.(P),3.0,357567.56,False,core_food,6.5e-05,97.0,1.0
+Conut - Tyre,free dip,free dip,PISTACHIO DIP.(P),3.0,357567.56,False,core_food,6.5e-05,97.0,1.0
+Conut - Tyre,free dip,free dip,PASSION FRUITS DIP.(P),2.0,238378.38,False,core_food,4.3e-05,102.0,2.0
+Conut - Tyre,coffee type,coffee type,DECAF,19.0,0.0,True,modifier,,,
+Conut - Tyre,coffee type,coffee type,REGULAR.,240.0,0.0,True,modifier,,,
+Conut - Tyre,DRINK TYPE,DRINK TYPE,HOT,142.0,0.0,True,other_beverage,,,
+Conut - Tyre,DRINK TYPE,DRINK TYPE,ICED,19.0,0.0,True,other_beverage,,,
+Conut - Tyre,MILK OPTIONS,MILK OPTIONS,MILK OPTIONS,21.0,0.0,True,modifier,,,
+Conut - Tyre,MILK OPTIONS,MILK OPTIONS,FULL FAT MILK,204.0,0.0,True,modifier,,,
+Conut - Tyre,MILK OPTIONS,MILK OPTIONS,SKIMMED MILK.,11.0,0.0,True,modifier,,,
+Conut - Tyre,MILK OPTIONS,MILK OPTIONS,LACTOSE FREE MILK.,19.0,0.0,True,modifier,,,
+Conut - Tyre,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,TOASTED MARSHMALLOWS,2.0,238378.38,False,core_food,4.3e-05,102.0,1.0
+Conut - Tyre,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,NO MARSHMALLLOWS,2.0,0.0,True,modifier,,,
+Conut - Tyre,CONUT''S FAVORITE,CONUT''S FAVORITE,HOT CHOCOLATE,4.0,1907027.0,False,core_food,0.000346,66.0,1.0
+Conut - Tyre,CONUT''S FAVORITE,CONUT''S FAVORITE,MATCHA LATTE,3.0,1787837.86,False,core_food,0.000325,68.0,2.0
+Conut - Tyre,CONUT''S FAVORITE,CONUT''S FAVORITE,AFFOGATO,1.0,536351.34,False,core_food,9.7e-05,90.0,3.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,AMERICAN COFFEE,3.0,1072702.69,False,coffee_hot,0.000244,76.0,10.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,CAPPUCCINO,3.0,1251486.47,False,coffee_hot,0.000285,71.0,8.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,CAFFE LATTE,19.0,7926080.98,False,coffee_hot,0.001805,34.0,2.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,CAFE MOCHA,9.0,4564946.01,False,coffee_hot,0.00104,43.0,3.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,CARAMEL MACHIATO,5.0,2681756.72,False,coffee_hot,0.000611,52.0,5.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,CAFFE AMERICANO,16.0,4264324.26,False,coffee_hot,0.000971,45.0,4.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,SINGLE ESPRESSO,7.0,1668648.63,False,coffee_hot,0.00038,62.0,7.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,DOUBLE ESPRESSO,31.0,10181405.25,False,coffee_hot,0.002318,31.0,1.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,WHITE MOCHA,4.0,2028864.89,False,coffee_hot,0.000462,58.0,6.0
+Conut,Hot-Coffee Based,Hot-Coffee Based,FLAT WHITE,3.0,1164081.06,False,coffee_hot,0.000265,73.0,9.0
+Conut,Hot-Coffee Based,Free Dressing,[CARAMEL DRESSING],26.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,Free Dressing,[CHOCOLATE DRESSING],29.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,Free Dressing,[NO DRESSING],24.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,Free Dressing,[STRAWBERRY DRESSING],10.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,Free Dressing,[SALTED CARAMEL DRESSING],10.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,Free Whipped Cream,WHIPPED CREAM...,42.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,Free Whipped Cream,NO WHIPPED CREAM,61.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,PRESSED,215.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,REGULAR,45.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON TOP,257.0,0.0,True,coffee_hot,,,
+Conut,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON THE SIDE,249.0,0.0,True,coffee_hot,,,
+Conut,Bev Add-ons,Bev Add-ons,WHIPPED CREAM,4.0,476756.75,False,core_food,0.000109,89.0,1.0
+Conut,Bev Add-ons,Bev Add-ons,"CARAMEL  SAUCE,",4.0,360216.21,False,core_food,8.2e-05,93.0,2.0
+Conut,Bev Add-ons,Bev Add-ons,VANILLA SYRUP,3.0,270162.16,False,core_food,6.2e-05,97.0,3.0
+Conut,Bev Add-ons,Bev Add-ons,EXTRA ESPRESSO SHOT,1.0,90054.05,False,core_food,2.1e-05,106.0,4.0
+Conut,Frappes,Frappes,MOCHA FRAPPE,14.0,7508918.82,False,coffee_cold,0.00171,35.0,1.0
+Conut,Frappes,Frappes,CARAMEL MOCHA FRAPPE,3.0,1609054.03,False,coffee_cold,0.000366,63.0,4.0
+Conut,Frappes,Frappes,HAZELNUT MOCHA FRAPPE,2.0,1072702.69,False,coffee_cold,0.000244,76.0,5.0
+Conut,Frappes,Frappes,CARAMEL FRAPPE,8.0,4290810.75,False,coffee_cold,0.000977,44.0,2.0
+Conut,Frappes,Frappes,VANILLA FRAPPE,2.0,1072702.69,False,coffee_cold,0.000244,76.0,5.0
+Conut,Frappes,Frappes,WHITE MOCHA FRAPPE,4.0,2145405.38,False,coffee_cold,0.000489,56.0,3.0
+Conut,Frappes,Frappes,SALTED CARAMEL FRAPPE,2.0,1072702.69,False,coffee_cold,0.000244,76.0,5.0
+Conut,Frappes,Frappes,ESPRESSO FRAPPE,2.0,895243.23,False,coffee_cold,0.000204,79.0,6.0
+Conut,Frappes,Frappes,TOFFEE NUT FRAPPE,1.0,536351.34,False,coffee_cold,0.000122,87.0,7.0
+Conut,Shakes,Shakes,VANILLA MILKSHAKE,14.0,7508918.82,False,milkshake,0.00171,35.0,3.0
+Conut,Shakes,Shakes,OREO MILKSHAKE,19.0,13587567.67,False,milkshake,0.003094,29.0,1.0
+Conut,Shakes,Shakes,STRAWBERRY MILKSHAKE,12.0,8581621.68,False,milkshake,0.001954,33.0,2.0
+Conut,Shakes,Shakes,SALTED CARAMEL MILKSHAKE,8.0,6197837.87,False,milkshake,0.001411,38.0,4.0
+Conut,Shakes,Shakes,PISTACHIO MILKSHAKE,4.0,3575675.69,False,milkshake,0.000814,47.0,5.0
+Conut,Shakes,Shakes,GRANOLA BERRIES MILKSHAKE,2.0,1549459.47,False,milkshake,0.000353,64.0,8.0
+Conut,Shakes,Shakes,DOUBLE CHOCOLATE MILKSHAKE,4.0,3098918.94,False,milkshake,0.000706,48.0,6.0
+Conut,Shakes,Shakes,FRUIT LOOPS MILKSHAKE,1.0,774729.73,False,milkshake,0.000176,81.0,9.0
+Conut,Shakes,Shakes,TOFFEE NUT MILKSHAKE,3.0,2324189.2,False,milkshake,0.000529,53.0,7.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,ICED CHOCOLATE,3.0,1342864.84,False,other_beverage,0.000306,69.0,6.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,WATER,907.0,72069724.84,False,other_beverage,0.016411,17.0,1.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,VIA SPARKLING WATER,24.0,4290810.75,False,other_beverage,0.000977,44.0,4.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,MANGO PASSION,22.0,9177567.45,False,other_beverage,0.00209,32.0,2.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,MELON PASSION,7.0,2920135.1,False,other_beverage,0.000665,50.0,5.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,WILD BERRIES,13.0,5423108.04,False,other_beverage,0.001235,41.0,3.0
+Conut,Hot and Cold Drinks,Hot and Cold Drinks,WILD BERRIES PASSION,2.0,834324.31,False,other_beverage,0.00019,80.0,8.0
+Conut,Hot and Cold Drinks,TEA FLAVORS,EARL GREY,1.0,297972.97,False,other_beverage,6.8e-05,96.0,10.0
+Conut,Hot and Cold Drinks,TEA FLAVORS,GREEN TEA,2.0,595945.94,False,other_beverage,0.000136,85.0,9.0
+Conut,Hot and Cold Drinks,TEA FLAVORS,PEPPERMINT TEA,1.0,297972.97,False,other_beverage,6.8e-05,96.0,10.0
+Conut,Hot and Cold Drinks,TEA FLAVORS,PEACH ICED TEA,7.0,2920135.1,False,other_beverage,0.000665,50.0,5.0
+Conut,Hot and Cold Drinks,TEA FLAVORS,RASPBERRY ICED TEA,3.0,1251486.47,False,other_beverage,0.000285,71.0,7.0
+Conut,Conuts,Conuts,NO CINNAMON,11.0,0.0,True,modifier,,,
+Conut,Extras and Sides,Extras and Sides,ADD ICE CREAM,324.0,154469187.13,False,core_food,0.035175,9.0,1.0
+Conut,Delivery Service,Delivery,DELIVERY CHARGE,216.0,51489729.04,False,core_food,0.011725,20.0,1.0
+Conut,Delivery Service,Delivery,SEND CUTLERY,3.0,0.0,True,modifier,,,
+Conut,Delivery Service,Delivery,TAKE AWAY,216.0,0.0,True,modifier,,,
+Conut,Free Conut Spreads,Free Conut Spreads,NUTELLA SPREAD CONUT.,972.0,0.0,True,modifier,,,
+Conut,Free Conut Spreads,Free Conut Spreads,LOTUS SPREAD CONUT.,50.0,0.0,True,modifier,,,
+Conut,Free Conut Spreads,Free Conut Spreads,WHITE CHOCOLATE SPREAD CONUT.,184.0,0.0,True,modifier,,,
+Conut,Free Conut Spreads,Free Conut Spreads,PISTACHIO SPREAD CONUT.,7.0,213216.21,False,core_food,4.9e-05,99.0,1.0
+Conut,Free Conut Spreads,Free Conut Spreads,NO SPREAD.,31.0,0.0,True,modifier,,,
+Conut,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NUTELLA SPREAD CHIMNEY.,1205.0,0.0,True,modifier,,,
+Conut,Free Chimney Cake Spreads,Free Chimney Cake Spreads,LOTUS SPREAD CHIMNEY.,70.0,0.0,True,modifier,,,
+Conut,Free Chimney Cake Spreads,Free Chimney Cake Spreads,WHITE CHOCOLATE SPREAD CHIMNEY.,184.0,0.0,True,modifier,,,
+Conut,Free Chimney Cake Spreads,Free Chimney Cake Spreads,PISTACHIO SPREAD CHIMNEY.,19.0,1132297.28,False,core_food,0.000258,74.0,1.0
+Conut,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NO SPREAD,68.0,0.0,True,modifier,,,
+Conut,Holder,Holders,ARGENTINA,1.0,0.0,True,modifier,,,
+Conut,Holder,Holders,ENGLAND HOLDER,1.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,CLASSIC CHIMNEY,260.0,154945947.7,False,core_food,0.035283,8.0,8.0
+Conut,ITEMS,ITEMS,MINI THE ONE,153.0,77604082.2,False,core_food,0.017672,15.0,14.0
+Conut,ITEMS,ITEMS,MINI THE ORIGINAL,100.0,47675675.04,False,core_food,0.010856,22.0,19.0
+Conut,ITEMS,ITEMS,CONUT THE ORIGINAL,374.0,323429136.08,False,core_food,0.073649,3.0,3.0
+Conut,ITEMS,ITEMS,CHIMNEY THE ORIGINAL,182.0,216924324.11,False,core_food,0.049397,5.0,5.0
+Conut,ITEMS,ITEMS,CONUT THE ONE,554.0,495231082.62,False,core_food,0.112771,2.0,2.0
+Conut,ITEMS,ITEMS,CHIMNEY THE ONE,870.0,1088793241.51,False,core_food,0.247934,1.0,1.0
+Conut,ITEMS,ITEMS,MINI PISTACHIO,36.0,22550594.8,False,core_food,0.005135,27.0,23.0
+Conut,ITEMS,ITEMS,CONUT PISTACHIO,104.0,105363243.37,False,core_food,0.023993,11.0,10.0
+Conut,ITEMS,ITEMS,CHIMNEY PISTACHIO,116.0,165911350.84,False,core_food,0.03778,7.0,7.0
+Conut,ITEMS,ITEMS,MINI BOSTON CHEESECAKE,40.0,21454053.77,False,core_food,0.004885,28.0,24.0
+Conut,ITEMS,ITEMS,CONUT BOSTON CHEESECAKE,82.0,75799027.17,False,core_food,0.017261,16.0,15.0
+Conut,ITEMS,ITEMS,CHIMNEY BOSTON CHEESECAKE,75.0,98331080.87,False,core_food,0.022391,12.0,11.0
+Conut,ITEMS,ITEMS,MINI BERRY MIX,49.0,24853594.95,False,core_food,0.00566,25.0,22.0
+Conut,ITEMS,ITEMS,CONUT BERRY MIX,134.0,119785135.51,False,core_food,0.027277,10.0,9.0
+Conut,ITEMS,ITEMS,CHIMNEY BERRY MIX,67.0,83849594.46,False,core_food,0.019094,14.0,13.0
+Conut,ITEMS,ITEMS,ICE CREAM BOWL,142.0,84624325.28,False,core_food,0.01927,13.0,12.0
+Conut,ITEMS,ITEMS,CONUT BITES,61.0,39987973.34,False,core_food,0.009106,23.0,20.0
+Conut,ITEMS,ITEMS,CINNAMON SUGAR RINGS,5.0,2085810.78,False,core_food,0.000475,57.0,25.0
+Conut,ITEMS,ITEMS,CHOCOLATE CHIPS RINGS,2.0,953513.5,False,core_food,0.000217,77.0,26.0
+Conut,ITEMS,ITEMS,CONUT TRIPLE CHOCOLATE,184.0,170085621.94,False,core_food,0.038731,6.0,6.0
+Conut,ITEMS,ITEMS,MINI TRIPLE CHOCOLATE,48.0,25744864.52,False,core_food,0.005862,24.0,21.0
+Conut,ITEMS,ITEMS,CHIMNEY TRIPLE CHOCOLATE,167.0,218950540.08,False,core_food,0.049858,4.0,4.0
+Conut,ITEMS,ITEMS,CHIMNEY COMBO.,14.0,55065405.49,False,core_food,0.012539,19.0,17.0
+Conut,ITEMS,ITEMS,CONUT COMBO,18.0,49344324.2,False,core_food,0.011236,21.0,18.0
+Conut,ITEMS,ITEMS,THE SHARING BOX.,41.0,68414594.87,False,core_food,0.015579,18.0,16.0
+Conut,ITEMS,ITEMS,THE ONE CONUT,18.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,THE ONE MINI,40.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,THE ONE CHIMNEY,14.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,PISTACHIO CONUT,18.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,PISTACHIO MINI,40.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,PISTACHIO CHIMNEY,14.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,TRIPLE CHOCOLATE CONUT,18.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,TRIPLE CHOCOLATE MINI,40.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,TRIPLE CHOCOLATE CHIMNEY,14.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,BOSTON CHEESECAKE CONUT,18.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,BOSTON CHEESECAKE MINI,40.0,0.0,True,modifier,,,
+Conut,ITEMS,ITEMS,BOSTON CHEESECAKE CHIMNEY,14.0,0.0,True,modifier,,,
+Conut,EXTRA MINI SPREAD,EXTRA MINI SPREAD,NUTELLA SPREAD MINI,1.0,59594.59,False,core_food,1.4e-05,108.0,1.0
+Conut,EXTRA MINI SPREAD,EXTRA MINI SPREAD,"NO SPREAD,.",35.0,0.0,True,modifier,,,
+Conut,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NUTELLA SPREAD CONUT,22.0,1981189.15,False,core_food,0.000451,60.0,1.0
+Conut,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,LOTUS SPREAD CONUT,7.0,630378.37,False,core_food,0.000144,83.0,2.0
+Conut,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,WHITE CHOCOLATE SPREAD CONUT,4.0,360216.21,False,core_food,8.2e-05,93.0,3.0
+Conut,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,PISTACHIO SPREAD CONUT,1.0,119189.19,False,core_food,2.7e-05,104.0,4.0
+Conut,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NO SPREAD..,170.0,0.0,True,modifier,,,
+Conut,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,NUTELLA SPREAD CHIMNEY,23.0,4112026.97,False,core_food,0.000936,46.0,2.0
+Conut,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,LOTUS SPREAD CHIMNEY,32.0,5721081.0,False,core_food,0.001303,40.0,1.0
+Conut,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,WHITE CHOCOLATE SPREAD CHIMNEY,13.0,2324189.16,False,core_food,0.000529,54.0,3.0
+Conut,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,PISTACHIO SPREAD CHIMNEY,3.0,715135.13,False,core_food,0.000163,82.0,4.0
+Conut,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,"NO SPREAD,,",164.0,0.0,True,modifier,,,
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED OREO (R),6.0,540324.31,False,core_food,0.000123,86.0,7.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED LOTUS (R),2.0,180108.1,False,core_food,4.1e-05,101.0,13.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BROWNIES (R),10.0,900540.52,False,core_food,0.000205,78.0,5.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRISPY CREPE (R),3.0,270162.16,False,core_food,6.2e-05,97.0,11.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,STRAWBERRIES (R),33.0,2971783.72,False,core_food,0.000677,49.0,1.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BLUEBERRIES (P),15.0,1787837.81,False,core_food,0.000407,61.0,2.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRIES (P),13.0,1549459.44,False,core_food,0.000353,65.0,3.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SPRINKLES (R),6.0,540324.31,False,core_food,0.000123,86.0,7.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,WHIPPED  CREAM (P),3.0,357567.56,False,core_food,8.1e-05,94.0,10.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SALTED CARAMEL SAUCE (R),0.0,0.0,False,core_food,0.0,110.0,15.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,NUTELLA SAUCE (R),12.0,1080648.63,False,core_food,0.000246,75.0,4.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PISTACHIO SAUCE (P),1.0,119189.19,False,core_food,2.7e-05,104.0,14.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,"WHITE CHOCOLATE SAUCE, (R)",5.0,450270.26,False,core_food,0.000103,91.0,8.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,LOTUS SAUCE (R),3.0,270162.16,False,core_food,6.2e-05,97.0,11.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,DARK CHOCOLATE CHIPS (P),2.0,238378.38,False,core_food,5.4e-05,98.0,12.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,FRUIT LOOPS (R),4.0,360216.21,False,core_food,8.2e-05,93.0,9.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GRANOLA BERRIES (P),1.0,119189.19,False,core_food,2.7e-05,104.0,14.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRY JAM (P),3.0,357567.56,False,core_food,8.1e-05,94.0,10.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CHERRY JAM (P),1.0,119189.19,False,core_food,2.7e-05,104.0,14.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GUMMY BEARS (R),7.0,630378.37,False,core_food,0.000144,83.0,6.0
+Conut,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,MARSHMALLOWS (R),6.0,540324.31,False,core_food,0.000123,86.0,7.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED OREO.,38.0,6793783.69,False,core_food,0.001547,36.0,3.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED LOTUS.,23.0,4112026.97,False,core_food,0.000936,46.0,6.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRISPY CREPE.,2.0,357567.56,False,core_food,8.1e-05,94.0,16.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BROWNIES.,28.0,5005945.88,False,core_food,0.00114,42.0,5.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,STRAWBERRY.,128.0,22884324.02,False,core_food,0.005211,26.0,1.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SPRINKLES.,6.0,1072702.69,False,core_food,0.000244,76.0,11.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BLUEBERRIES.,25.0,5959459.38,False,core_food,0.001357,39.0,4.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,RASPBERRIES.,21.0,5005945.88,False,core_food,0.00114,42.0,5.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PEANUT BUTTER CUPS.,1.0,238378.38,False,core_food,5.4e-05,98.0,17.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SALTED CARAMEL SAUCE.,2.0,357567.56,False,core_food,8.1e-05,94.0,16.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE SAUCE.,3.0,536351.34,False,core_food,0.000122,87.0,14.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,NUTELLA SAUCE.,67.0,11978513.35,False,core_food,0.002728,30.0,2.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,LOTUS SAUCE.,16.0,2860540.5,False,core_food,0.000651,51.0,7.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,WHIPPED  CREAM.,9.0,2145405.38,False,core_food,0.000489,56.0,8.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CARAMEL SAUCE.,6.0,1072702.69,False,core_food,0.000244,76.0,11.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PISTACHIO SAUCE.,6.0,1430270.25,False,core_food,0.000326,67.0,9.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE CHIPS.,3.0,715135.13,False,core_food,0.000163,82.0,13.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,FRUIT LOOPS.,1.0,178783.78,False,core_food,4.1e-05,102.0,18.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GRANOLA BERRIES.,4.0,953513.5,False,core_food,0.000217,77.0,12.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,RASPBERRY JAM.,2.0,476756.75,False,core_food,0.000109,89.0,15.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GUMMY BEARS.,7.0,1251486.47,False,core_food,0.000285,71.0,10.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,MARSHMALLOWS.,8.0,1430270.25,False,core_food,0.000326,67.0,9.0
+Conut,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SALTED PRETZELS.,2.0,357567.56,False,core_food,8.1e-05,94.0,16.0
+Conut,EXTRA DIP,EXTRA DIP,NUTELLA DIP (R),3.0,357567.56,False,core_food,8.1e-05,94.0,2.0
+Conut,EXTRA DIP,EXTRA DIP,LOTUS DIP (R),1.0,119189.19,False,core_food,2.7e-05,104.0,4.0
+Conut,EXTRA DIP,EXTRA DIP,CARAMEL DIP (R),2.0,238378.38,False,core_food,5.4e-05,98.0,3.0
+Conut,EXTRA DIP,EXTRA DIP,PASSION FRUIT DIP (P),1.0,238378.38,False,core_food,5.4e-05,98.0,3.0
+Conut,EXTRA DIP,EXTRA DIP,PISTACHIO DIP (P),3.0,715135.13,False,core_food,0.000163,82.0,1.0
+Conut,EXTRA DIP,EXTRA DIP,CHERRY JAM DIP (P),1.0,238378.38,False,core_food,5.4e-05,98.0,3.0
+Conut,free mini spread,FREE MINI SPREAD,NUTELLA SPREAD MINI.,284.0,0.0,True,modifier,,,
+Conut,free mini spread,FREE MINI SPREAD,LOTUS SPREAD MINI.,12.0,0.0,True,modifier,,,
+Conut,free mini spread,FREE MINI SPREAD,WHITE CHOCOLATE SPREAD MINI.,53.0,0.0,True,modifier,,,
+Conut,free mini spread,FREE MINI SPREAD,PISTACHIO SPREAD MINI.,1.0,30459.46,False,core_food,7e-06,109.0,1.0
+Conut,free mini spread,FREE MINI SPREAD,NO SPREAD .,40.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"STRAWBERRY , (R)",828.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"BLUEBERRIES, (P)",72.0,2193081.0,False,core_food,0.000499,55.0,2.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED OREO, (R)",64.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED LOTUS , (R)",124.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"SPRINKLES , (R)",20.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"BROWNIES , (R)",532.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,SALTED CARAMEL SAUCE . (R),8.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,WHIPPED CREAM . (P),15.0,456891.88,False,core_food,0.000104,90.0,6.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"LOTUS SAUCE , (R)",27.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"WHITE CHOCOLATE SAUCE , (R)",21.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"CARAMEL SAUCE , (R)",367.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,NO TOPPINGS.,98.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRIES, (P)",41.0,1248837.79,False,core_food,0.000284,72.0,4.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE CHIPS, (P)",17.0,517810.79,False,core_food,0.000118,88.0,5.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"GRANOLA BERRIES, (P)",14.0,426432.42,False,core_food,9.7e-05,92.0,7.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"PEANUT BUTTER CUP , (P)",7.0,213216.21,False,core_food,4.9e-05,99.0,8.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO SAUCE . (P),42.0,1279297.25,False,core_food,0.000291,70.0,3.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRY JAM , (P)",3.0,91378.38,False,core_food,2.1e-05,105.0,10.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,"CHERRY JAM, (P)",5.0,152297.29,False,core_food,3.5e-05,103.0,9.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,GUMMY BEARS . (R),31.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"MARSHMALLOWS , (R)",26.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,CRISPY CREPE . (R),11.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"SALTED PRETZELS , (R)",2.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,NUTELLA SAUCE . (R),693.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE SAUCE , (R)",11.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,FRUIT LOOPS . (R),6.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,"WHIPPED CREAM  ,",95.0,0.0,True,modifier,,,
+Conut,FREE CONUT TOP,FREE CONUT TOP,SWITCH TO ICE CREAM,18.0,6436216.13,False,core_food,0.001466,37.0,1.0
+Conut,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO TOPPING,88.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SALTED CARAMEL SAUCE,(R)",2.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"STRAWBERRY,(R)",969.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,BROWNIES . (R),360.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED OREO .(R),43.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED LOTUS .(R),113.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,SPRINKLES .(R),1.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"NUTELLA SAUCE,(R)",505.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"LOTUS SAUCE,(R)",28.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,WHITE CHOCOLATE SAUCE .(R),73.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CARAMEL SAUCE, (R)",463.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,NO TOPPINGS,100.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"BLUEBERRIES , (P)",34.0,2026216.19,False,core_food,0.000461,59.0,3.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRIES ,(P)",23.0,1370675.66,False,core_food,0.000312,68.0,4.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE CHIPS ,(P)",4.0,238378.38,False,core_food,5.4e-05,98.0,7.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PEANUT BUTTER CUPS,(P)",6.0,357567.56,False,core_food,8.1e-05,94.0,5.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM,",5.0,297972.97,False,core_food,6.8e-05,96.0,6.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO SAUCE ,(P)",35.0,2085810.78,False,core_food,0.000475,57.0,2.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRY JAM,(P)",1.0,59594.59,False,core_food,1.4e-05,108.0,8.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CHERRY JAM ,(P)",0.0,0.0,False,core_food,0.0,110.0,9.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"GUMMY BEARS ,(R)",6.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"MARSHMALLOWS,(R)",7.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CRISPY CREPE,(R)",4.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE SAUCE,(R)",4.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"FRUIT LOOPS,(R)",4.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM   ,",53.0,0.0,True,modifier,,,
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SWITCH TO ICE CREAM,",9.0,2145405.38,False,core_food,0.000489,56.0,1.0
+Conut,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO TOPPING,",103.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"NUTELLA SAUCE ,(R)",189.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,BLUEBERRIES .(P),6.0,182756.75,False,core_food,4.2e-05,100.0,3.0
+Conut,FREE MINI TOP,FREE MINI TOP,RASPBERRIES .(P),2.0,60918.92,False,core_food,1.4e-05,107.0,4.0
+Conut,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE CHIPS .(P),2.0,60918.92,False,core_food,1.4e-05,107.0,4.0
+Conut,FREE MINI TOP,FREE MINI TOP,GRANOLA BERRIES .(P),1.0,30459.46,False,core_food,7e-06,109.0,5.0
+Conut,FREE MINI TOP,FREE MINI TOP,PEANUT BUTTER CUP .(P),1.0,30459.46,False,core_food,7e-06,109.0,5.0
+Conut,FREE MINI TOP,FREE MINI TOP,"WHIPPED CREAM ,(P)",6.0,182756.75,False,core_food,4.2e-05,100.0,3.0
+Conut,FREE MINI TOP,FREE MINI TOP,"PISTACHIO SAUCE,(P)",10.0,304594.58,False,core_food,6.9e-05,95.0,2.0
+Conut,FREE MINI TOP,FREE MINI TOP,RASPBERRY JAM .(P),1.0,30459.46,False,core_food,7e-06,109.0,5.0
+Conut,FREE MINI TOP,FREE MINI TOP,CHERRY JAM .(P),1.0,30459.46,False,core_food,7e-06,109.0,5.0
+Conut,FREE MINI TOP,FREE MINI TOP,"GUMMY BEARS,(R)",3.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,MARSHMALLOWS .(R),6.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"CRISPY CREPE ,(R)",1.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,STRAWBERRY .(R),226.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"BROWNIES,(R)",141.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"CRUSHED OREO ,(R)",13.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"CRUSHED LOTUS,(R)",42.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"SPRINKLES,(R)",3.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,LOTUS SAUCE .(R),5.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"WHITE CHOCOLATE SAUCE  ,(R)",3.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"CARAMEL SAUCE  ,(R)",98.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,SALTED CARAMEL SAUCE  .(R),1.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE SAUCE .(R),0.0,0.0,False,core_food,0.0,110.0,6.0
+Conut,FREE MINI TOP,FREE MINI TOP,"FRUIT LOOPS ,(R)",2.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,"NO TOPPINGS ,",11.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,WHIPPED CREAM  .,36.0,0.0,True,modifier,,,
+Conut,FREE MINI TOP,FREE MINI TOP,switch to ice cream.,8.0,2860540.5,False,core_food,0.000651,51.0,1.0
+Conut,FREE MINI TOP,FREE MINI TOP,PISTACHIO TOPPING.,33.0,0.0,True,modifier,,,
+Conut,free dip,free dip,NUTELLA DIP.(R),42.0,0.0,True,modifier,,,
+Conut,free dip,free dip,LOTUS DIP.(R),6.0,0.0,True,modifier,,,
+Conut,free dip,free dip,WHITE CHOCOLATE DIP.(R),6.0,0.0,True,modifier,,,
+Conut,free dip,free dip,CARAMEL DIP.(R),1.0,0.0,True,modifier,,,
+Conut,free dip,free dip,SALTED CARAMEL DIP.(R),5.0,0.0,True,modifier,,,
+Conut,free dip,free dip,DARK CHOCOLATE DIP.(R),4.0,0.0,True,modifier,,,
+Conut,free dip,free dip,CHERRY JAM DIP.(P),1.0,119189.19,False,core_food,2.7e-05,104.0,2.0
+Conut,free dip,free dip,PISTACHIO DIP.(P),3.0,357567.56,False,core_food,8.1e-05,94.0,1.0
+Conut,coffee type,coffee type,DECAF,8.0,0.0,True,modifier,,,
+Conut,coffee type,coffee type,REGULAR.,126.0,0.0,True,modifier,,,
+Conut,DRINK TYPE,DRINK TYPE,HOT,54.0,0.0,True,other_beverage,,,
+Conut,DRINK TYPE,DRINK TYPE,ICED,40.0,0.0,True,other_beverage,,,
+Conut,MILK OPTIONS,MILK OPTIONS,MILK OPTIONS,1.0,0.0,True,modifier,,,
+Conut,MILK OPTIONS,MILK OPTIONS,FULL FAT MILK,147.0,0.0,True,modifier,,,
+Conut,MILK OPTIONS,MILK OPTIONS,SKIMMED MILK.,15.0,0.0,True,modifier,,,
+Conut,MILK OPTIONS,MILK OPTIONS,LACTOSE FREE MILK.,1.0,0.0,True,modifier,,,
+Conut,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,TOASTED MARSHMALLOWS,2.0,238378.38,False,core_food,5.4e-05,98.0,1.0
+Conut,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,NO MARSHMALLLOWS,4.0,0.0,True,modifier,,,
+Conut,CONUT''S FAVORITE,CONUT''S FAVORITE,HOT CHOCOLATE,6.0,2860540.5,False,core_food,0.000651,51.0,1.0
+Conut,CONUT''S FAVORITE,CONUT''S FAVORITE,ICED SHAKEN ESPRESSO,3.0,1521648.67,False,core_food,0.000347,66.0,2.0
+Conut,CONUT''S FAVORITE,CONUT''S FAVORITE,MATCHA LATTE,1.0,595945.95,False,core_food,0.000136,84.0,3.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,AMERICAN COFFEE,46.0,16448107.89,False,coffee_hot,0.002891,45.0,9.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,CAPPUCCINO,114.0,47556485.85,False,coffee_hot,0.008359,27.0,2.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,CAFFE LATTE,156.0,65077296.41,False,coffee_hot,0.011438,23.0,1.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,CAFE MOCHA,47.0,23839162.5,False,coffee_hot,0.00419,40.0,7.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,CARAMEL MACHIATO,76.0,40762702.16,False,coffee_hot,0.007165,31.0,4.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,CAFFE AMERICANO,66.0,20055567.27,False,coffee_hot,0.003525,42.0,8.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,SINGLE ESPRESSO,131.0,31227567.15,False,coffee_hot,0.005489,36.0,6.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,DOUBLE ESPRESSO,127.0,41710918.28,False,coffee_hot,0.007331,30.0,3.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,ESPRESSO MACCHIATO,6.0,1970594.56,False,coffee_hot,0.000346,83.0,12.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,WHITE MOCHA,15.0,7608243.35,False,coffee_hot,0.001337,55.0,10.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,FLAT WHITE,8.0,3104216.17,False,coffee_hot,0.000546,74.0,11.0
+Conut Jnah,Hot-Coffee Based,Hot-Coffee Based,HOT CHOCOLATE COMBO,57.0,37743243.21,False,coffee_hot,0.006634,33.0,5.0
+Conut Jnah,Hot-Coffee Based,Free Dressing,[CARAMEL DRESSING],71.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,Free Dressing,[CHOCOLATE DRESSING],118.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,Free Dressing,[NO DRESSING],143.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,Free Dressing,[STRAWBERRY DRESSING],28.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,Free Dressing,[SALTED CARAMEL DRESSING],16.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,Free Whipped Cream,WHIPPED CREAM...,142.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,Free Whipped Cream,NO WHIPPED CREAM,263.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,PRESSED,244.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,REGULAR,47.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON TOP,158.0,0.0,True,coffee_hot,,,
+Conut Jnah,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON THE SIDE,289.0,0.0,True,coffee_hot,,,
+Conut Jnah,Bev Add-ons,Bev Add-ons,"CARAMEL  SAUCE,",20.0,1801081.04,False,core_food,0.000317,85.0,1.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,CHOCOLATE SAUCE,14.0,1260756.73,False,core_food,0.000222,94.0,3.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,HAZELNUT SYRUP,2.0,180108.1,False,core_food,3.2e-05,121.0,4.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,VANILLA SYRUP,16.0,1440864.84,False,core_food,0.000253,92.0,2.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,EXTRA ESPRESSO SHOT,2.0,180108.1,False,core_food,3.2e-05,121.0,4.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,SWEETENED CREAM,1.0,90054.05,False,core_food,1.6e-05,125.0,5.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,WHITE CHOCOLATE SAUCE,2.0,180108.1,False,core_food,3.2e-05,121.0,4.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,WHITE CHOCOLATE FLAVOUR,2.0,180108.1,False,core_food,3.2e-05,121.0,4.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,EXTRA DECAF ESPRESSO SHOT,1.0,90054.05,False,core_food,1.6e-05,125.0,5.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,STRAWBERRY DRESSING,1.0,90054.05,False,core_food,1.6e-05,125.0,5.0
+Conut Jnah,Bev Add-ons,Bev Add-ons,SALTED CARAMEL SYRUP,2.0,180108.1,False,core_food,3.2e-05,121.0,4.0
+Conut Jnah,Frappes,Frappes,MOCHA FRAPPE,24.0,12872432.26,False,coffee_cold,0.002263,48.0,2.0
+Conut Jnah,Frappes,Frappes,CARAMEL MOCHA FRAPPE,16.0,8581621.51,False,coffee_cold,0.001508,53.0,4.0
+Conut Jnah,Frappes,Frappes,HAZELNUT MOCHA FRAPPE,7.0,3754459.41,False,coffee_cold,0.00066,72.0,8.0
+Conut Jnah,Frappes,Frappes,CARAMEL FRAPPE,81.0,43444458.88,False,coffee_cold,0.007636,28.0,1.0
+Conut Jnah,Frappes,Frappes,VANILLA FRAPPE,11.0,5899864.79,False,coffee_cold,0.001037,62.0,7.0
+Conut Jnah,Frappes,Frappes,WHITE MOCHA FRAPPE,11.0,5899864.79,False,coffee_cold,0.001037,62.0,7.0
+Conut Jnah,Frappes,Frappes,HAZELNUT FRAPPE,7.0,3754459.41,False,coffee_cold,0.00066,72.0,8.0
+Conut Jnah,Frappes,Frappes,MATCHA FRAPPE,10.0,6264054.11,False,coffee_cold,0.001101,59.0,6.0
+Conut Jnah,Frappes,Frappes,SALTED CARAMEL FRAPPE,14.0,7508918.82,False,coffee_cold,0.00132,56.0,5.0
+Conut Jnah,Frappes,Frappes,ESPRESSO FRAPPE,7.0,3133351.31,False,coffee_cold,0.000551,73.0,9.0
+Conut Jnah,Frappes,Frappes,TOFFEE NUT FRAPPE,21.0,11263378.23,False,coffee_cold,0.00198,50.0,3.0
+Conut Jnah,Shakes,Shakes,VANILLA MILKSHAKE,46.0,24672161.83,False,milkshake,0.004337,39.0,3.0
+Conut Jnah,Shakes,Shakes,OREO MILKSHAKE,59.0,42192973.28,False,milkshake,0.007416,29.0,1.0
+Conut Jnah,Shakes,Shakes,PEANUT BUTTER MILKSHAKE,2.0,1549459.47,False,milkshake,0.000272,89.0,10.0
+Conut Jnah,Shakes,Shakes,STRAWBERRY MILKSHAKE,35.0,25029729.91,False,milkshake,0.004399,38.0,2.0
+Conut Jnah,Shakes,Shakes,MATCHA MILKSHAKE,6.0,5363513.53,False,milkshake,0.000943,66.0,7.0
+Conut Jnah,Shakes,Shakes,SALTED CARAMEL MILKSHAKE,12.0,9296756.81,False,milkshake,0.001634,52.0,6.0
+Conut Jnah,Shakes,Shakes,PISTACHIO MILKSHAKE,11.0,9833108.14,False,milkshake,0.001728,51.0,5.0
+Conut Jnah,Shakes,Shakes,GRANOLA BERRIES MILKSHAKE,4.0,3098918.94,False,milkshake,0.000545,75.0,8.0
+Conut Jnah,Shakes,Shakes,DOUBLE CHOCOLATE MILKSHAKE,19.0,14719864.95,False,milkshake,0.002587,46.0,4.0
+Conut Jnah,Shakes,Shakes,FRUIT LOOPS MILKSHAKE,3.0,2324189.2,False,milkshake,0.000409,81.0,9.0
+Conut Jnah,Shakes,Shakes,TOFFEE NUT MILKSHAKE,1.0,774729.73,False,milkshake,0.000136,103.0,11.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,ICED CHOCOLATE,11.0,4923837.76,False,other_beverage,0.000865,68.0,8.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,WATER,2181.0,173301068.95,False,other_beverage,0.030461,8.0,1.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,HOT MILK,17.0,3039324.28,False,other_beverage,0.000534,77.0,9.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,VIA SPARKLING WATER,34.0,6078648.57,False,other_beverage,0.001068,61.0,5.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,MANGO PASSION,44.0,18355134.89,False,other_beverage,0.003226,44.0,2.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,MELON PASSION,16.0,6674594.51,False,other_beverage,0.001173,58.0,4.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,WILD BERRIES,14.0,5840270.19,False,other_beverage,0.001027,63.0,6.0
+Conut Jnah,Hot and Cold Drinks,Hot and Cold Drinks,WILD BERRIES PASSION,4.0,1668648.63,False,other_beverage,0.000293,88.0,11.0
+Conut Jnah,Hot and Cold Drinks,TEA FLAVORS,EARL GREY,5.0,1489864.84,False,other_beverage,0.000262,91.0,12.0
+Conut Jnah,Hot and Cold Drinks,TEA FLAVORS,ENGLISH BREAKFAST,3.0,893918.91,False,other_beverage,0.000157,101.0,13.0
+Conut Jnah,Hot and Cold Drinks,TEA FLAVORS,GREEN TEA,8.0,2383783.75,False,other_beverage,0.000419,80.0,10.0
+Conut Jnah,Hot and Cold Drinks,TEA FLAVORS,PEPPERMINT TEA,2.0,595945.94,False,other_beverage,0.000105,109.0,14.0
+Conut Jnah,Hot and Cold Drinks,TEA FLAVORS,PEACH ICED TEA,35.0,14600675.48,False,other_beverage,0.002566,47.0,3.0
+Conut Jnah,Hot and Cold Drinks,TEA FLAVORS,RASPBERRY ICED TEA,12.0,5005945.88,False,other_beverage,0.00088,67.0,7.0
+Conut Jnah,Conuts,Conuts,NO CINNAMON,22.0,0.0,True,modifier,,,
+Conut Jnah,Extras and Sides,Extras and Sides,ADD ICE CREAM,276.0,131584863.11,False,core_food,0.023128,13.0,1.0
+Conut Jnah,Delivery Service,Delivery,DELIVERY CHARGE,270.0,64362161.3,False,core_food,0.011313,24.0,1.0
+Conut Jnah,Delivery Service,Delivery,SEND CUTLERY,7.0,0.0,True,modifier,,,
+Conut Jnah,Delivery Service,Delivery,DONT SEND CUTLERY,1.0,0.0,True,modifier,,,
+Conut Jnah,Delivery Service,Delivery,TAKE AWAY,620.0,0.0,True,modifier,,,
+Conut Jnah,Free Conut Spreads,Free Conut Spreads,NUTELLA SPREAD CONUT.,902.0,0.0,True,modifier,,,
+Conut Jnah,Free Conut Spreads,Free Conut Spreads,LOTUS SPREAD CONUT.,40.0,0.0,True,modifier,,,
+Conut Jnah,Free Conut Spreads,Free Conut Spreads,WHITE CHOCOLATE SPREAD CONUT.,217.0,0.0,True,modifier,,,
+Conut Jnah,Free Conut Spreads,Free Conut Spreads,PISTACHIO SPREAD CONUT.,2.0,60918.92,False,core_food,1.1e-05,126.0,1.0
+Conut Jnah,Free Conut Spreads,Free Conut Spreads,NO SPREAD.,17.0,0.0,True,modifier,,,
+Conut Jnah,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NUTELLA SPREAD CHIMNEY.,1248.0,0.0,True,modifier,,,
+Conut Jnah,Free Chimney Cake Spreads,Free Chimney Cake Spreads,LOTUS SPREAD CHIMNEY.,69.0,0.0,True,modifier,,,
+Conut Jnah,Free Chimney Cake Spreads,Free Chimney Cake Spreads,WHITE CHOCOLATE SPREAD CHIMNEY.,249.0,0.0,True,modifier,,,
+Conut Jnah,Free Chimney Cake Spreads,Free Chimney Cake Spreads,PISTACHIO SPREAD CHIMNEY.,21.0,1251486.47,False,core_food,0.00022,95.0,1.0
+Conut Jnah,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NO SPREAD,76.0,0.0,True,modifier,,,
+Conut Jnah,Holder,Holders,ARGENTINA,1.0,0.0,True,modifier,,,
+Conut Jnah,Holder,Holders,ENGLAND HOLDER,1.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,CLASSIC CHIMNEY,291.0,173420272.24,False,core_food,0.030482,7.0,7.0
+Conut Jnah,ITEMS,ITEMS,MINI THE ONE,255.0,129340136.99,False,core_food,0.022734,15.0,13.0
+Conut Jnah,ITEMS,ITEMS,MINI THE ORIGINAL,219.0,104409728.34,False,core_food,0.018352,18.0,16.0
+Conut Jnah,ITEMS,ITEMS,CONUT THE ORIGINAL,313.0,270677325.11,False,core_food,0.047576,4.0,4.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY THE ORIGINAL,171.0,203813513.31,False,core_food,0.035824,6.0,6.0
+Conut Jnah,ITEMS,ITEMS,CONUT THE ONE,486.0,434444595.95,False,core_food,0.076361,2.0,2.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY THE ONE,859.0,1075026890.19,False,core_food,0.188954,1.0,1.0
+Conut Jnah,ITEMS,ITEMS,MINI PISTACHIO,61.0,38210730.08,False,core_food,0.006716,32.0,23.0
+Conut Jnah,ITEMS,ITEMS,CONUT PISTACHIO,87.0,88140405.51,False,core_food,0.015492,19.0,17.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY PISTACHIO,117.0,167341621.11,False,core_food,0.029413,9.0,8.0
+Conut Jnah,ITEMS,ITEMS,MINI BOSTON CHEESECAKE,53.0,28426621.24,False,core_food,0.004996,37.0,26.0
+Conut Jnah,ITEMS,ITEMS,CONUT BOSTON CHEESECAKE,95.0,87815946.11,False,core_food,0.015435,20.0,18.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY BOSTON CHEESECAKE,84.0,110130810.58,False,core_food,0.019357,17.0,15.0
+Conut Jnah,ITEMS,ITEMS,MINI BERRY MIX,122.0,61880379.27,False,core_food,0.010877,25.0,21.0
+Conut Jnah,ITEMS,ITEMS,CONUT BERRY MIX,158.0,141239189.63,False,core_food,0.024825,12.0,11.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY BERRY MIX,102.0,127651621.42,False,core_food,0.022437,16.0,14.0
+Conut Jnah,ITEMS,ITEMS,ICE CREAM BOWL,271.0,161501353.18,False,core_food,0.028387,10.0,9.0
+Conut Jnah,ITEMS,ITEMS,CONUT BITES,50.0,32777027.32,False,core_food,0.005761,35.0,25.0
+Conut Jnah,ITEMS,ITEMS,CINNAMON SUGAR RINGS,13.0,5423108.04,False,core_food,0.000953,65.0,28.0
+Conut Jnah,ITEMS,ITEMS,CHOCOLATE CHIPS RINGS,8.0,3814054.0,False,core_food,0.00067,71.0,29.0
+Conut Jnah,ITEMS,ITEMS,CONUT TRIPLE CHOCOLATE,226.0,208909513.9,False,core_food,0.036719,5.0,5.0
+Conut Jnah,ITEMS,ITEMS,MINI TRIPLE CHOCOLATE,124.0,66507566.68,False,core_food,0.01169,22.0,20.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY TRIPLE CHOCOLATE,240.0,314659458.79,False,core_food,0.055307,3.0,3.0
+Conut Jnah,ITEMS,ITEMS,CHIMNEY COMBO.,3.0,11799729.75,False,core_food,0.002074,49.0,27.0
+Conut Jnah,ITEMS,ITEMS,CONUT COMBO,13.0,35637567.47,False,core_food,0.006264,34.0,24.0
+Conut Jnah,ITEMS,ITEMS,THE SHARING BOX.,47.0,78426486.82,False,core_food,0.013785,21.0,19.0
+Conut Jnah,ITEMS,ITEMS,THE ONE CONUT,13.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,THE ONE MINI,47.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,THE ONE CHIMNEY,3.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,PISTACHIO CONUT,13.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,PISTACHIO MINI,46.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,PISTACHIO CHIMNEY,3.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,TRIPLE CHOCOLATE CONUT,13.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,TRIPLE CHOCOLATE MINI,47.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,TRIPLE CHOCOLATE CHIMNEY,3.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,BOSTON CHEESECAKE CONUT,13.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,BOSTON CHEESECAKE MINI,47.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,BOSTON CHEESECAKE CHIMNEY,3.0,0.0,True,modifier,,,
+Conut Jnah,ITEMS,ITEMS,TIRAMISU MINI CONUT,88.0,52443243.84,False,core_food,0.009218,26.0,22.0
+Conut Jnah,ITEMS,ITEMS,TIRAMISU CONUT,137.0,130631351.62,False,core_food,0.022961,14.0,12.0
+Conut Jnah,ITEMS,ITEMS,TIRAMISU CHIMNEY,120.0,157329729.4,False,core_food,0.027653,11.0,10.0
+Conut Jnah,EXTRA MINI SPREAD,EXTRA MINI SPREAD,NUTELLA SPREAD MINI,3.0,178783.78,False,core_food,3.1e-05,122.0,1.0
+Conut Jnah,EXTRA MINI SPREAD,EXTRA MINI SPREAD,PISTACHIO SPREAD MINI,1.0,90054.05,False,core_food,1.6e-05,125.0,2.0
+Conut Jnah,EXTRA MINI SPREAD,EXTRA MINI SPREAD,"NO SPREAD,.",59.0,0.0,True,modifier,,,
+Conut Jnah,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NUTELLA SPREAD CONUT,16.0,1440864.84,False,core_food,0.000253,92.0,1.0
+Conut Jnah,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,LOTUS SPREAD CONUT,6.0,540324.31,False,core_food,9.5e-05,111.0,2.0
+Conut Jnah,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,WHITE CHOCOLATE SPREAD CONUT,0.0,0.0,False,core_food,0.0,128.0,4.0
+Conut Jnah,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,PISTACHIO SPREAD CONUT,1.0,119189.19,False,core_food,2.1e-05,124.0,3.0
+Conut Jnah,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NO SPREAD..,167.0,0.0,True,modifier,,,
+Conut Jnah,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,NUTELLA SPREAD CHIMNEY,12.0,2145405.38,False,core_food,0.000377,82.0,2.0
+Conut Jnah,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,LOTUS SPREAD CHIMNEY,17.0,3039324.28,False,core_food,0.000534,77.0,1.0
+Conut Jnah,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,WHITE CHOCOLATE SPREAD CHIMNEY,4.0,715135.13,False,core_food,0.000126,105.0,4.0
+Conut Jnah,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,PISTACHIO SPREAD CHIMNEY,5.0,1191891.88,False,core_food,0.000209,96.0,3.0
+Conut Jnah,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,"NO SPREAD,,",184.0,0.0,True,modifier,,,
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED OREO (R),1.0,90054.05,False,core_food,1.6e-05,125.0,15.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED LOTUS (R),5.0,450270.26,False,core_food,7.9e-05,113.0,9.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BROWNIES (R),9.0,810486.47,False,core_food,0.000142,102.0,4.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PEANUT BUTTER CUPS (P),2.0,238378.38,False,core_food,4.2e-05,119.0,12.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRISPY CREPE (R),1.0,90054.05,False,core_food,1.6e-05,125.0,15.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,STRAWBERRIES (R),19.0,1711026.99,False,core_food,0.000301,87.0,1.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BLUEBERRIES (P),12.0,1430270.25,False,core_food,0.000251,93.0,2.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRIES (P),9.0,1072702.69,False,core_food,0.000189,99.0,3.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SPRINKLES (R),8.0,720432.42,False,core_food,0.000127,104.0,5.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,DARK CHOCOLATE SAUCE (R),1.0,90054.05,False,core_food,1.6e-05,125.0,15.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,WHIPPED  CREAM (P),6.0,715135.13,False,core_food,0.000126,105.0,6.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SALTED CARAMEL SAUCE (R),2.0,180108.1,False,core_food,3.2e-05,121.0,13.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,NUTELLA SAUCE (R),7.0,630378.37,False,core_food,0.000111,106.0,7.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PISTACHIO SAUCE (P),4.0,476756.75,False,core_food,8.4e-05,112.0,8.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,LOTUS SAUCE (R),3.0,270162.16,False,core_food,4.7e-05,118.0,11.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,DARK CHOCOLATE CHIPS (P),1.0,119189.19,False,core_food,2.1e-05,124.0,14.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,FRUIT LOOPS (R),3.0,270162.16,False,core_food,4.7e-05,118.0,11.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GRANOLA BERRIES (P),1.0,119189.19,False,core_food,2.1e-05,124.0,14.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRY JAM (P),1.0,119189.19,False,core_food,2.1e-05,124.0,14.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GUMMY BEARS (R),4.0,360216.21,False,core_food,6.3e-05,115.0,10.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,MARSHMALLOWS (R),3.0,270162.16,False,core_food,4.7e-05,118.0,11.0
+Conut Jnah,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SALTED PRETZELS (R),1.0,90054.05,False,core_food,1.6e-05,125.0,15.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED OREO.,12.0,2145405.38,False,core_food,0.000377,82.0,7.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED LOTUS.,10.0,1787837.81,False,core_food,0.000314,86.0,8.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRISPY CREPE.,5.0,893918.91,False,core_food,0.000157,101.0,12.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BROWNIES.,27.0,4827162.1,False,core_food,0.000848,69.0,4.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,STRAWBERRY.,129.0,23063107.8,False,core_food,0.004054,41.0,1.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SPRINKLES.,4.0,715135.13,False,core_food,0.000126,105.0,13.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BLUEBERRIES.,26.0,6197837.76,False,core_food,0.001089,60.0,3.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,RASPBERRIES.,16.0,3814054.0,False,core_food,0.00067,71.0,5.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PEANUT BUTTER CUPS.,2.0,476756.75,False,core_food,8.4e-05,112.0,14.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SALTED CARAMEL SAUCE.,1.0,178783.78,False,core_food,3.1e-05,122.0,16.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE SAUCE.,1.0,178783.78,False,core_food,3.1e-05,122.0,16.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,NUTELLA SAUCE.,40.0,7151351.26,False,core_food,0.001257,57.0,2.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,LOTUS SAUCE.,7.0,1251486.47,False,core_food,0.00022,95.0,10.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,WHIPPED  CREAM.,5.0,1191891.88,False,core_food,0.000209,96.0,11.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CARAMEL SAUCE.,1.0,178783.78,False,core_food,3.1e-05,122.0,16.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PISTACHIO SAUCE.,11.0,2622162.13,False,core_food,0.000461,78.0,6.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE CHIPS.,2.0,476756.75,False,core_food,8.4e-05,112.0,14.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,FRUIT LOOPS.,5.0,893918.91,False,core_food,0.000157,101.0,12.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GRANOLA BERRIES.,1.0,238378.38,False,core_food,4.2e-05,119.0,15.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GUMMY BEARS.,8.0,1430270.25,False,core_food,0.000251,93.0,9.0
+Conut Jnah,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,MARSHMALLOWS.,8.0,1430270.25,False,core_food,0.000251,93.0,9.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,NUTELLA DIP (R),4.0,476756.75,False,core_food,8.4e-05,112.0,3.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,LOTUS DIP (R),4.0,476756.75,False,core_food,8.4e-05,112.0,3.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,WHITE CHOCOLATE DIP (R),2.0,238378.38,False,core_food,4.2e-05,119.0,4.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,CARAMEL DIP (R),0.0,0.0,False,core_food,0.0,128.0,5.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,DARK CHOCOLATE DIP (R),0.0,0.0,False,core_food,0.0,128.0,5.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,PISTACHIO DIP (P),4.0,953513.5,False,core_food,0.000168,100.0,1.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,RASPBERRY JAM DIP (P),1.0,238378.38,False,core_food,4.2e-05,119.0,4.0
+Conut Jnah,EXTRA DIP,EXTRA DIP,CHERRY JAM DIP (P),3.0,715135.13,False,core_food,0.000126,105.0,2.0
+Conut Jnah,free mini spread,FREE MINI SPREAD,NUTELLA SPREAD MINI.,575.0,0.0,True,modifier,,,
+Conut Jnah,free mini spread,FREE MINI SPREAD,LOTUS SPREAD MINI.,14.0,0.0,True,modifier,,,
+Conut Jnah,free mini spread,FREE MINI SPREAD,WHITE CHOCOLATE SPREAD MINI.,122.0,0.0,True,modifier,,,
+Conut Jnah,free mini spread,FREE MINI SPREAD,PISTACHIO SPREAD MINI.,2.0,60918.92,False,core_food,1.1e-05,126.0,1.0
+Conut Jnah,free mini spread,FREE MINI SPREAD,NO SPREAD .,58.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"STRAWBERRY , (R)",789.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"BLUEBERRIES, (P)",60.0,1827567.5,False,core_food,0.000321,84.0,2.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED OREO, (R)",51.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED LOTUS , (R)",148.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"SPRINKLES , (R)",41.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"BROWNIES , (R)",635.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,SALTED CARAMEL SAUCE . (R),7.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,WHIPPED CREAM . (P),11.0,335054.04,False,core_food,5.9e-05,117.0,7.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"LOTUS SAUCE , (R)",50.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"WHITE CHOCOLATE SAUCE , (R)",34.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"CARAMEL SAUCE , (R)",353.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,NO TOPPINGS.,89.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRIES, (P)",38.0,1157459.42,False,core_food,0.000203,98.0,4.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE CHIPS, (P)",20.0,609189.17,False,core_food,0.000107,107.0,5.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"GRANOLA BERRIES, (P)",13.0,395972.96,False,core_food,7e-05,114.0,6.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"PEANUT BUTTER CUP , (P)",6.0,182756.75,False,core_food,3.2e-05,120.0,8.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO SAUCE . (P),39.0,1187918.88,False,core_food,0.000209,97.0,3.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"PASSION FRUITS SAUCE ,(P)",11.0,335054.04,False,core_food,5.9e-05,117.0,7.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRY JAM , (P)",6.0,182756.75,False,core_food,3.2e-05,120.0,8.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"CHERRY JAM, (P)",1.0,30459.46,False,core_food,5e-06,127.0,9.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,GUMMY BEARS . (R),28.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"MARSHMALLOWS , (R)",39.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,CRISPY CREPE . (R),11.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,NUTELLA SAUCE . (R),829.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE SAUCE , (R)",10.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,FRUIT LOOPS . (R),14.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,"WHIPPED CREAM  ,",118.0,0.0,True,modifier,,,
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,SWITCH TO ICE CREAM,20.0,7151351.26,False,core_food,0.001257,57.0,1.0
+Conut Jnah,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO TOPPING,67.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SALTED CARAMEL SAUCE,(R)",2.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"STRAWBERRY,(R)",989.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,BROWNIES . (R),418.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED OREO .(R),17.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED LOTUS .(R),107.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,SPRINKLES .(R),6.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"NUTELLA SAUCE,(R)",613.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"LOTUS SAUCE,(R)",33.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,WHITE CHOCOLATE SAUCE .(R),59.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CARAMEL SAUCE, (R)",529.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,NO TOPPINGS,81.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"BLUEBERRIES , (P)",36.0,2145405.38,False,core_food,0.000377,82.0,3.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRIES ,(P)",26.0,1549459.44,False,core_food,0.000272,90.0,4.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE CHIPS ,(P)",3.0,178783.78,False,core_food,3.1e-05,122.0,6.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PEANUT BUTTER CUPS,(P)",3.0,178783.78,False,core_food,3.1e-05,122.0,6.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM,",12.0,715135.13,False,core_food,0.000126,105.0,5.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO SAUCE ,(P)",92.0,5482702.63,False,core_food,0.000964,64.0,1.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PASSION FRUIT SAUCE,(P)",3.0,178783.78,False,core_food,3.1e-05,122.0,6.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRY JAM,(P)",2.0,119189.19,False,core_food,2.1e-05,124.0,7.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CHERRY JAM ,(P)",3.0,178783.78,False,core_food,3.1e-05,122.0,6.0
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"GUMMY BEARS ,(R)",3.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"MARSHMALLOWS,(R)",9.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CRISPY CREPE,(R)",3.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE SAUCE,(R)",5.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"FRUIT LOOPS,(R)",4.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM   ,",76.0,0.0,True,modifier,,,
+Conut Jnah,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SWITCH TO ICE CREAM,",13.0,3098918.88,False,core_food,0.000545,76.0,2.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"NUTELLA SAUCE ,(R)",482.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,BLUEBERRIES .(P),4.0,121837.83,False,core_food,2.1e-05,123.0,4.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,RASPBERRIES .(P),4.0,121837.83,False,core_food,2.1e-05,123.0,4.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE CHIPS .(P),2.0,60918.92,False,core_food,1.1e-05,126.0,5.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,PEANUT BUTTER CUP .(P),1.0,30459.46,False,core_food,5e-06,127.0,6.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"WHIPPED CREAM ,(P)",6.0,182756.75,False,core_food,3.2e-05,120.0,3.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"PISTACHIO SAUCE,(P)",19.0,578729.71,False,core_food,0.000102,110.0,2.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,PASSION FRUITS SAUCE .(P),2.0,60918.92,False,core_food,1.1e-05,126.0,5.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,RASPBERRY JAM .(P),2.0,60918.92,False,core_food,1.1e-05,126.0,5.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"GUMMY BEARS,(R)",1.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,MARSHMALLOWS .(R),4.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"CRISPY CREPE ,(R)",3.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"SALTED PRETZELS,(R)",1.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,STRAWBERRY .(R),361.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"BROWNIES,(R)",319.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"CRUSHED OREO ,(R)",3.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"CRUSHED LOTUS,(R)",54.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"SPRINKLES,(R)",12.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,LOTUS SAUCE .(R),11.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"WHITE CHOCOLATE SAUCE  ,(R)",3.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"CARAMEL SAUCE  ,(R)",178.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,SALTED CARAMEL SAUCE  .(R),1.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE SAUCE .(R),6.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"FRUIT LOOPS ,(R)",1.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,"NO TOPPINGS ,",34.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,WHIPPED CREAM  .,105.0,0.0,True,modifier,,,
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,switch to ice cream.,7.0,2502972.94,False,core_food,0.00044,79.0,1.0
+Conut Jnah,FREE MINI TOP,FREE MINI TOP,PISTACHIO TOPPING.,42.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,NUTELLA DIP.(R),45.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,LOTUS DIP.(R),7.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,WHITE CHOCOLATE DIP.(R),6.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,CARAMEL DIP.(R),6.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,SALTED CARAMEL DIP.(R),1.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,DARK CHOCOLATE DIP.(R),3.0,0.0,True,modifier,,,
+Conut Jnah,free dip,free dip,PISTACHIO DIP.(P),3.0,357567.56,False,core_food,6.3e-05,116.0,1.0
+Conut Jnah,free dip,free dip,PASSION FRUITS DIP.(P),0.0,0.0,False,core_food,0.0,128.0,2.0
+Conut Jnah,coffee type,coffee type,DECAF,34.0,0.0,True,modifier,,,
+Conut Jnah,coffee type,coffee type,REGULAR.,955.0,0.0,True,modifier,,,
+Conut Jnah,DRINK TYPE,DRINK TYPE,HOT,473.0,0.0,True,other_beverage,,,
+Conut Jnah,DRINK TYPE,DRINK TYPE,ICED,191.0,0.0,True,other_beverage,,,
+Conut Jnah,MILK OPTIONS,MILK OPTIONS,MILK OPTIONS,7.0,0.0,True,modifier,,,
+Conut Jnah,MILK OPTIONS,MILK OPTIONS,FULL FAT MILK,868.0,0.0,True,modifier,,,
+Conut Jnah,MILK OPTIONS,MILK OPTIONS,SKIMMED MILK.,34.0,0.0,True,modifier,,,
+Conut Jnah,MILK OPTIONS,MILK OPTIONS,LACTOSE FREE MILK.,23.0,0.0,True,modifier,,,
+Conut Jnah,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,TOASTED MARSHMALLOWS,15.0,1787837.81,False,core_food,0.000314,86.0,1.0
+Conut Jnah,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,NO MARSHMALLLOWS,24.0,0.0,True,modifier,,,
+Conut Jnah,CONUT''S FAVORITE,CONUT''S FAVORITE,HOT CHOCOLATE,39.0,18593513.27,False,core_food,0.003268,43.0,1.0
+Conut Jnah,CONUT''S FAVORITE,CONUT''S FAVORITE,ICED SHAKEN ESPRESSO,16.0,8115459.58,False,core_food,0.001426,54.0,2.0
+Conut Jnah,CONUT''S FAVORITE,CONUT''S FAVORITE,MATCHA LATTE,8.0,4767567.62,False,core_food,0.000838,70.0,3.0
+Conut Jnah,CONUT''S FAVORITE,CONUT''S FAVORITE,AFFOGATO,4.0,2145405.38,False,core_food,0.000377,82.0,4.0
+Conut Jnah,CONUT''S FAVORITE,CONUT''S FAVORITE,PISTACHIO LATTE,1.0,595945.95,False,core_food,0.000105,108.0,5.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,AMERICAN COFFEE,62.0,22169188.89,False,coffee_hot,0.004173,37.0,6.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,CAPPUCCINO,60.0,25029729.4,False,coffee_hot,0.004712,33.0,4.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,CAFFE LATTE,60.0,25029729.4,False,coffee_hot,0.004712,33.0,4.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,CAFE MOCHA,6.0,3043297.34,False,coffee_hot,0.000573,57.0,10.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,CARAMEL MACHIATO,26.0,13945134.95,False,coffee_hot,0.002625,42.0,7.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,CAFFE AMERICANO,102.0,31518918.45,False,coffee_hot,0.005933,31.0,3.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,SINGLE ESPRESSO,214.0,51012972.29,False,coffee_hot,0.009603,25.0,1.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,DOUBLE ESPRESSO,72.0,23647134.77,False,coffee_hot,0.004451,36.0,5.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,ESPRESSO MACCHIATO,2.0,656864.85,False,coffee_hot,0.000124,96.0,11.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,WHITE MOCHA,12.0,6086594.68,False,coffee_hot,0.001146,48.0,8.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,FLAT WHITE,12.0,4656324.25,False,coffee_hot,0.000877,52.0,9.0
+Main Street Coffee,Hot-Coffee Based,Hot-Coffee Based,HOT CHOCOLATE COMBO,58.0,38405405.37,False,coffee_hot,0.00723,27.0,2.0
+Main Street Coffee,Hot-Coffee Based,Free Dressing,[CARAMEL DRESSING],12.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,Free Dressing,[CHOCOLATE DRESSING],8.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,Free Dressing,[NO DRESSING],131.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,Free Dressing,[STRAWBERRY DRESSING],2.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,Free Dressing,[SALTED CARAMEL DRESSING],2.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,Free Whipped Cream,WHIPPED CREAM...,41.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,Free Whipped Cream,NO WHIPPED CREAM,123.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,PRESSED,123.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,CHIMNEY CAKE OPTIONS,REGULAR,39.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON TOP,271.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Hot-Coffee Based,OPTIONS ICE CREAM,ICE CREAM ON THE SIDE,114.0,0.0,True,coffee_hot,,,
+Main Street Coffee,Bev Add-ons,Bev Add-ons,WHIPPED CREAM,10.0,1191891.88,False,core_food,0.000224,83.0,3.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,"CARAMEL  SAUCE,",6.0,540324.31,False,core_food,0.000102,99.0,5.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,HAZELNUT SYRUP,9.0,810486.47,False,core_food,0.000153,92.0,4.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,VANILLA SYRUP,3.0,270162.16,False,core_food,5.1e-05,107.0,6.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,EXTRA ESPRESSO SHOT,20.0,1801081.04,False,core_food,0.000339,70.0,2.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,SWEETENED CREAM,26.0,2341405.36,False,core_food,0.000441,65.0,1.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,EXTRA DECAF ESPRESSO SHOT,1.0,90054.05,False,core_food,1.7e-05,114.0,7.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,STRAWBERRY DRESSING,1.0,90054.05,False,core_food,1.7e-05,114.0,7.0
+Main Street Coffee,Bev Add-ons,Bev Add-ons,SALTED CARAMEL SYRUP,1.0,90054.05,False,core_food,1.7e-05,114.0,7.0
+Main Street Coffee,Frappes,Frappes,MOCHA FRAPPE,12.0,6436216.13,False,coffee_cold,0.001212,47.0,2.0
+Main Street Coffee,Frappes,Frappes,CARAMEL MOCHA FRAPPE,10.0,5363513.44,False,coffee_cold,0.00101,50.0,3.0
+Main Street Coffee,Frappes,Frappes,HAZELNUT MOCHA FRAPPE,1.0,536351.34,False,coffee_cold,0.000101,100.0,8.0
+Main Street Coffee,Frappes,Frappes,CARAMEL FRAPPE,16.0,8581621.51,False,coffee_cold,0.001615,44.0,1.0
+Main Street Coffee,Frappes,Frappes,WHITE MOCHA FRAPPE,8.0,4290810.75,False,coffee_cold,0.000808,55.0,4.0
+Main Street Coffee,Frappes,Frappes,MATCHA FRAPPE,4.0,2505621.64,False,coffee_cold,0.000472,64.0,5.0
+Main Street Coffee,Frappes,Frappes,SALTED CARAMEL FRAPPE,3.0,1609054.03,False,coffee_cold,0.000303,76.0,7.0
+Main Street Coffee,Frappes,Frappes,ESPRESSO FRAPPE,4.0,1790486.46,False,coffee_cold,0.000337,71.0,6.0
+Main Street Coffee,Frappes,Frappes,TOFFEE NUT FRAPPE,1.0,536351.34,False,coffee_cold,0.000101,100.0,8.0
+Main Street Coffee,Shakes,Shakes,VANILLA MILKSHAKE,32.0,17163243.01,False,milkshake,0.003231,39.0,2.0
+Main Street Coffee,Shakes,Shakes,OREO MILKSHAKE,28.0,20023783.93,False,milkshake,0.003769,38.0,1.0
+Main Street Coffee,Shakes,Shakes,PEANUT BUTTER MILKSHAKE,1.0,774729.73,False,milkshake,0.000146,93.0,9.0
+Main Street Coffee,Shakes,Shakes,STRAWBERRY MILKSHAKE,19.0,13587567.67,False,milkshake,0.002558,43.0,3.0
+Main Street Coffee,Shakes,Shakes,MATCHA MILKSHAKE,1.0,893918.92,False,milkshake,0.000168,90.0,8.0
+Main Street Coffee,Shakes,Shakes,SALTED CARAMEL MILKSHAKE,6.0,4648378.4,False,milkshake,0.000875,53.0,5.0
+Main Street Coffee,Shakes,Shakes,PISTACHIO MILKSHAKE,3.0,2681756.77,False,milkshake,0.000505,62.0,6.0
+Main Street Coffee,Shakes,Shakes,GRANOLA BERRIES MILKSHAKE,1.0,774729.73,False,milkshake,0.000146,93.0,9.0
+Main Street Coffee,Shakes,Shakes,DOUBLE CHOCOLATE MILKSHAKE,11.0,8522027.08,False,milkshake,0.001604,45.0,4.0
+Main Street Coffee,Shakes,Shakes,FRUIT LOOPS MILKSHAKE,1.0,774729.73,False,milkshake,0.000146,93.0,9.0
+Main Street Coffee,Shakes,Shakes,TOFFEE NUT MILKSHAKE,2.0,1549459.47,False,milkshake,0.000292,78.0,7.0
+Main Street Coffee,Hot and Cold Drinks,Hot and Cold Drinks,ICED CHOCOLATE,2.0,895243.23,False,other_beverage,0.000169,89.0,8.0
+Main Street Coffee,Hot and Cold Drinks,Hot and Cold Drinks,WATER,1393.0,110687022.0,False,other_beverage,0.020836,14.0,1.0
+Main Street Coffee,Hot and Cold Drinks,Hot and Cold Drinks,HOT MILK,5.0,893918.91,False,other_beverage,0.000168,91.0,9.0
+Main Street Coffee,Hot and Cold Drinks,Hot and Cold Drinks,VIA SPARKLING WATER,12.0,2145405.38,False,other_beverage,0.000404,66.0,3.0
+Main Street Coffee,Hot and Cold Drinks,TEA FLAVORS,EARL GREY,4.0,1191891.89,False,other_beverage,0.000224,82.0,6.0
+Main Street Coffee,Hot and Cold Drinks,TEA FLAVORS,ENGLISH BREAKFAST,4.0,1191891.88,False,other_beverage,0.000224,83.0,7.0
+Main Street Coffee,Hot and Cold Drinks,TEA FLAVORS,GREEN TEA,9.0,2681756.72,False,other_beverage,0.000505,63.0,2.0
+Main Street Coffee,Hot and Cold Drinks,TEA FLAVORS,PEPPERMINT TEA,9.0,2681756.72,False,other_beverage,0.000505,63.0,2.0
+Main Street Coffee,Hot and Cold Drinks,TEA FLAVORS,PEACH ICED TEA,4.0,1668648.63,False,other_beverage,0.000314,75.0,4.0
+Main Street Coffee,Hot and Cold Drinks,TEA FLAVORS,RASPBERRY ICED TEA,3.0,1251486.47,False,other_beverage,0.000236,81.0,5.0
+Main Street Coffee,Conuts,Conuts,NO CINNAMON,22.0,0.0,True,modifier,,,
+Main Street Coffee,Extras and Sides,Extras and Sides,ADD ICE CREAM,169.0,80571890.82,False,core_food,0.015167,19.0,1.0
+Main Street Coffee,Delivery Service,Delivery,DELIVERY CHARGE,21.0,5005945.88,False,core_food,0.000942,51.0,1.0
+Main Street Coffee,Delivery Service,Delivery,SEND CUTLERY,2.0,0.0,True,modifier,,,
+Main Street Coffee,Delivery Service,Delivery,DONT SEND CUTLERY,1.0,0.0,True,modifier,,,
+Main Street Coffee,Delivery Service,Delivery,TAKE AWAY,80.0,0.0,True,modifier,,,
+Main Street Coffee,Free Conut Spreads,Free Conut Spreads,NUTELLA SPREAD CONUT.,1129.0,0.0,True,modifier,,,
+Main Street Coffee,Free Conut Spreads,Free Conut Spreads,LOTUS SPREAD CONUT.,15.0,0.0,True,modifier,,,
+Main Street Coffee,Free Conut Spreads,Free Conut Spreads,WHITE CHOCOLATE SPREAD CONUT.,264.0,0.0,True,modifier,,,
+Main Street Coffee,Free Conut Spreads,Free Conut Spreads,PISTACHIO SPREAD CONUT.,3.0,91378.38,False,core_food,1.7e-05,113.0,1.0
+Main Street Coffee,Free Conut Spreads,Free Conut Spreads,NO SPREAD.,23.0,0.0,True,modifier,,,
+Main Street Coffee,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NUTELLA SPREAD CHIMNEY.,1250.0,0.0,True,modifier,,,
+Main Street Coffee,Free Chimney Cake Spreads,Free Chimney Cake Spreads,LOTUS SPREAD CHIMNEY.,28.0,0.0,True,modifier,,,
+Main Street Coffee,Free Chimney Cake Spreads,Free Chimney Cake Spreads,WHITE CHOCOLATE SPREAD CHIMNEY.,156.0,0.0,True,modifier,,,
+Main Street Coffee,Free Chimney Cake Spreads,Free Chimney Cake Spreads,PISTACHIO SPREAD CHIMNEY.,4.0,238378.38,False,core_food,4.5e-05,108.0,1.0
+Main Street Coffee,Free Chimney Cake Spreads,Free Chimney Cake Spreads,NO SPREAD,29.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,CLASSIC CHIMNEY,162.0,96543244.34,False,core_food,0.018174,16.0,15.0
+Main Street Coffee,ITEMS,ITEMS,MINI THE ONE,180.0,91298920.22,False,core_food,0.017187,17.0,16.0
+Main Street Coffee,ITEMS,ITEMS,MINI THE ORIGINAL,131.0,62455134.3,False,core_food,0.011757,21.0,19.0
+Main Street Coffee,ITEMS,ITEMS,CONUT THE ORIGINAL,364.0,314781298.21,False,core_food,0.059257,3.0,3.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY THE ORIGINAL,216.0,257448648.39,False,core_food,0.048464,4.0,4.0
+Main Street Coffee,ITEMS,ITEMS,CONUT THE ONE,641.0,573002028.81,False,core_food,0.107866,2.0,2.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY THE ONE,835.0,1044991214.56,False,core_food,0.196716,1.0,1.0
+Main Street Coffee,ITEMS,ITEMS,MINI PISTACHIO,61.0,38210730.08,False,core_food,0.007193,28.0,24.0
+Main Street Coffee,ITEMS,ITEMS,CONUT PISTACHIO,165.0,167162838.03,False,core_food,0.031468,9.0,9.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY PISTACHIO,140.0,200237837.23,False,core_food,0.037694,7.0,7.0
+Main Street Coffee,ITEMS,ITEMS,MINI BOSTON CHEESECAKE,45.0,24135810.49,False,core_food,0.004543,35.0,27.0
+Main Street Coffee,ITEMS,ITEMS,CONUT BOSTON CHEESECAKE,95.0,87815946.11,False,core_food,0.016531,18.0,17.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY BOSTON CHEESECAKE,76.0,99642161.95,False,core_food,0.018757,15.0,14.0
+Main Street Coffee,ITEMS,ITEMS,MINI BERRY MIX,60.0,30432973.41,False,core_food,0.005729,32.0,25.0
+Main Street Coffee,ITEMS,ITEMS,CONUT BERRY MIX,160.0,143027027.47,False,core_food,0.026924,10.0,10.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY BERRY MIX,91.0,113885270.09,False,core_food,0.021439,13.0,13.0
+Main Street Coffee,ITEMS,ITEMS,ICE CREAM BOWL,225.0,134087839.36,False,core_food,0.025242,11.0,11.0
+Main Street Coffee,ITEMS,ITEMS,CONUT BITES,38.0,24910540.77,False,core_food,0.004689,34.0,26.0
+Main Street Coffee,ITEMS,ITEMS,CINNAMON SUGAR RINGS,14.0,5840270.19,False,core_food,0.001099,49.0,28.0
+Main Street Coffee,ITEMS,ITEMS,CHOCOLATE CHIPS RINGS,4.0,1907027.0,False,core_food,0.000359,68.0,29.0
+Main Street Coffee,ITEMS,ITEMS,CONUT TRIPLE CHOCOLATE,271.0,250506541.01,False,core_food,0.047157,5.0,5.0
+Main Street Coffee,ITEMS,ITEMS,MINI TRIPLE CHOCOLATE,103.0,55244188.45,False,core_food,0.0104,22.0,20.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY TRIPLE CHOCOLATE,167.0,218950540.08,False,core_food,0.041217,6.0,6.0
+Main Street Coffee,ITEMS,ITEMS,CHIMNEY COMBO.,14.0,55065405.49,False,core_food,0.010366,23.0,21.0
+Main Street Coffee,ITEMS,ITEMS,CONUT COMBO,19.0,52085675.54,False,core_food,0.009805,24.0,22.0
+Main Street Coffee,ITEMS,ITEMS,THE SHARING BOX.,39.0,65077297.58,False,core_food,0.012251,20.0,18.0
+Main Street Coffee,ITEMS,ITEMS,THE ONE CONUT,19.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,THE ONE MINI,39.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,THE ONE CHIMNEY,14.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,PISTACHIO CONUT,19.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,PISTACHIO MINI,39.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,PISTACHIO CHIMNEY,14.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,TRIPLE CHOCOLATE CONUT,19.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,TRIPLE CHOCOLATE MINI,39.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,TRIPLE CHOCOLATE CHIMNEY,14.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,BOSTON CHEESECAKE CONUT,19.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,BOSTON CHEESECAKE MINI,39.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,BOSTON CHEESECAKE CHIMNEY,14.0,0.0,True,modifier,,,
+Main Street Coffee,ITEMS,ITEMS,TIRAMISU MINI CONUT,67.0,39928378.8,False,core_food,0.007516,26.0,23.0
+Main Street Coffee,ITEMS,ITEMS,TIRAMISU CONUT,131.0,124910270.53,False,core_food,0.023514,12.0,12.0
+Main Street Coffee,ITEMS,ITEMS,TIRAMISU CHIMNEY,136.0,178307026.65,False,core_food,0.033566,8.0,8.0
+Main Street Coffee,EXTRA MINI SPREAD,EXTRA MINI SPREAD,NUTELLA SPREAD MINI,1.0,59594.59,False,core_food,1.1e-05,116.0,1.0
+Main Street Coffee,EXTRA MINI SPREAD,EXTRA MINI SPREAD,LOTUS SPREAD MINI,1.0,59594.59,False,core_food,1.1e-05,116.0,1.0
+Main Street Coffee,EXTRA MINI SPREAD,EXTRA MINI SPREAD,"NO SPREAD,.",61.0,0.0,True,modifier,,,
+Main Street Coffee,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NUTELLA SPREAD CONUT,15.0,1350810.78,False,core_food,0.000254,80.0,1.0
+Main Street Coffee,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,LOTUS SPREAD CONUT,7.0,630378.37,False,core_food,0.000119,97.0,2.0
+Main Street Coffee,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,WHITE CHOCOLATE SPREAD CONUT,1.0,90054.05,False,core_food,1.7e-05,114.0,4.0
+Main Street Coffee,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,PISTACHIO SPREAD CONUT,1.0,119189.19,False,core_food,2.2e-05,112.0,3.0
+Main Street Coffee,EXTRA CONUT SPREAD,EXTRA CONUT SPREAD,NO SPREAD..,238.0,0.0,True,modifier,,,
+Main Street Coffee,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,NUTELLA SPREAD CHIMNEY,16.0,2860540.5,False,core_food,0.000538,60.0,1.0
+Main Street Coffee,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,LOTUS SPREAD CHIMNEY,5.0,893918.91,False,core_food,0.000168,91.0,2.0
+Main Street Coffee,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,WHITE CHOCOLATE SPREAD CHIMNEY,2.0,357567.56,False,core_food,6.7e-05,105.0,3.0
+Main Street Coffee,EXTRA CHIMNEY SPREAD,EXTRA CHIMNEY SPREAD,"NO SPREAD,,",197.0,0.0,True,modifier,,,
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED OREO (R),6.0,540324.31,False,core_food,0.000102,99.0,10.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRUSHED LOTUS (R),5.0,450270.26,False,core_food,8.5e-05,103.0,12.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BROWNIES (R),3.0,270162.16,False,core_food,5.1e-05,107.0,15.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PEANUT BUTTER CUPS (P),5.0,595945.94,False,core_food,0.000112,98.0,9.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CRISPY CREPE (R),2.0,180108.1,False,core_food,3.4e-05,109.0,17.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,STRAWBERRIES (R),33.0,2971783.72,False,core_food,0.000559,59.0,1.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,BLUEBERRIES (P),23.0,2741351.31,False,core_food,0.000516,61.0,2.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRIES (P),17.0,2026216.19,False,core_food,0.000381,67.0,3.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,SPRINKLES (R),11.0,990594.57,False,core_food,0.000186,86.0,5.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,DARK CHOCOLATE SAUCE (R),2.0,180108.1,False,core_food,3.4e-05,109.0,17.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,WHIPPED  CREAM (P),4.0,476756.75,False,core_food,9e-05,102.0,11.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,NUTELLA SAUCE (R),9.0,810486.47,False,core_food,0.000153,92.0,8.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,PISTACHIO SAUCE (P),3.0,357567.56,False,core_food,6.7e-05,105.0,14.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,"WHITE CHOCOLATE SAUCE, (R)",11.0,990594.57,False,core_food,0.000186,86.0,5.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,LOTUS SAUCE (R),4.0,360216.21,False,core_food,6.8e-05,104.0,13.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,DARK CHOCOLATE CHIPS (P),8.0,953513.5,False,core_food,0.000179,87.0,6.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,FRUIT LOOPS (R),3.0,270162.16,False,core_food,5.1e-05,107.0,15.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GRANOLA BERRIES (P),2.0,238378.38,False,core_food,4.5e-05,108.0,16.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,RASPBERRY JAM (P),1.0,119189.19,False,core_food,2.2e-05,112.0,18.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,CHERRY JAM (P),2.0,238378.38,False,core_food,4.5e-05,108.0,16.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,GUMMY BEARS (R),10.0,900540.52,False,core_food,0.00017,88.0,7.0
+Main Street Coffee,MINI/CONUT/BOWL TOPPINGS,MINI/CONUT/BOWL TOPPINGS,MARSHMALLOWS (R),15.0,1350810.78,False,core_food,0.000254,80.0,4.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED OREO.,10.0,1787837.81,False,core_food,0.000337,73.0,8.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRUSHED LOTUS.,17.0,3039324.28,False,core_food,0.000572,58.0,6.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CRISPY CREPE.,1.0,178783.78,False,core_food,3.4e-05,110.0,16.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BROWNIES.,25.0,4469594.54,False,core_food,0.000841,54.0,5.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,STRAWBERRY.,83.0,14839053.86,False,core_food,0.002793,40.0,1.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,SPRINKLES.,6.0,1072702.69,False,core_food,0.000202,85.0,13.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,BLUEBERRIES.,36.0,8581621.51,False,core_food,0.001615,44.0,2.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,RASPBERRIES.,31.0,7389729.63,False,core_food,0.001391,46.0,3.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PEANUT BUTTER CUPS.,3.0,715135.13,False,core_food,0.000135,94.0,14.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE SAUCE.,8.0,1430270.25,False,core_food,0.000269,79.0,10.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,NUTELLA SAUCE.,30.0,5363513.44,False,core_food,0.00101,50.0,4.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,LOTUS SAUCE.,1.0,178783.78,False,core_food,3.4e-05,110.0,16.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,WHIPPED  CREAM.,5.0,1191891.88,False,core_food,0.000224,83.0,12.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,CARAMEL SAUCE.,3.0,536351.34,False,core_food,0.000101,100.0,15.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,PISTACHIO SAUCE.,5.0,1191891.88,False,core_food,0.000224,83.0,12.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,DARK CHOCOLATE CHIPS.,9.0,2145405.38,False,core_food,0.000404,66.0,7.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,FRUIT LOOPS.,1.0,178783.78,False,core_food,3.4e-05,110.0,16.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,GUMMY BEARS.,7.0,1251486.47,False,core_food,0.000236,81.0,11.0
+Main Street Coffee,CHIMNEY TOPPINGS,CHIMNEY TOPPINGS,MARSHMALLOWS.,9.0,1609054.03,False,core_food,0.000303,76.0,9.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,NUTELLA DIP (R),8.0,953513.5,False,core_food,0.000179,87.0,1.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,LOTUS DIP (R),3.0,357567.56,False,core_food,6.7e-05,105.0,3.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,WHITE CHOCOLATE DIP (R),4.0,476756.75,False,core_food,9e-05,102.0,2.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,CARAMEL DIP (R),2.0,238378.38,False,core_food,4.5e-05,108.0,4.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,SALTED CARAMEL DIP (R),1.0,119189.19,False,core_food,2.2e-05,112.0,5.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,DARK CHOCOLATE DIP (R),2.0,238378.38,False,core_food,4.5e-05,108.0,4.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,PASSION FRUIT DIP (P),2.0,476756.75,False,core_food,9e-05,102.0,2.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,PISTACHIO DIP (P),2.0,476756.75,False,core_food,9e-05,102.0,2.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,RASPBERRY JAM DIP (P),1.0,238378.38,False,core_food,4.5e-05,108.0,4.0
+Main Street Coffee,EXTRA DIP,EXTRA DIP,CHERRY JAM DIP (P),1.0,238378.38,False,core_food,4.5e-05,108.0,4.0
+Main Street Coffee,free mini spread,FREE MINI SPREAD,NUTELLA SPREAD MINI.,367.0,0.0,True,modifier,,,
+Main Street Coffee,free mini spread,FREE MINI SPREAD,LOTUS SPREAD MINI.,3.0,0.0,True,modifier,,,
+Main Street Coffee,free mini spread,FREE MINI SPREAD,WHITE CHOCOLATE SPREAD MINI.,96.0,0.0,True,modifier,,,
+Main Street Coffee,free mini spread,FREE MINI SPREAD,PISTACHIO SPREAD MINI.,2.0,60918.92,False,core_food,1.1e-05,115.0,1.0
+Main Street Coffee,free mini spread,FREE MINI SPREAD,NO SPREAD .,51.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"STRAWBERRY , (R)",1013.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"BLUEBERRIES, (P)",52.0,1583891.84,False,core_food,0.000298,77.0,3.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED OREO, (R)",33.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"CRUSHED LOTUS , (R)",116.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"SPRINKLES , (R)",30.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"BROWNIES , (R)",644.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,SALTED CARAMEL SAUCE . (R),4.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,WHIPPED CREAM . (P),2.0,60918.92,False,core_food,1.1e-05,115.0,8.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"LOTUS SAUCE , (R)",17.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"WHITE CHOCOLATE SAUCE , (R)",20.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"CARAMEL SAUCE , (R)",485.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,NO TOPPINGS.,104.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRIES, (P)",37.0,1126999.96,False,core_food,0.000212,84.0,4.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE CHIPS, (P)",22.0,670108.08,False,core_food,0.000126,95.0,5.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"GRANOLA BERRIES, (P)",16.0,487351.33,False,core_food,9.2e-05,101.0,6.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"PEANUT BUTTER CUP , (P)",11.0,335054.04,False,core_food,6.3e-05,106.0,7.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO SAUCE . (P),60.0,1827567.5,False,core_food,0.000344,69.0,2.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"PASSION FRUITS SAUCE ,(P)",2.0,60918.92,False,core_food,1.1e-05,115.0,8.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"RASPBERRY JAM , (P)",2.0,60918.92,False,core_food,1.1e-05,115.0,8.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"CHERRY JAM, (P)",2.0,60918.92,False,core_food,1.1e-05,115.0,8.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,GUMMY BEARS . (R),32.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"MARSHMALLOWS , (R)",37.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,CRISPY CREPE . (R),20.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"SALTED PRETZELS , (R)",3.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,NUTELLA SAUCE . (R),982.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"DARK CHOCOLATE SAUCE , (R)",8.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,FRUIT LOOPS . (R),5.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,"WHIPPED CREAM  ,",65.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,SWITCH TO ICE CREAM,89.0,31823513.09,False,core_food,0.005991,30.0,1.0
+Main Street Coffee,FREE CONUT TOP,FREE CONUT TOP,PISTACHIO TOPPING,146.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SALTED CARAMEL SAUCE,(R)",2.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"STRAWBERRY,(R)",1010.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,BROWNIES . (R),375.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED OREO .(R),7.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,CRUSHED LOTUS .(R),87.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,SPRINKLES .(R),1.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"NUTELLA SAUCE,(R)",645.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"LOTUS SAUCE,(R)",23.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,WHITE CHOCOLATE SAUCE .(R),26.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"CARAMEL SAUCE, (R)",568.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,NO TOPPINGS,32.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"BLUEBERRIES , (P)",15.0,893918.91,False,core_food,0.000168,91.0,3.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRIES ,(P)",8.0,476756.75,False,core_food,9e-05,102.0,4.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE CHIPS ,(P)",4.0,238378.38,False,core_food,4.5e-05,108.0,5.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PEANUT BUTTER CUPS,(P)",3.0,178783.78,False,core_food,3.4e-05,110.0,6.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM,",4.0,238378.38,False,core_food,4.5e-05,108.0,5.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO SAUCE ,(P)",29.0,1728243.22,False,core_food,0.000325,74.0,2.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"RASPBERRY JAM,(P)",2.0,119189.19,False,core_food,2.2e-05,112.0,7.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"GUMMY BEARS ,(R)",3.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"MARSHMALLOWS,(R)",2.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"DARK CHOCOLATE SAUCE,(R)",5.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"FRUIT LOOPS,(R)",1.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"WHIPPED CREAM   ,",19.0,0.0,True,modifier,,,
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"SWITCH TO ICE CREAM,",60.0,14302702.51,False,core_food,0.002692,41.0,1.0
+Main Street Coffee,FREE CHIMNEY TOP,FREE CHIMNEY TOP,"PISTACHIO TOPPING,",114.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"NUTELLA SAUCE ,(R)",321.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,BLUEBERRIES .(P),5.0,152297.29,False,core_food,2.9e-05,111.0,2.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,RASPBERRIES .(P),3.0,91378.38,False,core_food,1.7e-05,113.0,3.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE CHIPS .(P),2.0,60918.92,False,core_food,1.1e-05,115.0,4.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"WHIPPED CREAM ,(P)",1.0,30459.46,False,core_food,6e-06,117.0,5.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"PISTACHIO SAUCE,(P)",2.0,60918.92,False,core_food,1.1e-05,115.0,4.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,CHERRY JAM .(P),0.0,0.0,False,core_food,0.0,118.0,6.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"GUMMY BEARS,(R)",3.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,MARSHMALLOWS .(R),3.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"CRISPY CREPE ,(R)",1.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"SALTED PRETZELS,(R)",1.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,STRAWBERRY .(R),283.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"BROWNIES,(R)",220.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"CRUSHED OREO ,(R)",4.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"CRUSHED LOTUS,(R)",40.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"SPRINKLES,(R)",4.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,LOTUS SAUCE .(R),3.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"WHITE CHOCOLATE SAUCE  ,(R)",2.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"CARAMEL SAUCE  ,(R)",134.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,DARK CHOCOLATE SAUCE .(R),1.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,"NO TOPPINGS ,",11.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,WHIPPED CREAM  .,30.0,0.0,True,modifier,,,
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,switch to ice cream.,24.0,8581621.51,False,core_food,0.001615,44.0,1.0
+Main Street Coffee,FREE MINI TOP,FREE MINI TOP,PISTACHIO TOPPING.,60.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,NUTELLA DIP.(R),39.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,LOTUS DIP.(R),3.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,WHITE CHOCOLATE DIP.(R),2.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,CARAMEL DIP.(R),4.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,SALTED CARAMEL DIP.(R),1.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,DARK CHOCOLATE DIP.(R),2.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,NO DIP,4.0,0.0,True,modifier,,,
+Main Street Coffee,free dip,free dip,PISTACHIO DIP.(P),1.0,119189.19,False,core_food,2.2e-05,112.0,1.0
+Main Street Coffee,coffee type,coffee type,DECAF,16.0,0.0,True,modifier,,,
+Main Street Coffee,coffee type,coffee type,REGULAR.,663.0,0.0,True,modifier,,,
+Main Street Coffee,DRINK TYPE,DRINK TYPE,HOT,514.0,0.0,True,other_beverage,,,
+Main Street Coffee,DRINK TYPE,DRINK TYPE,ICED,41.0,0.0,True,other_beverage,,,
+Main Street Coffee,MILK OPTIONS,MILK OPTIONS,FULL FAT MILK,355.0,0.0,True,modifier,,,
+Main Street Coffee,MILK OPTIONS,MILK OPTIONS,SKIMMED MILK.,39.0,0.0,True,modifier,,,
+Main Street Coffee,MILK OPTIONS,MILK OPTIONS,LACTOSE FREE MILK.,32.0,0.0,True,modifier,,,
+Main Street Coffee,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,TOASTED MARSHMALLOWS,18.0,2145405.38,False,core_food,0.000404,66.0,1.0
+Main Street Coffee,MARSHMALLOW OPTIONS,MARSHMALLOW OPTIONS,NO MARSHMALLLOWS,53.0,0.0,True,modifier,,,
+Main Street Coffee,CONUT''S FAVORITE,CONUT''S FAVORITE,HOT CHOCOLATE,71.0,33849729.28,False,core_food,0.006372,29.0,1.0
+Main Street Coffee,CONUT''S FAVORITE,CONUT''S FAVORITE,MATCHA LATTE,3.0,1787837.86,False,core_food,0.000337,72.0,3.0
+Main Street Coffee,CONUT''S FAVORITE,CONUT''S FAVORITE,AFFOGATO,6.0,3218108.07,False,core_food,0.000606,56.0,2.0
+Main Street Coffee,CONUT''S FAVORITE,CONUT''S FAVORITE,PISTACHIO LATTE,3.0,1787837.86,False,core_food,0.000337,72.0,3.0

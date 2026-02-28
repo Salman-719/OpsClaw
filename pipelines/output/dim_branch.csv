@@ -1,0 +1,5 @@
+canonical_branch_name,has_delivery,has_table,has_takeaway,has_monthly_sales,months_of_data,has_attendance_data
+Conut,True,True,True,True,5,False
+Conut - Tyre,True,False,True,True,5,True
+Conut Jnah,False,True,False,True,5,True
+Main Street Coffee,False,True,False,True,4,True

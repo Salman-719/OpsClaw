@@ -1,0 +1,4 @@
+branch,median_hours,mean_hours,valid_shifts,unique_employees,morning_pct,afternoon_pct,evening_pct,weekend_shift_pct,total_shifts,anomaly_rate
+Conut - Tyre,8.57,8.26,85,4,0.1529,0.8,0.0471,0.3176,100,0.15
+Conut Jnah,8.14,7.43,70,4,0.5429,0.4,0.0571,0.2857,81,0.1358
+Main Street Coffee,9.06,8.87,101,5,0.2772,0.6436,0.0792,0.2871,130,0.2231

@@ -1,0 +1,312 @@
+emp_id,name,branch,date,punch_in,punch_out,duration_hours,shift_type,is_anomalous,is_valid_shift,shift_start_hour,day_of_week,weekend_flag
+31,Person_0007,Conut - Tyre,2025-12-01,16:30:35,23:39:07,7.14,afternoon,False,True,16,Monday,False
+35,Person_0009,Conut - Tyre,2025-12-01,11:57:02,21:43:07,9.77,morning,False,True,11,Monday,False
+45,Person_0010,Conut - Tyre,2025-12-01,14:56:32,23:39:02,8.71,afternoon,False,True,14,Monday,False
+30,Person_0006,Conut - Tyre,2025-12-02,12:13:43,19:57:12,7.72,afternoon,False,True,12,Tuesday,False
+31,Person_0007,Conut - Tyre,2025-12-02,16:07:52,16:29:08,0.35,afternoon,True,False,16,Tuesday,False
+31,Person_0007,Conut - Tyre,2025-12-02,16:29:15,23:46:26,7.29,afternoon,False,True,16,Tuesday,False
+45,Person_0010,Conut - Tyre,2025-12-02,15:11:36,23:45:33,8.57,afternoon,False,True,15,Tuesday,False
+30,Person_0006,Conut - Tyre,2025-12-03,14:12:32,00:23:20,10.18,afternoon,False,True,14,Wednesday,False
+35,Person_0009,Conut - Tyre,2025-12-03,08:52:34,20:28:54,11.61,morning,False,True,8,Wednesday,False
+45,Person_0010,Conut - Tyre,2025-12-03,15:00:26,00:23:26,9.38,afternoon,False,True,15,Wednesday,False
+30,Person_0006,Conut - Tyre,2025-12-04,12:10:45,18:33:13,6.37,afternoon,False,True,12,Thursday,False
+31,Person_0007,Conut - Tyre,2025-12-04,14:49:06,23:43:08,8.9,afternoon,False,True,14,Thursday,False
+35,Person_0009,Conut - Tyre,2025-12-04,13:29:30,23:43:02,10.23,afternoon,False,True,13,Thursday,False
+30,Person_0006,Conut - Tyre,2025-12-05,11:51:32,19:58:06,8.11,morning,False,True,11,Friday,False
+31,Person_0007,Conut - Tyre,2025-12-05,16:08:50,23:37:28,7.48,afternoon,False,True,16,Friday,False
+35,Person_0009,Conut - Tyre,2025-12-05,15:27:46,23:37:21,8.16,afternoon,False,True,15,Friday,False
+45,Person_0010,Conut - Tyre,2025-12-05,15:27:59,23:37:35,8.16,afternoon,False,True,15,Friday,False
+30,Person_0006,Conut - Tyre,2025-12-06,14:15:33,23:30:16,9.25,afternoon,False,True,14,Saturday,True
+31,Person_0007,Conut - Tyre,2025-12-06,11:19:33,20:09:30,8.83,morning,False,True,11,Saturday,True
+35,Person_0009,Conut - Tyre,2025-12-06,15:33:39,23:30:26,7.95,afternoon,False,True,15,Saturday,True
+45,Person_0010,Conut - Tyre,2025-12-06,16:05:35,23:30:31,7.42,afternoon,False,True,16,Saturday,True
+30,Person_0006,Conut - Tyre,2025-12-07,14:33:09,23:52:12,9.32,afternoon,False,True,14,Sunday,True
+35,Person_0009,Conut - Tyre,2025-12-07,15:05:54,23:52:18,8.77,afternoon,False,True,15,Sunday,True
+45,Person_0010,Conut - Tyre,2025-12-07,15:06:05,23:52:29,8.77,afternoon,False,True,15,Sunday,True
+30,Person_0006,Conut - Tyre,2025-12-08,20:17:09,15:00:34,18.72,evening,True,False,20,Monday,False
+31,Person_0007,Conut - Tyre,2025-12-08,15:20:38,23:42:07,8.36,afternoon,False,True,15,Monday,False
+45,Person_0010,Conut - Tyre,2025-12-08,14:55:36,23:41:51,8.77,afternoon,False,True,14,Monday,False
+31,Person_0007,Conut - Tyre,2025-12-09,15:08:13,23:47:06,8.65,afternoon,False,True,15,Tuesday,False
+35,Person_0009,Conut - Tyre,2025-12-09,11:48:33,21:13:40,9.42,morning,False,True,11,Tuesday,False
+45,Person_0010,Conut - Tyre,2025-12-09,14:59:44,23:47:00,8.79,afternoon,False,True,14,Tuesday,False
+30,Person_0006,Conut - Tyre,2025-12-10,15:00:46,00:01:16,9.01,afternoon,False,True,15,Wednesday,False
+35,Person_0009,Conut - Tyre,2025-12-10,14:51:04,14:51:13,0.0,afternoon,True,False,14,Wednesday,False
+35,Person_0009,Conut - Tyre,2025-12-10,14:51:19,00:01:22,9.17,afternoon,False,True,14,Wednesday,False
+45,Person_0010,Conut - Tyre,2025-12-10,11:59:26,22:02:22,10.05,morning,False,True,11,Wednesday,False
+30,Person_0006,Conut - Tyre,2025-12-11,15:06:11,19:55:13,4.82,afternoon,False,True,15,Thursday,False
+35,Person_0009,Conut - Tyre,2025-12-11,14:59:56,23:45:03,8.75,afternoon,False,True,14,Thursday,False
+30,Person_0006,Conut - Tyre,2025-12-12,12:02:12,14:55:31,2.89,afternoon,False,True,12,Friday,False
+31,Person_0007,Conut - Tyre,2025-12-12,16:58:44,23:54:08,6.92,afternoon,False,True,16,Friday,False
+35,Person_0009,Conut - Tyre,2025-12-12,14:54:17,23:54:02,9.0,afternoon,False,True,14,Friday,False
+30,Person_0006,Conut - Tyre,2025-12-13,14:55:37,23:33:17,8.63,afternoon,False,True,14,Saturday,True
+31,Person_0007,Conut - Tyre,2025-12-13,12:41:02,19:31:54,6.85,afternoon,False,True,12,Saturday,True
+35,Person_0009,Conut - Tyre,2025-12-13,17:08:35,23:33:11,6.41,evening,False,True,17,Saturday,True
+45,Person_0010,Conut - Tyre,2025-12-13,23:33:24,23:33:31,0.0,evening,True,False,23,Saturday,True
+30,Person_0006,Conut - Tyre,2025-12-14,14:35:42,23:42:34,9.11,afternoon,False,True,14,Sunday,True
+31,Person_0007,Conut - Tyre,2025-12-14,12:03:23,13:14:32,1.19,afternoon,True,False,12,Sunday,True
+35,Person_0009,Conut - Tyre,2025-12-14,13:15:08,23:42:42,10.46,afternoon,False,True,13,Sunday,True
+45,Person_0010,Conut - Tyre,2025-12-14,14:57:36,23:42:24,8.75,afternoon,False,True,14,Sunday,True
+31,Person_0007,Conut - Tyre,2025-12-15,15:54:01,23:56:23,8.04,afternoon,False,True,15,Monday,False
+45,Person_0010,Conut - Tyre,2025-12-15,15:13:34,23:56:29,8.72,afternoon,False,True,15,Monday,False
+30,Person_0006,Conut - Tyre,2025-12-16,15:27:18,16:39:21,1.2,afternoon,True,False,15,Tuesday,False
+31,Person_0007,Conut - Tyre,2025-12-16,17:33:29,23:32:22,5.98,evening,False,True,17,Tuesday,False
+45,Person_0010,Conut - Tyre,2025-12-16,12:07:38,22:08:45,10.02,afternoon,False,True,12,Tuesday,False
+30,Person_0006,Conut - Tyre,2025-12-17,23:30:32,23:30:50,0.01,evening,True,False,23,Wednesday,False
+31,Person_0007,Conut - Tyre,2025-12-17,11:43:21,18:19:35,6.6,morning,False,True,11,Wednesday,False
+35,Person_0009,Conut - Tyre,2025-12-17,15:14:57,23:30:57,8.27,afternoon,False,True,15,Wednesday,False
+45,Person_0010,Conut - Tyre,2025-12-17,23:31:07,23:31:12,0.0,evening,True,False,23,Wednesday,False
+30,Person_0006,Conut - Tyre,2025-12-18,14:35:29,23:30:38,8.92,afternoon,False,True,14,Thursday,False
+31,Person_0007,Conut - Tyre,2025-12-18,10:31:14,14:35:14,4.07,morning,False,True,10,Thursday,False
+31,Person_0007,Conut - Tyre,2025-12-18,14:35:23,18:42:43,4.12,afternoon,False,True,14,Thursday,False
+35,Person_0009,Conut - Tyre,2025-12-18,15:00:37,23:30:32,8.5,afternoon,False,True,15,Thursday,False
+27,Person_0005,Conut - Tyre,2025-12-19,19:02:17,15:02:30,20.0,evening,True,False,19,Friday,False
+30,Person_0006,Conut - Tyre,2025-12-19,12:08:35,21:05:24,8.95,afternoon,False,True,12,Friday,False
+31,Person_0007,Conut - Tyre,2025-12-19,18:42:50,23:48:09,5.09,evening,False,True,18,Friday,False
+35,Person_0009,Conut - Tyre,2025-12-19,15:38:57,23:48:20,8.16,afternoon,False,True,15,Friday,False
+45,Person_0010,Conut - Tyre,2025-12-19,15:28:24,23:48:39,8.34,afternoon,False,True,15,Friday,False
+30,Person_0006,Conut - Tyre,2025-12-20,14:30:58,23:35:54,9.08,afternoon,False,True,14,Saturday,True
+31,Person_0007,Conut - Tyre,2025-12-20,18:40:42,18:40:49,0.0,evening,True,False,18,Saturday,True
+35,Person_0009,Conut - Tyre,2025-12-20,14:53:05,23:35:39,8.71,afternoon,False,True,14,Saturday,True
+45,Person_0010,Conut - Tyre,2025-12-20,15:27:09,23:35:45,8.14,afternoon,False,True,15,Saturday,True
+30,Person_0006,Conut - Tyre,2025-12-21,14:29:31,23:58:15,9.48,afternoon,False,True,14,Sunday,True
+31,Person_0007,Conut - Tyre,2025-12-21,11:58:21,16:44:00,4.76,morning,False,True,11,Sunday,True
+35,Person_0009,Conut - Tyre,2025-12-21,14:58:31,23:58:21,9.0,afternoon,False,True,14,Sunday,True
+45,Person_0010,Conut - Tyre,2025-12-21,15:02:41,23:58:07,8.92,afternoon,False,True,15,Sunday,True
+31,Person_0007,Conut - Tyre,2025-12-22,14:58:35,23:34:02,8.59,afternoon,False,True,14,Monday,False
+35,Person_0009,Conut - Tyre,2025-12-22,11:16:09,22:00:55,10.75,morning,False,True,11,Monday,False
+45,Person_0010,Conut - Tyre,2025-12-22,15:04:13,23:34:13,8.5,afternoon,False,True,15,Monday,False
+30,Person_0006,Conut - Tyre,2025-12-23,15:45:40,15:11:12,23.43,afternoon,True,False,15,Tuesday,False
+31,Person_0007,Conut - Tyre,2025-12-23,16:01:27,23:44:38,7.72,afternoon,False,True,16,Tuesday,False
+35,Person_0009,Conut - Tyre,2025-12-23,14:39:30,23:44:33,9.08,afternoon,False,True,14,Tuesday,False
+30,Person_0006,Conut - Tyre,2025-12-24,15:11:18,23:26:33,8.25,afternoon,False,True,15,Wednesday,False
+35,Person_0009,Conut - Tyre,2025-12-24,15:32:34,23:26:39,7.9,afternoon,False,True,15,Wednesday,False
+45,Person_0010,Conut - Tyre,2025-12-24,11:56:14,21:42:47,9.78,morning,False,True,11,Wednesday,False
+30,Person_0006,Conut - Tyre,2025-12-25,14:19:06,23:33:41,9.24,afternoon,False,True,14,Thursday,False
+31,Person_0007,Conut - Tyre,2025-12-25,11:37:40,16:38:43,5.02,morning,False,True,11,Thursday,False
+35,Person_0009,Conut - Tyre,2025-12-25,15:02:09,23:33:47,8.53,afternoon,False,True,15,Thursday,False
+45,Person_0010,Conut - Tyre,2025-12-25,15:02:21,15:03:27,0.02,afternoon,True,False,15,Thursday,False
+45,Person_0010,Conut - Tyre,2025-12-25,15:03:39,23:33:35,8.5,afternoon,False,True,15,Thursday,False
+30,Person_0006,Conut - Tyre,2025-12-26,15:23:04,15:17:59,23.92,afternoon,True,False,15,Friday,False
+31,Person_0007,Conut - Tyre,2025-12-26,16:38:54,17:05:28,0.44,afternoon,True,False,16,Friday,False
+31,Person_0007,Conut - Tyre,2025-12-26,17:05:34,23:27:26,6.36,evening,False,True,17,Friday,False
+45,Person_0010,Conut - Tyre,2025-12-26,12:02:48,22:19:00,10.27,afternoon,False,True,12,Friday,False
+30,Person_0006,Conut - Tyre,2025-12-27,15:18:04,23:24:29,8.11,afternoon,False,True,15,Saturday,True
+31,Person_0007,Conut - Tyre,2025-12-27,11:47:16,11:57:35,0.17,morning,True,False,11,Saturday,True
+35,Person_0009,Conut - Tyre,2025-12-27,14:25:00,23:24:34,8.99,afternoon,False,True,14,Saturday,True
+45,Person_0010,Conut - Tyre,2025-12-27,15:04:03,23:24:24,8.34,afternoon,False,True,15,Saturday,True
+30,Person_0006,Conut - Tyre,2025-12-28,15:09:55,23:27:56,8.3,afternoon,False,True,15,Sunday,True
+31,Person_0007,Conut - Tyre,2025-12-28,11:57:49,23:32:48,11.58,morning,False,True,11,Sunday,True
+35,Person_0009,Conut - Tyre,2025-12-28,15:16:09,23:28:02,8.2,afternoon,False,True,15,Sunday,True
+45,Person_0010,Conut - Tyre,2025-12-28,14:58:27,23:27:51,8.49,afternoon,False,True,14,Sunday,True
+35,Person_0009,Conut - Tyre,2025-12-29,16:40:37,23:36:46,6.94,afternoon,False,True,16,Monday,False
+6,Person_0002,Conut Jnah,2025-12-01,13:28:48,22:06:03,8.62,afternoon,False,True,13,Monday,False
+7,Person_0003,Conut Jnah,2025-12-01,08:44:56,16:49:35,8.08,morning,False,True,8,Monday,False
+7,Person_0003,Conut Jnah,2025-12-02,08:49:26,15:09:24,6.33,morning,False,True,8,Tuesday,False
+8,Person_0004,Conut Jnah,2025-12-02,13:00:02,22:00:10,9.0,afternoon,False,True,13,Tuesday,False
+6,Person_0002,Conut Jnah,2025-12-03,15:07:53,23:20:17,8.21,afternoon,False,True,15,Wednesday,False
+7,Person_0003,Conut Jnah,2025-12-03,09:01:04,15:35:30,6.57,morning,False,True,9,Wednesday,False
+8,Person_0004,Conut Jnah,2025-12-03,13:44:47,22:00:52,8.27,afternoon,False,True,13,Wednesday,False
+6,Person_0002,Conut Jnah,2025-12-04,08:40:08,16:39:15,7.99,morning,False,True,8,Thursday,False
+8,Person_0004,Conut Jnah,2025-12-04,13:00:11,22:00:31,9.01,afternoon,False,True,13,Thursday,False
+7,Person_0003,Conut Jnah,2025-12-05,09:10:53,15:26:41,6.26,morning,False,True,9,Friday,False
+8,Person_0004,Conut Jnah,2025-12-05,13:13:21,22:02:33,8.82,afternoon,False,True,13,Friday,False
+6,Person_0002,Conut Jnah,2025-12-06,21:30:05,14:58:24,17.47,evening,True,False,21,Saturday,True
+7,Person_0003,Conut Jnah,2025-12-06,09:03:55,15:47:23,6.72,morning,False,True,9,Saturday,True
+8,Person_0004,Conut Jnah,2025-12-06,13:19:38,22:04:01,8.74,afternoon,False,True,13,Saturday,True
+6,Person_0002,Conut Jnah,2025-12-07,23:56:59,23:57:04,0.0,evening,True,False,23,Sunday,True
+7,Person_0003,Conut Jnah,2025-12-07,09:10:23,16:10:07,7.0,morning,False,True,9,Sunday,True
+8,Person_0004,Conut Jnah,2025-12-07,09:30:42,18:57:40,9.45,morning,False,True,9,Sunday,True
+6,Person_0002,Conut Jnah,2025-12-08,09:12:51,08:55:53,23.72,morning,True,False,9,Monday,False
+7,Person_0003,Conut Jnah,2025-12-08,09:12:40,16:14:14,7.03,morning,False,True,9,Monday,False
+7,Person_0003,Conut Jnah,2025-12-09,09:03:17,14:07:56,5.08,morning,False,True,9,Tuesday,False
+8,Person_0004,Conut Jnah,2025-12-09,13:06:01,22:02:46,8.95,afternoon,False,True,13,Tuesday,False
+6,Person_0002,Conut Jnah,2025-12-10,08:56:00,18:01:59,9.1,morning,False,True,8,Wednesday,False
+8,Person_0004,Conut Jnah,2025-12-10,13:05:02,22:00:57,8.93,afternoon,False,True,13,Wednesday,False
+6,Person_0002,Conut Jnah,2025-12-11,09:29:09,18:06:23,8.62,morning,False,True,9,Thursday,False
+7,Person_0003,Conut Jnah,2025-12-11,09:36:30,14:44:24,5.13,morning,False,True,9,Thursday,False
+8,Person_0004,Conut Jnah,2025-12-11,12:57:19,18:06:07,5.15,afternoon,False,True,12,Thursday,False
+7,Person_0003,Conut Jnah,2025-12-12,09:33:03,13:31:21,3.97,morning,False,True,9,Friday,False
+8,Person_0004,Conut Jnah,2025-12-12,09:52:01,09:52:15,0.0,morning,True,False,9,Friday,False
+8,Person_0004,Conut Jnah,2025-12-12,10:07:18,19:00:48,8.89,morning,False,True,10,Friday,False
+6,Person_0002,Conut Jnah,2025-12-13,15:02:35,23:58:39,8.93,afternoon,False,True,15,Saturday,True
+7,Person_0003,Conut Jnah,2025-12-13,16:19:54,16:19:59,0.0,afternoon,True,False,16,Saturday,True
+8,Person_0004,Conut Jnah,2025-12-13,13:07:30,22:00:14,8.88,afternoon,False,True,13,Saturday,True
+7,Person_0003,Conut Jnah,2025-12-14,09:07:31,16:20:29,7.22,morning,False,True,9,Sunday,True
+8,Person_0004,Conut Jnah,2025-12-14,13:05:45,22:01:16,8.93,afternoon,False,True,13,Sunday,True
+34,Person_0008,Conut Jnah,2025-12-15,13:07:53,13:08:03,0.0,afternoon,True,False,13,Monday,False
+7,Person_0003,Conut Jnah,2025-12-15,09:26:57,16:02:00,6.58,morning,False,True,9,Monday,False
+8,Person_0004,Conut Jnah,2025-12-15,13:07:32,13:08:14,0.01,afternoon,True,False,13,Monday,False
+8,Person_0004,Conut Jnah,2025-12-15,13:08:19,21:57:29,8.82,afternoon,False,True,13,Monday,False
+6,Person_0002,Conut Jnah,2025-12-16,15:41:27,00:00:31,8.32,afternoon,False,True,15,Tuesday,False
+7,Person_0003,Conut Jnah,2025-12-16,09:12:28,14:04:22,4.86,morning,False,True,9,Tuesday,False
+8,Person_0004,Conut Jnah,2025-12-16,11:03:43,20:00:59,8.95,morning,False,True,11,Tuesday,False
+6,Person_0002,Conut Jnah,2025-12-17,16:52:10,00:00:09,7.13,afternoon,False,True,16,Wednesday,False
+7,Person_0003,Conut Jnah,2025-12-17,09:16:19,14:30:03,5.23,morning,False,True,9,Wednesday,False
+8,Person_0004,Conut Jnah,2025-12-17,12:57:00,21:59:32,9.04,afternoon,False,True,12,Wednesday,False
+6,Person_0002,Conut Jnah,2025-12-18,18:19:57,00:05:05,5.75,evening,False,True,18,Thursday,False
+7,Person_0003,Conut Jnah,2025-12-18,08:41:27,11:40:03,2.98,morning,False,True,8,Thursday,False
+54,Person_0016,Conut Jnah,2025-12-19,09:01:02,09:01:27,0.01,morning,True,False,9,Friday,False
+6,Person_0002,Conut Jnah,2025-12-19,18:35:22,23:58:33,5.39,evening,False,True,18,Friday,False
+7,Person_0003,Conut Jnah,2025-12-19,11:17:27,11:17:33,0.0,morning,True,False,11,Friday,False
+7,Person_0003,Conut Jnah,2025-12-19,14:32:20,14:35:58,0.06,afternoon,True,False,14,Friday,False
+6,Person_0002,Conut Jnah,2025-12-20,18:29:22,23:59:28,5.5,evening,False,True,18,Saturday,True
+7,Person_0003,Conut Jnah,2025-12-20,08:48:52,15:40:41,6.86,morning,False,True,8,Saturday,True
+8,Person_0004,Conut Jnah,2025-12-20,08:54:30,18:02:35,9.13,morning,False,True,8,Saturday,True
+7,Person_0003,Conut Jnah,2025-12-21,09:16:25,15:18:11,6.03,morning,False,True,9,Sunday,True
+8,Person_0004,Conut Jnah,2025-12-21,09:06:03,18:10:27,9.07,morning,False,True,9,Sunday,True
+7,Person_0003,Conut Jnah,2025-12-22,10:04:11,16:06:45,6.04,morning,False,True,10,Monday,False
+8,Person_0004,Conut Jnah,2025-12-22,13:01:54,22:01:12,8.99,afternoon,False,True,13,Monday,False
+54,Person_0016,Conut Jnah,2025-12-23,11:09:20,11:10:23,0.02,morning,True,False,11,Tuesday,False
+54,Person_0016,Conut Jnah,2025-12-23,11:10:28,18:32:05,7.36,morning,False,True,11,Tuesday,False
+6,Person_0002,Conut Jnah,2025-12-23,18:01:01,00:38:39,6.63,evening,False,True,18,Tuesday,False
+7,Person_0003,Conut Jnah,2025-12-23,09:03:13,15:43:54,6.68,morning,False,True,9,Tuesday,False
+8,Person_0004,Conut Jnah,2025-12-23,13:01:28,22:00:35,8.99,afternoon,False,True,13,Tuesday,False
+54,Person_0016,Conut Jnah,2025-12-24,08:57:18,18:00:09,9.05,morning,False,True,8,Wednesday,False
+6,Person_0002,Conut Jnah,2025-12-24,16:18:30,00:01:16,7.71,afternoon,False,True,16,Wednesday,False
+6,Person_0002,Conut Jnah,2025-12-25,14:43:02,23:20:22,8.62,afternoon,False,True,14,Thursday,False
+7,Person_0003,Conut Jnah,2025-12-25,09:15:54,14:57:05,5.69,morning,False,True,9,Thursday,False
+8,Person_0004,Conut Jnah,2025-12-25,13:09:10,22:01:20,8.87,afternoon,False,True,13,Thursday,False
+54,Person_0016,Conut Jnah,2025-12-26,09:07:09,13:16:38,4.16,morning,False,True,9,Friday,False
+6,Person_0002,Conut Jnah,2025-12-26,15:14:45,23:32:20,8.29,afternoon,False,True,15,Friday,False
+7,Person_0003,Conut Jnah,2025-12-26,09:29:02,15:01:29,5.54,morning,False,True,9,Friday,False
+8,Person_0004,Conut Jnah,2025-12-26,13:09:57,22:02:15,8.87,afternoon,False,True,13,Friday,False
+54,Person_0016,Conut Jnah,2025-12-27,13:16:44,22:04:50,8.8,afternoon,False,True,13,Saturday,True
+7,Person_0003,Conut Jnah,2025-12-27,09:18:19,15:29:36,6.19,morning,False,True,9,Saturday,True
+8,Person_0004,Conut Jnah,2025-12-27,08:50:37,18:06:34,9.27,morning,False,True,8,Saturday,True
+54,Person_0016,Conut Jnah,2025-12-28,12:57:10,22:05:27,9.14,afternoon,False,True,12,Sunday,True
+6,Person_0002,Conut Jnah,2025-12-28,10:09:31,13:21:12,3.19,morning,False,True,10,Sunday,True
+7,Person_0003,Conut Jnah,2025-12-28,09:23:29,15:19:00,5.93,morning,False,True,9,Sunday,True
+8,Person_0004,Conut Jnah,2025-12-28,13:13:28,22:05:36,8.87,afternoon,False,True,13,Sunday,True
+54,Person_0016,Conut Jnah,2025-12-29,09:02:44,18:01:11,8.97,morning,False,True,9,Monday,False
+7,Person_0003,Conut Jnah,2025-12-29,09:55:37,15:38:25,5.71,morning,False,True,9,Monday,False
+8,Person_0004,Conut Jnah,2025-12-29,13:13:30,22:04:50,8.86,afternoon,False,True,13,Monday,False
+1,Person_0001,Main Street Coffee,2025-12-01,07:39:35,19:37:56,11.97,morning,False,True,7,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-01,00:41:12,00:41:24,0.0,morning,True,False,0,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-01,14:49:36,00:30:06,9.67,afternoon,False,True,14,Monday,False
+51,Person_0014,Main Street Coffee,2025-12-01,15:09:04,22:51:09,7.7,afternoon,False,True,15,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-01,00:40:50,00:40:59,0.0,morning,True,False,0,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-01,14:49:43,00:29:58,9.67,afternoon,False,True,14,Monday,False
+1,Person_0001,Main Street Coffee,2025-12-02,15:14:59,23:51:33,8.61,afternoon,False,True,15,Tuesday,False
+49,Person_0012,Main Street Coffee,2025-12-02,15:14:38,23:51:39,8.62,afternoon,False,True,15,Tuesday,False
+50,Person_0013,Main Street Coffee,2025-12-02,08:32:56,15:54:10,7.35,morning,False,True,8,Tuesday,False
+51,Person_0014,Main Street Coffee,2025-12-02,14:53:50,22:04:36,7.18,afternoon,False,True,14,Tuesday,False
+52,Person_0015,Main Street Coffee,2025-12-02,15:14:44,23:51:46,8.62,afternoon,False,True,15,Tuesday,False
+1,Person_0001,Main Street Coffee,2025-12-03,15:12:21,00:17:12,9.08,afternoon,False,True,15,Wednesday,False
+49,Person_0012,Main Street Coffee,2025-12-03,15:18:04,15:18:17,0.0,afternoon,True,False,15,Wednesday,False
+50,Person_0013,Main Street Coffee,2025-12-03,09:22:40,15:59:10,6.61,morning,False,True,9,Wednesday,False
+52,Person_0015,Main Street Coffee,2025-12-03,15:17:55,00:17:37,8.99,afternoon,False,True,15,Wednesday,False
+49,Person_0012,Main Street Coffee,2025-12-04,00:17:20,00:17:27,0.0,morning,True,False,0,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-04,23:44:10,23:44:19,0.0,evening,True,False,23,Thursday,False
+50,Person_0013,Main Street Coffee,2025-12-04,06:48:38,08:00:19,1.19,morning,True,False,6,Thursday,False
+50,Person_0013,Main Street Coffee,2025-12-04,08:00:28,16:25:52,8.42,morning,False,True,8,Thursday,False
+52,Person_0015,Main Street Coffee,2025-12-04,14:12:59,00:00:35,9.79,afternoon,False,True,14,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-05,00:00:20,00:00:27,0.0,morning,True,False,0,Friday,False
+49,Person_0012,Main Street Coffee,2025-12-05,16:12:37,01:38:50,9.44,afternoon,False,True,16,Friday,False
+50,Person_0013,Main Street Coffee,2025-12-05,07:50:46,16:18:42,8.47,morning,False,True,7,Friday,False
+50,Person_0013,Main Street Coffee,2025-12-05,20:26:23,23:07:41,2.69,evening,False,True,20,Friday,False
+51,Person_0014,Main Street Coffee,2025-12-05,18:22:53,01:03:33,6.68,evening,False,True,18,Friday,False
+52,Person_0015,Main Street Coffee,2025-12-05,16:12:45,01:38:58,9.44,afternoon,False,True,16,Friday,False
+1,Person_0001,Main Street Coffee,2025-12-06,16:03:47,00:27:15,8.39,afternoon,False,True,16,Saturday,True
+49,Person_0012,Main Street Coffee,2025-12-06,15:10:39,00:56:36,9.77,afternoon,False,True,15,Saturday,True
+50,Person_0013,Main Street Coffee,2025-12-06,07:17:36,16:19:29,9.03,morning,False,True,7,Saturday,True
+51,Person_0014,Main Street Coffee,2025-12-06,16:02:20,00:27:09,8.41,afternoon,False,True,16,Saturday,True
+52,Person_0015,Main Street Coffee,2025-12-06,15:10:46,00:56:48,9.77,afternoon,False,True,15,Saturday,True
+1,Person_0001,Main Street Coffee,2025-12-07,13:15:46,23:43:34,10.46,afternoon,False,True,13,Sunday,True
+49,Person_0012,Main Street Coffee,2025-12-07,15:41:29,00:53:51,9.21,afternoon,False,True,15,Sunday,True
+50,Person_0013,Main Street Coffee,2025-12-07,07:35:12,16:13:14,8.63,morning,False,True,7,Sunday,True
+51,Person_0014,Main Street Coffee,2025-12-07,14:45:48,00:08:48,9.38,afternoon,False,True,14,Sunday,True
+52,Person_0015,Main Street Coffee,2025-12-07,15:41:35,00:53:59,9.21,afternoon,False,True,15,Sunday,True
+1,Person_0001,Main Street Coffee,2025-12-08,10:18:40,15:59:28,5.68,morning,False,True,10,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-08,15:10:07,00:57:05,9.78,afternoon,False,True,15,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-08,15:10:16,00:57:13,9.78,afternoon,False,True,15,Monday,False
+1,Person_0001,Main Street Coffee,2025-12-09,14:26:54,00:16:20,9.82,afternoon,False,True,14,Tuesday,False
+50,Person_0013,Main Street Coffee,2025-12-09,07:40:14,16:19:53,8.66,morning,False,True,7,Tuesday,False
+51,Person_0014,Main Street Coffee,2025-12-09,18:01:41,00:13:02,6.19,evening,False,True,18,Tuesday,False
+1,Person_0001,Main Street Coffee,2025-12-10,15:24:36,00:28:39,9.07,afternoon,False,True,15,Wednesday,False
+50,Person_0013,Main Street Coffee,2025-12-10,08:02:30,15:49:24,7.78,morning,False,True,8,Wednesday,False
+49,Person_0012,Main Street Coffee,2025-12-11,00:29:12,00:29:20,0.0,morning,True,False,0,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-11,15:23:32,00:16:17,8.88,afternoon,False,True,15,Thursday,False
+50,Person_0013,Main Street Coffee,2025-12-11,07:39:08,16:09:49,8.51,morning,False,True,7,Thursday,False
+51,Person_0014,Main Street Coffee,2025-12-11,14:45:56,00:11:39,9.43,afternoon,False,True,14,Thursday,False
+52,Person_0015,Main Street Coffee,2025-12-11,00:28:56,00:29:04,0.0,morning,True,False,0,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-12,15:06:28,01:04:29,9.97,afternoon,False,True,15,Friday,False
+50,Person_0013,Main Street Coffee,2025-12-12,08:15:43,15:59:36,7.73,morning,False,True,8,Friday,False
+51,Person_0014,Main Street Coffee,2025-12-12,17:56:44,01:04:23,7.13,evening,False,True,17,Friday,False
+52,Person_0015,Main Street Coffee,2025-12-12,15:06:36,01:04:36,9.97,afternoon,False,True,15,Friday,False
+49,Person_0012,Main Street Coffee,2025-12-13,15:49:08,02:08:02,10.32,afternoon,False,True,15,Saturday,True
+50,Person_0013,Main Street Coffee,2025-12-13,07:48:10,16:41:17,8.89,morning,False,True,7,Saturday,True
+51,Person_0014,Main Street Coffee,2025-12-13,15:41:41,01:27:42,9.77,afternoon,False,True,15,Saturday,True
+52,Person_0015,Main Street Coffee,2025-12-13,15:49:16,02:07:52,10.31,afternoon,False,True,15,Saturday,True
+49,Person_0012,Main Street Coffee,2025-12-14,13:08:57,00:48:53,11.67,afternoon,False,True,13,Sunday,True
+50,Person_0013,Main Street Coffee,2025-12-14,08:11:49,18:09:25,9.96,morning,False,True,8,Sunday,True
+51,Person_0014,Main Street Coffee,2025-12-14,12:44:36,00:09:52,11.42,afternoon,False,True,12,Sunday,True
+52,Person_0015,Main Street Coffee,2025-12-14,15:45:05,00:48:45,9.06,afternoon,False,True,15,Sunday,True
+49,Person_0012,Main Street Coffee,2025-12-15,15:31:24,20:00:04,4.48,afternoon,False,True,15,Monday,False
+50,Person_0013,Main Street Coffee,2025-12-15,08:49:54,11:02:30,2.21,morning,False,True,8,Monday,False
+51,Person_0014,Main Street Coffee,2025-12-15,17:32:36,00:26:49,6.9,evening,False,True,17,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-15,11:26:21,19:59:57,8.56,morning,False,True,11,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-16,13:45:04,01:23:09,11.63,afternoon,False,True,13,Tuesday,False
+50,Person_0013,Main Street Coffee,2025-12-16,07:41:16,18:09:27,10.47,morning,False,True,7,Tuesday,False
+51,Person_0014,Main Street Coffee,2025-12-16,18:16:34,01:22:58,7.11,evening,False,True,18,Tuesday,False
+1,Person_0001,Main Street Coffee,2025-12-17,15:02:51,00:24:15,9.36,afternoon,False,True,15,Wednesday,False
+48,Person_0011,Main Street Coffee,2025-12-17,01:23:36,00:05:46,22.7,morning,True,False,1,Wednesday,False
+50,Person_0013,Main Street Coffee,2025-12-17,08:50:22,08:50:53,0.01,morning,True,False,8,Wednesday,False
+50,Person_0013,Main Street Coffee,2025-12-17,08:51:01,15:58:33,7.13,morning,False,True,8,Wednesday,False
+52,Person_0015,Main Street Coffee,2025-12-17,15:11:32,00:24:22,9.21,afternoon,False,True,15,Wednesday,False
+1,Person_0001,Main Street Coffee,2025-12-18,15:17:14,03:14:06,11.95,afternoon,False,True,15,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-18,00:24:29,00:24:35,0.0,morning,True,False,0,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-18,15:49:32,15:49:37,0.0,afternoon,True,False,15,Thursday,False
+50,Person_0013,Main Street Coffee,2025-12-18,07:45:48,16:26:30,8.68,morning,False,True,7,Thursday,False
+51,Person_0014,Main Street Coffee,2025-12-18,15:48:54,15:49:47,0.01,afternoon,True,False,15,Thursday,False
+52,Person_0015,Main Street Coffee,2025-12-18,15:49:04,15:49:20,0.0,afternoon,True,False,15,Thursday,False
+52,Person_0015,Main Street Coffee,2025-12-18,15:49:25,03:14:17,11.41,afternoon,False,True,15,Thursday,False
+49,Person_0012,Main Street Coffee,2025-12-19,15:41:53,00:47:33,9.09,afternoon,False,True,15,Friday,False
+50,Person_0013,Main Street Coffee,2025-12-19,07:26:33,16:48:56,9.37,morning,False,True,7,Friday,False
+51,Person_0014,Main Street Coffee,2025-12-19,14:56:52,00:48:41,9.86,afternoon,False,True,14,Friday,False
+52,Person_0015,Main Street Coffee,2025-12-19,15:41:41,00:47:39,9.1,afternoon,False,True,15,Friday,False
+1,Person_0001,Main Street Coffee,2025-12-20,00:47:55,00:48:03,0.0,morning,True,False,0,Saturday,True
+1,Person_0001,Main Street Coffee,2025-12-20,16:02:14,01:30:30,9.47,afternoon,False,True,16,Saturday,True
+49,Person_0012,Main Street Coffee,2025-12-20,15:22:53,01:30:24,10.13,afternoon,False,True,15,Saturday,True
+50,Person_0013,Main Street Coffee,2025-12-20,07:47:08,07:45:20,23.97,morning,True,False,7,Saturday,True
+51,Person_0014,Main Street Coffee,2025-12-20,13:28:48,00:41:06,11.21,afternoon,False,True,13,Saturday,True
+52,Person_0015,Main Street Coffee,2025-12-20,15:23:01,01:30:15,10.12,afternoon,False,True,15,Saturday,True
+1,Person_0001,Main Street Coffee,2025-12-21,16:25:38,00:15:09,7.83,afternoon,False,True,16,Sunday,True
+50,Person_0013,Main Street Coffee,2025-12-21,07:45:30,16:49:54,9.07,morning,False,True,7,Sunday,True
+51,Person_0014,Main Street Coffee,2025-12-21,11:41:37,00:14:30,12.55,morning,False,True,11,Sunday,True
+1,Person_0001,Main Street Coffee,2025-12-22,14:39:10,00:21:15,9.7,afternoon,False,True,14,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-22,00:14:43,00:14:48,0.0,morning,True,False,0,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-22,15:25:52,00:22:19,8.94,afternoon,False,True,15,Monday,False
+51,Person_0014,Main Street Coffee,2025-12-22,19:15:55,00:22:30,5.11,evening,False,True,19,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-22,00:14:34,00:14:39,0.0,morning,True,False,0,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-22,07:57:54,15:57:31,7.99,morning,False,True,7,Monday,False
+1,Person_0001,Main Street Coffee,2025-12-23,15:37:36,00:22:47,8.75,afternoon,False,True,15,Tuesday,False
+49,Person_0012,Main Street Coffee,2025-12-23,15:57:19,00:22:58,8.43,afternoon,False,True,15,Tuesday,False
+50,Person_0013,Main Street Coffee,2025-12-23,08:03:31,17:17:28,9.23,morning,False,True,8,Tuesday,False
+52,Person_0015,Main Street Coffee,2025-12-23,15:57:45,00:22:53,8.42,afternoon,False,True,15,Tuesday,False
+1,Person_0001,Main Street Coffee,2025-12-24,12:38:31,21:29:08,8.84,afternoon,False,True,12,Wednesday,False
+50,Person_0013,Main Street Coffee,2025-12-24,08:14:09,08:47:50,0.56,morning,True,False,8,Wednesday,False
+51,Person_0014,Main Street Coffee,2025-12-24,11:27:41,21:28:59,10.02,morning,False,True,11,Wednesday,False
+1,Person_0001,Main Street Coffee,2025-12-25,15:24:48,00:25:13,9.01,afternoon,False,True,15,Thursday,False
+50,Person_0013,Main Street Coffee,2025-12-25,19:14:39,19:14:56,0.0,evening,True,False,19,Thursday,False
+51,Person_0014,Main Street Coffee,2025-12-25,21:01:28,23:55:14,2.9,evening,False,True,21,Thursday,False
+1,Person_0001,Main Street Coffee,2025-12-26,16:05:55,00:51:30,8.76,afternoon,False,True,16,Friday,False
+49,Person_0012,Main Street Coffee,2025-12-26,00:25:50,00:26:00,0.0,morning,True,False,0,Friday,False
+49,Person_0012,Main Street Coffee,2025-12-26,16:06:04,00:54:08,8.8,afternoon,False,True,16,Friday,False
+50,Person_0013,Main Street Coffee,2025-12-26,08:04:41,18:27:40,10.38,morning,False,True,8,Friday,False
+51,Person_0014,Main Street Coffee,2025-12-26,13:29:48,00:54:04,11.4,afternoon,False,True,13,Friday,False
+52,Person_0015,Main Street Coffee,2025-12-26,00:25:26,00:25:34,0.0,morning,True,False,0,Friday,False
+52,Person_0015,Main Street Coffee,2025-12-26,14:44:24,00:54:12,10.16,afternoon,False,True,14,Friday,False
+1,Person_0001,Main Street Coffee,2025-12-27,15:33:02,00:04:24,8.52,afternoon,False,True,15,Saturday,True
+50,Person_0013,Main Street Coffee,2025-12-27,08:27:24,00:04:32,15.62,morning,True,False,8,Saturday,True
+51,Person_0014,Main Street Coffee,2025-12-27,15:43:19,00:04:15,8.35,afternoon,False,True,15,Saturday,True
+1,Person_0001,Main Street Coffee,2025-12-28,22:43:17,22:43:24,0.0,evening,True,False,22,Sunday,True
+49,Person_0012,Main Street Coffee,2025-12-28,00:04:39,00:04:46,0.0,morning,True,False,0,Sunday,True
+50,Person_0013,Main Street Coffee,2025-12-28,07:55:14,16:43:19,8.8,morning,False,True,7,Sunday,True
+51,Person_0014,Main Street Coffee,2025-12-28,12:29:22,00:35:16,12.1,afternoon,False,True,12,Sunday,True
+52,Person_0015,Main Street Coffee,2025-12-28,00:04:55,00:05:00,0.0,morning,True,False,0,Sunday,True
+1,Person_0001,Main Street Coffee,2025-12-29,07:23:08,15:42:54,8.33,morning,False,True,7,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-29,00:41:12,00:41:20,0.0,morning,True,False,0,Monday,False
+49,Person_0012,Main Street Coffee,2025-12-29,16:45:17,00:33:37,7.81,afternoon,False,True,16,Monday,False
+51,Person_0014,Main Street Coffee,2025-12-29,15:00:06,00:30:54,9.51,afternoon,False,True,15,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-29,00:40:42,00:40:47,0.0,morning,True,False,0,Monday,False
+52,Person_0015,Main Street Coffee,2025-12-29,16:45:09,00:33:30,7.81,afternoon,False,True,16,Monday,False

@@ -1,0 +1,13 @@
+branch,source_a,source_b,metric,value_a,value_b,variance_pct,is_within_tolerance,note
+Conut,avg_sales_menu,items_by_group,total_revenue,3882259399.65,4391472696.01,0.1312,False,cross-check channel aggregate vs product aggregate
+Conut,monthly_sales,avg_sales_menu,total_revenue,3894865642.86,3882259399.65,0.0032,True,monthly_sales is revenue truth; avg_sales is channel aggregate
+Conut,monthly_sales,items_by_group,total_revenue,3894865642.86,4391472696.01,0.1275,False,"items_by_group is mix truth, not revenue truth"
+Conut - Tyre,avg_sales_menu,items_by_group,total_revenue,5118958154.23,5505805539.98,0.0756,True,cross-check channel aggregate vs product aggregate
+Conut - Tyre,monthly_sales,avg_sales_menu,total_revenue,5176885755.75,5118958154.23,0.0112,True,monthly_sales is revenue truth; avg_sales is channel aggregate
+Conut - Tyre,monthly_sales,items_by_group,total_revenue,5176885755.75,5505805539.98,0.0635,True,"items_by_group is mix truth, not revenue truth"
+Conut Jnah,avg_sales_menu,items_by_group,total_revenue,5669069616.74,5689346280.27,0.0036,True,cross-check channel aggregate vs product aggregate
+Conut Jnah,monthly_sales,avg_sales_menu,total_revenue,5689346280.23,5669069616.74,0.0036,True,monthly_sales is revenue truth; avg_sales is channel aggregate
+Conut Jnah,monthly_sales,items_by_group,total_revenue,5689346280.23,5689346280.27,0.0,True,"items_by_group is mix truth, not revenue truth"
+Main Street Coffee,avg_sales_menu,items_by_group,total_revenue,5271762462.21,5312181370.35,0.0077,True,cross-check channel aggregate vs product aggregate
+Main Street Coffee,monthly_sales,avg_sales_menu,total_revenue,5312181370.35,5271762462.21,0.0076,True,monthly_sales is revenue truth; avg_sales is channel aggregate
+Main Street Coffee,monthly_sales,items_by_group,total_revenue,5312181370.35,5312181370.35,0.0,True,"items_by_group is mix truth, not revenue truth"

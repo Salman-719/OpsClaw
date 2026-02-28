@@ -1,0 +1,20 @@
+branch,month,year,revenue,month_num,date,is_partial_history
+Conut,August,2025,554074782.88,8,2025-08-01,False
+Conut,September,2025,784385377.11,9,2025-09-01,False
+Conut,October,2025,1137352241.41,10,2025-10-01,False
+Conut,November,2025,1351165728.11,11,2025-11-01,False
+Conut,December,2025,67887513.35,12,2025-12-01,False
+Conut - Tyre,August,2025,477535459.07,8,2025-08-01,False
+Conut - Tyre,September,2025,444800810.51,9,2025-09-01,False
+Conut - Tyre,October,2025,2100816729.45,10,2025-10-01,False
+Conut - Tyre,November,2025,1129526810.42,11,2025-11-01,False
+Conut - Tyre,December,2025,1024205946.3,12,2025-12-01,False
+Conut Jnah,August,2025,363540268.13,8,2025-08-01,False
+Conut Jnah,September,2025,714037266.45,9,2025-09-01,False
+Conut Jnah,October,2025,785925564.58,10,2025-10-01,False
+Conut Jnah,November,2025,947652050.58,11,2025-11-01,False
+Conut Jnah,December,2025,2878191130.49,12,2025-12-01,False
+Main Street Coffee,September,2025,145842540.35,9,2025-09-01,True
+Main Street Coffee,October,2025,920588160.21,10,2025-10-01,True
+Main Street Coffee,November,2025,1171534376.2,11,2025-11-01,True
+Main Street Coffee,December,2025,3074216293.59,12,2025-12-01,True
