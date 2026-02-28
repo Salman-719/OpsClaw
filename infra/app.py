@@ -71,6 +71,7 @@ frontend_stack = FrontendStack(
     f"ConutFrontend-{env_name}",
     env_name=env_name,
     api_url=agent_stack.api_url,
+    alb=agent_stack.alb,
     env=aws_env,
 )
 frontend_stack.add_dependency(agent_stack)

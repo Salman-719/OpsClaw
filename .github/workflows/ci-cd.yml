@@ -93,8 +93,8 @@ jobs:
       - name: Install CDK CLI
         run: npm install -g aws-cdk
 
-      - name: Install frontend dependencies & build
-        run: cd frontend && npm ci && npm run build
+      - name: Install frontend dependencies
+        run: cd frontend && npm ci
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -105,9 +105,27 @@ jobs:
       - name: CDK Bootstrap
         run: cdk bootstrap --app "python3 infra/app.py"
 
-      - name: CDK Deploy
+      # Phase 1: Deploy Pipeline + Agent (need ALB URL before building frontend)
+      - name: Deploy Pipeline + Agent
         run: |
-          cdk deploy --all \
+          cdk deploy ConutPipeline-dev ConutAgent-dev \
+            --require-approval never \
+            --app "python3 infra/app.py"
+
+      # Phase 2: Rebuild frontend with the real ALB URL
+      - name: Build frontend with API URL
+        run: |
+          ALB_URL=$(aws cloudformation describe-stacks \
+            --stack-name ConutAgent-dev \
+            --query 'Stacks[0].Outputs[?OutputKey==`AgentALBUrl`].OutputValue' \
+            --output text)
+          echo "Agent API URL: $ALB_URL"
+          cd frontend && VITE_API_URL="$ALB_URL" npm run build
+
+      # Phase 3: Deploy Frontend (S3 + CloudFront)
+      - name: Deploy Frontend
+        run: |
+          cdk deploy ConutFrontend-dev \
             --require-approval never \
             --app "python3 infra/app.py" \
             --outputs-file cdk-outputs.json

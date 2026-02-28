@@ -240,7 +240,8 @@ class AgentStack(Stack):
             ),
         )
 
-        # ── Store ALB URL for the frontend stack ────────────────────────
+        # ── Store ALB URL + object for the frontend stack ────────────
+        self.alb = alb
         self.api_url = f"http://{alb.load_balancer_dns_name}"
 
         # ── Outputs ─────────────────────────────────────────────────────

@@ -20,6 +20,7 @@ from aws_cdk import (
     aws_s3_deployment as s3deploy,
     aws_cloudfront as cloudfront,
     aws_cloudfront_origins as origins,
+    aws_elasticloadbalancingv2 as elbv2,
 )
 from constructs import Construct
 
@@ -36,6 +37,7 @@ class FrontendStack(Stack):
         *,
         env_name: str = "dev",
         api_url: str = "",
+        alb: elbv2.IApplicationLoadBalancer | None = None,
         **kwargs,
     ) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -55,6 +57,21 @@ class FrontendStack(Stack):
             auto_delete_objects=(env_name != "prod"),
         )
 
+        # ── API origin (ALB) — CloudFront proxies /api/* to ALB ─────────
+        additional_behaviors = {}
+        if alb is not None:
+            api_origin = origins.HttpOrigin(
+                alb.load_balancer_dns_name,
+                protocol_policy=cloudfront.OriginProtocolPolicy.HTTP_ONLY,
+            )
+            additional_behaviors["/api/*"] = cloudfront.BehaviorOptions(
+                origin=api_origin,
+                viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+                allowed_methods=cloudfront.AllowedMethods.ALLOW_ALL,
+                cache_policy=cloudfront.CachePolicy.CACHING_DISABLED,
+                origin_request_policy=cloudfront.OriginRequestPolicy.ALL_VIEWER,
+            )
+
         # ── CloudFront Distribution ─────────────────────────────────────
         distribution = cloudfront.Distribution(
             self,
@@ -66,6 +83,7 @@ class FrontendStack(Stack):
                 viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                 cache_policy=cloudfront.CachePolicy.CACHING_OPTIMIZED,
             ),
+            additional_behaviors=additional_behaviors,
             default_root_object="index.html",
             error_responses=[
                 # SPA: serve index.html for all 404s (React Router)

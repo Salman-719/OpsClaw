@@ -37,17 +37,16 @@ else
     ok "Python venv created and deps installed"
 fi
 
-# ── Build Frontend ──────────────────────────────────────────
-info "Building frontend …"
+# ── Install Frontend deps ───────────────────────────────────
+info "Installing frontend dependencies …"
 pushd frontend >/dev/null
 npm install --silent
-npm run build
 popd >/dev/null
-ok "Frontend built → frontend/dist/"
+ok "Frontend deps installed"
 
 # ── CDK Bootstrap (idempotent) ──────────────────────────────
 info "Bootstrapping CDK …"
-"$CDK_CMD" bootstrap --app "python3 infra/app.py" 2>&1 | tail -1
+"$CDK_CMD" bootstrap --app "python3 infra/app.py"
 ok "CDK bootstrapped"
 
 # ── Deploy / Destroy ────────────────────────────────────────
@@ -56,9 +55,32 @@ if [[ "${1:-}" == "--destroy" ]]; then
     "$CDK_CMD" destroy --all --force --app "python3 infra/app.py"
     ok "All stacks destroyed"
 else
-    info "Deploying all stacks (Pipeline → Agent → Frontend) …"
-    "$CDK_CMD" deploy --all --require-approval never --app "python3 infra/app.py"
+    # Phase 1: Deploy Pipeline + Agent (need ALB URL before building frontend)
+    info "Phase 1 — Deploying Pipeline + Agent …"
+    "$CDK_CMD" deploy ConutPipeline-dev ConutAgent-dev \
+        --require-approval never --app "python3 infra/app.py"
+    ok "Pipeline + Agent deployed"
+
+    # Grab the ALB URL from the Agent stack outputs
+    ALB_URL=$(aws cloudformation describe-stacks \
+        --stack-name ConutAgent-dev --region "${AWS_REGION:-eu-west-1}" \
+        --query 'Stacks[0].Outputs[?OutputKey==`AgentALBUrl`].OutputValue' \
+        --output text)
+    info "Agent ALB URL: $ALB_URL"
+
+    # Phase 2: Rebuild frontend with the real API URL
+    info "Phase 2 — Building frontend with VITE_API_URL=$ALB_URL …"
+    pushd frontend >/dev/null
+    VITE_API_URL="$ALB_URL" npm run build
+    popd >/dev/null
+    ok "Frontend built → frontend/dist/"
+
+    # Phase 3: Deploy Frontend stack (S3 + CloudFront)
+    info "Phase 3 — Deploying Frontend …"
+    "$CDK_CMD" deploy ConutFrontend-dev \
+        --require-approval never --app "python3 infra/app.py"
     ok "All stacks deployed 🎉"
+
     echo ""
     echo "Stack outputs:"
     "$CDK_CMD" list --app "python3 infra/app.py" 2>/dev/null | while read -r stack; do
