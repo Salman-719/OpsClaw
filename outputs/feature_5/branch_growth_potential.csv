@@ -1,4 +1,0 @@
-branch,total_orders,beverage_orders,beverage_attachment_rate,best_branch_rate,beverage_gap_to_best,total_amount,bev_amount,bev_revenue_share,low_attachment_score,order_volume_score,avg_lift,assoc_lift_score,potential_score,potential_rank,top_bundle_rule
-Conut Jnah,98,15,0.1531,0.2857,0.1326,5689346280.269999,833188036.69,0.1464,1.0,1.0,68.6,1.0,1.0,1,hot chocolate combo → oreo milkshake (lift=98.00)
-Conut - Tyre,9,2,0.2222,0.2857,0.0635,5505805539.98,243368428.32,0.0442,0.4788838612368031,0.0,4.5,0.0,0.1676,2,conut the one → mocha frappe (lift=9.00)
-Main Street Coffee,14,4,0.2857,0.2857,0.0,5312181370.35,473534667.55,0.0891,0.0,0.056179775280898875,10.73334,0.0972439937597504,0.0488,3,hot chocolate → double chocolate milkshake (lift=14.00)

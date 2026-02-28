@@ -4,10 +4,10 @@ run.py – Feature 5 end-to-end pipeline entrypoint.
 Usage
 -----
 # Full pipeline:
-    python -m pipelines.feature_5.run --data_dir "pipelines/output"
+    python -m analytics.growth.run --data_dir "pipelines/output"
 
 # Override output dir:
-    python -m pipelines.feature_5.run --data_dir "pipelines/output" --out_dir "outputs/feature_5"
+    python -m analytics.growth.run --data_dir "pipelines/output" --out_dir "outputs/feature_5"
 
 # Smoke-test agent queries (requires outputs to exist):
     python -m pipelines.feature_5.run --smoke_test
@@ -32,6 +32,9 @@ from .kpis import compute_basket_kpis, compute_revenue_kpis, merge_kpis
 from .loader import load_all
 from .scoring import compute_growth_potential
 from .utils import get_logger, repo_root, resolve_output_dir
+
+_PACKAGE_DIR = Path(__file__).resolve().parent
+_DEFAULT_OUTPUT_DIR = _PACKAGE_DIR / "output"
 
 _log = get_logger("feature_5.run")
 
@@ -171,8 +174,7 @@ def run_pipeline(data_dir: str, out_dir: str = None) -> None:
     growth_df = compute_growth_potential(kpis_df, rules_df)
 
     # 5. Outputs
-    root = repo_root()
-    output_dir = resolve_output_dir(root, "outputs/feature_5") if out_dir is None else Path(out_dir)
+    output_dir = _DEFAULT_OUTPUT_DIR if out_dir is None else Path(out_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     _log.info("Writing outputs to %s", output_dir)
 
@@ -239,7 +241,7 @@ def run_smoke_tests() -> None:
 
 def _parse_args(argv=None):
     parser = argparse.ArgumentParser(
-        prog="python -m pipelines.feature_5.run",
+        prog="python -m analytics.growth.run",
         description="Feature 5 – Coffee & Milkshake Growth Strategy Pipeline",
     )
     parser.add_argument(

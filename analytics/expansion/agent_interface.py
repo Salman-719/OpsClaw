@@ -13,9 +13,9 @@ SUPPORTED QUERY TYPES:
   "risk_summary"              – Volatility / risk level per branch
 
 USAGE (programmatic):
-    from pipelines.feature_3.agent_interface import ClawbotExpansionInterface
+    from analytics.expansion.agent_interface import ClawbotExpansionInterface
 
-    agent = ClawbotExpansionInterface.from_outputs("outputs/feature_3")
+    agent = ClawbotExpansionInterface.from_outputs("analytics/expansion/output")
 
     result = agent.handle_query("expansion_recommendation")
     result = agent.handle_query("branch_ranking")

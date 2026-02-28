@@ -36,17 +36,17 @@ _CACHE: Dict[str, Any] = {}
 
 
 def _load_outputs() -> Dict[str, Any]:
-    """Load pre-computed CSVs from outputs/feature_5/."""
+    """Load pre-computed CSVs from analytics/growth/output/."""
     if _CACHE:
         return _CACHE
 
     import pandas as pd
 
-    out_dir = repo_root() / "outputs" / "feature_5"
+    out_dir = Path(__file__).resolve().parent / "output"
     if not out_dir.exists():
         raise FileNotFoundError(
-            f"outputs/feature_5/ not found at {out_dir}. "
-            "Run the pipeline first:  python -m pipelines.feature_5.run"
+            f"analytics/growth/output/ not found at {out_dir}. "
+            "Run the pipeline first:  python -m analytics.growth.run"
         )
 
     _CACHE["kpis"] = pd.read_csv(out_dir / "branch_beverage_kpis.csv")

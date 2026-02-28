@@ -31,9 +31,9 @@ def resolve_output_dir(base: str | Path, sub: str = "outputs/feature_5") -> Path
 
 
 def repo_root() -> Path:
-    """Walk up from this file to find the repo root (contains pipelines/)."""
+    """Walk up from this file to find the repo root (contains pipelines/ and analytics/)."""
     here = Path(__file__).resolve()
     for parent in here.parents:
-        if (parent / "pipelines").is_dir():
+        if (parent / "pipelines").is_dir() and (parent / "analytics").is_dir():
             return parent
-    return here.parents[2]  # fallback: 3 levels up from feature_5/
+    return here.parents[2]  # fallback: 3 levels up from analytics/growth/

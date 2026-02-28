@@ -18,6 +18,8 @@ pipelines/output/
 analytics/forecast/output/
 analytics/staffing/output/
 analytics/combo/data/
+analytics/expansion/output/
+analytics/growth/output/
 
 # CDK build artifacts
 cdk.out/
