@@ -1,0 +1,91 @@
+{
+  "recommended_region": "North Lebanon",
+  "candidate_locations": [
+    "Batroun region",
+    "Byblos",
+    "Tripoli"
+  ],
+  "best_branch_to_replicate": "batroun",
+  "feasibility_tier": "High",
+  "overall_feasibility": 0.6787,
+  "region_scores": {
+    "beirut": 0.4329,
+    "north": 0.6402,
+    "south": 0.5497
+  },
+  "growth_summary": {
+    "batroun": {
+      "growth_rate": 2.721614,
+      "is_growing": true,
+      "pct_change": 20.079
+    },
+    "bliss": {
+      "growth_rate": -0.260339,
+      "is_growing": false,
+      "pct_change": -0.8775
+    },
+    "jnah": {
+      "growth_rate": 2.312619,
+      "is_growing": true,
+      "pct_change": 6.9171
+    },
+    "tyre": {
+      "growth_rate": 0.858657,
+      "is_growing": true,
+      "pct_change": 1.1448
+    }
+  },
+  "reasoning": [
+    "North (Batroun) has the highest regional score (0.6402).",
+    "Sales in Batroun are INCREASING (growth rate: +2.7216). Positive growth trend strongly supports opening a new branch in North Lebanon — replicating the Batroun branch profile.",
+    "Best-scored branch overall: Jnah (score=0.6787, tier=High).",
+    "Strongest growth branch: Batroun (growth_rate=+2.7216)."
+  ],
+  "warning": null,
+  "raw_scores": [
+    {
+      "branch": "jnah",
+      "feasibility_score": 0.6787,
+      "score_tier": "High",
+      "w_growth": 0.8628432594060548,
+      "w_revenue": 0.6536410299281116,
+      "stability": 0.20955252776055056,
+      "w_avg_order": 0.5,
+      "w_delivery": 1.0,
+      "w_ops_eff": 1.0
+    },
+    {
+      "branch": "batroun",
+      "feasibility_score": 0.6402,
+      "score_tier": "Medium",
+      "w_growth": 1.0,
+      "w_revenue": 1.0,
+      "stability": 0.0,
+      "w_avg_order": 0.5,
+      "w_delivery": 0.15162557689786724,
+      "w_ops_eff": 0.0
+    },
+    {
+      "branch": "tyre",
+      "feasibility_score": 0.5497,
+      "score_tier": "Medium",
+      "w_growth": 0.37525595242116444,
+      "w_revenue": 0.46697686758332624,
+      "stability": 0.9900122534952029,
+      "w_avg_order": 1.0,
+      "w_delivery": 0.0,
+      "w_ops_eff": 0.438405487062123
+    },
+    {
+      "branch": "bliss",
+      "feasibility_score": 0.1871,
+      "score_tier": "Low",
+      "w_growth": 0.0,
+      "w_revenue": 0.0,
+      "stability": 1.0,
+      "w_avg_order": 0.0,
+      "w_delivery": 0.15162557689786724,
+      "w_ops_eff": 0.438405487062123
+    }
+  ]
+}
