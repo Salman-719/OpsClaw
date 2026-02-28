@@ -3,9 +3,9 @@ CDK Stack — Conut AI Operations Pipeline
 =========================================
 Defines all AWS resources:
   - S3 bucket  (raw input + processed + results)
-  - DynamoDB table  (forecast results for agent queries)
-  - Lambda functions  (ETL + Forecast, Docker-based)
-  - Step Functions state machine  (ETL → Forecast chain)
+  - DynamoDB tables  (forecast + combo results for agent queries)
+  - Lambda functions  (ETL + Forecast + Combo, Docker-based)
+  - Step Functions state machine  (ETL → Forecast & Combo in parallel)
   - S3 event trigger  (auto-kicks pipeline on CSV upload)
 """
 
@@ -62,7 +62,7 @@ class ConutPipelineStack(Stack):
             ],
         )
 
-        # ── DynamoDB Table ───────────────────────────────────────────────
+        # ── DynamoDB: Forecast Table ─────────────────────────────────────
         forecast_table = dynamodb.Table(
             self,
             "ForecastTable",
@@ -77,6 +77,21 @@ class ConutPipelineStack(Stack):
             removal_policy=RemovalPolicy.DESTROY if env_name != "prod" else RemovalPolicy.RETAIN,
         )
 
+        # ── DynamoDB: Combo Table ────────────────────────────────────────
+        combo_table = dynamodb.Table(
+            self,
+            "ComboTable",
+            table_name=f"{project}-combo-{env_name}",
+            partition_key=dynamodb.Attribute(
+                name="pk", type=dynamodb.AttributeType.STRING   # scope (e.g. "overall", "branch:Conut Jnah")
+            ),
+            sort_key=dynamodb.Attribute(
+                name="sk", type=dynamodb.AttributeType.STRING   # "item_a#item_b"
+            ),
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            removal_policy=RemovalPolicy.DESTROY if env_name != "prod" else RemovalPolicy.RETAIN,
+        )
+
         # ── Shared Lambda environment ────────────────────────────────────
         common_env = {
             "S3_BUCKET": data_bucket.bucket_name,
@@ -84,6 +99,7 @@ class ConutPipelineStack(Stack):
             "S3_PROCESSED_PREFIX": "processed/",
             "S3_RESULTS_PREFIX": "results/forecast/",
             "DYNAMODB_TABLE": forecast_table.table_name,
+            "DYNAMODB_COMBO_TABLE": combo_table.table_name,
         }
 
         # ── ETL Lambda (Docker image) ───────────────────────────────────
@@ -116,12 +132,29 @@ class ConutPipelineStack(Stack):
             environment=common_env,
         )
 
+        # ── Combo Lambda (Docker image) ─────────────────────────────────
+        combo_fn = _lambda.DockerImageFunction(
+            self,
+            "ComboFunction",
+            function_name=f"{project}-combo-{env_name}",
+            code=_lambda.DockerImageCode.from_image_asset(
+                directory=str(PROJECT_ROOT),
+                file="infra/Dockerfile",
+                target="combo",
+            ),
+            timeout=Duration.minutes(15),
+            memory_size=1024,
+            environment=common_env,
+        )
+
         # ── IAM: grant S3 + DynamoDB access ─────────────────────────────
         data_bucket.grant_read_write(etl_fn)
         data_bucket.grant_read_write(forecast_fn)
+        data_bucket.grant_read_write(combo_fn)
         forecast_table.grant_read_write_data(forecast_fn)
+        combo_table.grant_read_write_data(combo_fn)
 
-        # ── Step Functions: ETL → Forecast pipeline ──────────────────────
+        # ── Step Functions: ETL → (Forecast + Combo) in parallel ─────────
         etl_task = tasks.LambdaInvoke(
             self,
             "RunETL",
@@ -153,7 +186,31 @@ class ConutPipelineStack(Stack):
             output_path="$",
         )
 
-        pipeline_chain = etl_task.next(forecast_task)
+        combo_task = tasks.LambdaInvoke(
+            self,
+            "RunCombo",
+            lambda_function=combo_fn,
+            payload=sfn.TaskInput.from_object(
+                {
+                    "s3_bucket": data_bucket.bucket_name,
+                    "s3_processed_prefix": "processed/",
+                    "s3_results_prefix": "results/combo/",
+                    "dynamodb_table": combo_table.table_name,
+                }
+            ),
+            result_path="$.combo_result",
+            output_path="$",
+        )
+
+        # Forecast and Combo run in parallel after ETL
+        analytics_parallel = sfn.Parallel(
+            self, "RunAnalytics",
+            result_path="$.analytics_results",
+        )
+        analytics_parallel.branch(forecast_task)
+        analytics_parallel.branch(combo_task)
+
+        pipeline_chain = etl_task.next(analytics_parallel)
 
         state_machine = sfn.StateMachine(
             self,
@@ -173,6 +230,8 @@ class ConutPipelineStack(Stack):
         # ── Outputs ──────────────────────────────────────────────────────
         cdk.CfnOutput(self, "DataBucketName", value=data_bucket.bucket_name)
         cdk.CfnOutput(self, "ForecastTableName", value=forecast_table.table_name)
+        cdk.CfnOutput(self, "ComboTableName", value=combo_table.table_name)
         cdk.CfnOutput(self, "EtlFunctionArn", value=etl_fn.function_arn)
         cdk.CfnOutput(self, "ForecastFunctionArn", value=forecast_fn.function_arn)
+        cdk.CfnOutput(self, "ComboFunctionArn", value=combo_fn.function_arn)
         cdk.CfnOutput(self, "StateMachineArn", value=state_machine.state_machine_arn)

@@ -1,7 +1,7 @@
 # ── Stage 1: base image with Python + deps ──────────────────────────────
 FROM public.ecr.aws/lambda/python:3.13 AS base
 
-# Install dependencies (only pandas+numpy needed; no heavy ML libs)
+# Install dependencies
 COPY requirements.txt ${LAMBDA_TASK_ROOT}/
 RUN pip install --no-cache-dir -r ${LAMBDA_TASK_ROOT}/requirements.txt
 
@@ -18,3 +18,8 @@ CMD ["infra.handlers.etl_handler.handler"]
 # ── Stage 2b: Forecast handler image ────────────────────────────────────
 FROM base AS forecast
 CMD ["infra.handlers.forecast_handler.handler"]
+
+
+# ── Stage 2c: Combo handler image ───────────────────────────────────────
+FROM base AS combo
+CMD ["infra.handlers.combo_handler.handler"]

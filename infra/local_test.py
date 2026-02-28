@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Local test runner — exercises both handlers without AWS credentials.
+Local test runner — exercises all handlers without AWS credentials.
 
 Usage:
-    python infra/local_test.py            # run both
+    python infra/local_test.py            # run all
     python infra/local_test.py etl        # ETL only
     python infra/local_test.py forecast   # forecast only
+    python infra/local_test.py combo      # combo only
 """
 
 import json
@@ -41,6 +42,19 @@ def test_forecast():
     return result
 
 
+def test_combo():
+    print("=" * 60)
+    print("  LOCAL TEST — Combo Handler")
+    print("=" * 60)
+    from infra.handlers.combo_handler import run_local
+    result = run_local()
+    print(json.dumps(result, indent=2, default=str))
+    assert result["status"] == "success", f"Combo failed: {result}"
+    assert result["total_pairs"] > 0, f"Expected >0 pairs, got {result['total_pairs']}"
+    print(f"\n✓ Combo produced {result['total_baskets']} baskets, {result['total_pairs']} pairs.\n")
+    return result
+
+
 if __name__ == "__main__":
     target = sys.argv[1] if len(sys.argv) > 1 else "all"
 
@@ -49,5 +63,8 @@ if __name__ == "__main__":
 
     if target in ("all", "forecast"):
         test_forecast()
+
+    if target in ("all", "combo"):
+        test_combo()
 
     print("All local tests passed.")
