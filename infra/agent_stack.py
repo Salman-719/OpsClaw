@@ -94,7 +94,7 @@ class AgentStack(Stack):
             ],
         )
 
-        # DynamoDB read access to all 5 tables
+        # DynamoDB read + reset access to all 5 tables
         for table_suffix in ["forecast", "combo", "expansion", "staffing", "growth"]:
             table_arn = f"arn:aws:dynamodb:*:*:table/{project}-{table_suffix}-{env_name}"
             agent_role.add_to_policy(
@@ -104,6 +104,9 @@ class AgentStack(Stack):
                         "dynamodb:Query",
                         "dynamodb:Scan",
                         "dynamodb:BatchGetItem",
+                        "dynamodb:DeleteItem",
+                        "dynamodb:BatchWriteItem",
+                        "dynamodb:DescribeTable",
                     ],
                     resources=[table_arn, f"{table_arn}/index/*"],
                 )
@@ -129,6 +132,8 @@ class AgentStack(Stack):
                     "s3:PutObject",
                     "s3:GetObject",
                     "s3:ListBucket",
+                    "s3:DeleteObject",
+                    "s3:CopyObject",
                 ],
                 resources=[bucket_arn, f"{bucket_arn}/*"],
             )

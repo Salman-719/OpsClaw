@@ -1,14 +1,15 @@
 """
 Upload routes — presigned S3 upload URLs + pipeline trigger.
 
+POST /api/upload/prepare   → archive old S3 data + reset DynamoDB tables
 POST /api/upload/presign   → get a presigned PUT URL for S3
 POST /api/upload/trigger   → start the Step Functions pipeline
-GET  /api/upload/status    → check pipeline execution status
+POST /api/upload/status    → check pipeline execution status
 """
 
 from __future__ import annotations
 import json, logging
-from datetime import datetime
+from datetime import datetime, timezone
 
 import boto3
 from fastapi import APIRouter, HTTPException
@@ -24,6 +25,7 @@ router = APIRouter(prefix="/api/upload", tags=["upload"])
 # ---------------------------------------------------------------------------
 _s3_client = None
 _sfn_client = None
+_dynamo_resource = None
 
 
 def _s3():
@@ -40,9 +42,95 @@ def _sfn():
     return _sfn_client
 
 
+def _dynamo():
+    global _dynamo_resource
+    if _dynamo_resource is None:
+        _dynamo_resource = boto3.resource("dynamodb", region_name=config.AWS_REGION)
+    return _dynamo_resource
+
+
+# ---------------------------------------------------------------------------
+# Helpers — S3 archive
+# ---------------------------------------------------------------------------
+
+def _archive_prefix(bucket: str, src_prefix: str, archive_root: str) -> int:
+    """
+    Move all objects under *src_prefix* to *archive_root*/<src_prefix>.
+    Returns number of objects archived.
+    """
+    s3 = _s3()
+    paginator = s3.get_paginator("list_objects_v2")
+    count = 0
+
+    for page in paginator.paginate(Bucket=bucket, Prefix=src_prefix):
+        for obj in page.get("Contents", []):
+            src_key = obj["Key"]
+            dest_key = f"{archive_root}{src_key}"
+            log.info("  archive: %s → %s", src_key, dest_key)
+            s3.copy_object(
+                Bucket=bucket,
+                CopySource={"Bucket": bucket, "Key": src_key},
+                Key=dest_key,
+            )
+            s3.delete_object(Bucket=bucket, Key=src_key)
+            count += 1
+
+    return count
+
+
+# ---------------------------------------------------------------------------
+# Helpers — DynamoDB reset
+# ---------------------------------------------------------------------------
+
+ALL_TABLES = [
+    config.FORECAST_TABLE,
+    config.COMBO_TABLE,
+    config.EXPANSION_TABLE,
+    config.STAFFING_TABLE,
+    config.GROWTH_TABLE,
+]
+
+
+def _clear_table(table_name: str) -> int:
+    """Scan-and-delete all items from a DynamoDB table. Returns deleted count."""
+    table = _dynamo().Table(table_name)
+    # Get the key schema so we know which attributes to use for delete
+    key_attrs = [k["AttributeName"] for k in table.key_schema]
+
+    deleted = 0
+    scan_kwargs: dict = {"ProjectionExpression": ", ".join(key_attrs)}
+
+    while True:
+        resp = table.scan(**scan_kwargs)
+        items = resp.get("Items", [])
+        if not items:
+            break
+
+        with table.batch_writer() as batch:
+            for item in items:
+                key = {k: item[k] for k in key_attrs}
+                batch.delete_item(Key=key)
+                deleted += 1
+
+        # Continue scanning if there are more items
+        if "LastEvaluatedKey" in resp:
+            scan_kwargs["ExclusiveStartKey"] = resp["LastEvaluatedKey"]
+        else:
+            break
+
+    log.info("  cleared %d items from %s", deleted, table_name)
+    return deleted
+
+
 # ---------------------------------------------------------------------------
 # Schemas
 # ---------------------------------------------------------------------------
+
+class PrepareResponse(BaseModel):
+    archived_files: int
+    cleared_tables: dict[str, int]
+    archive_path: str
+
 
 class PresignRequest(BaseModel):
     filename: str = Field(..., min_length=1, description="CSV filename to upload")
@@ -79,6 +167,48 @@ class PipelineStatus(BaseModel):
 # ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
+
+@router.post("/prepare", response_model=PrepareResponse)
+async def prepare_for_upload():
+    """
+    Prepare the system for new data ingestion:
+      1. Archive all existing files under input/, processed/, results/
+         to archive/<timestamp>/
+      2. Clear all 5 DynamoDB tables so fresh analytics can be written
+    Call this BEFORE uploading new CSV files.
+    """
+    if config.LOCAL_MODE:
+        raise HTTPException(400, "Prepare not available in LOCAL_MODE")
+
+    bucket = config.S3_DATA_BUCKET
+    if not bucket:
+        raise HTTPException(500, "S3_DATA_BUCKET not configured")
+
+    try:
+        ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        archive_root = f"archive/{ts}/"
+
+        # 1. Archive S3 prefixes
+        total_archived = 0
+        for prefix in ("input/", "processed/", "results/"):
+            count = _archive_prefix(bucket, prefix, archive_root)
+            total_archived += count
+            log.info("Archived %d objects from %s", count, prefix)
+
+        # 2. Clear DynamoDB tables
+        cleared: dict[str, int] = {}
+        for table_name in ALL_TABLES:
+            if table_name:
+                cleared[table_name] = _clear_table(table_name)
+
+        return PrepareResponse(
+            archived_files=total_archived,
+            cleared_tables=cleared,
+            archive_path=f"s3://{bucket}/{archive_root}",
+        )
+    except Exception as exc:
+        log.exception("Prepare failed")
+        raise HTTPException(500, str(exc))
 
 @router.post("/presign", response_model=PresignResponse)
 async def presign_upload(req: PresignRequest):

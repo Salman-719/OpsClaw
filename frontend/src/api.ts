@@ -39,6 +39,12 @@ export interface HealthStatus {
   model: string;
 }
 
+export interface PrepareResponse {
+  archived_files: number;
+  cleared_tables: Record<string, number>;
+  archive_path: string;
+}
+
 export interface PresignResponse {
   upload_url: string;
   s3_key: string;
@@ -89,6 +95,12 @@ export const api = {
     fetchJSON<DashboardSection>(branch ? `/api/dashboard/growth/${encodeURIComponent(branch)}` : '/api/dashboard/growth'),
 
   // Upload + Pipeline
+  prepareForUpload: () =>
+    fetchJSON<PrepareResponse>('/api/upload/prepare', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }),
+
   presignUpload: (filename: string) =>
     fetchJSON<PresignResponse>('/api/upload/presign', {
       method: 'POST',

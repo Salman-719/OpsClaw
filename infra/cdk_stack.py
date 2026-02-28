@@ -21,7 +21,6 @@ from aws_cdk import (
     aws_dynamodb as dynamodb,
     aws_lambda as _lambda,
     aws_s3 as s3,
-    aws_s3_notifications as s3n,
     aws_stepfunctions as sfn,
     aws_stepfunctions_tasks as tasks,
 )
@@ -366,12 +365,10 @@ class ConutPipelineStack(Stack):
             timeout=Duration.minutes(30),
         )
 
-        # ── S3 event: auto-trigger ETL on CSV upload ─────────────────────
-        data_bucket.add_event_notification(
-            s3.EventType.OBJECT_CREATED,
-            s3n.LambdaDestination(etl_fn),
-            s3.NotificationKeyFilter(prefix="input/", suffix=".csv"),
-        )
+        # NOTE: S3 auto-trigger removed — the agent upload flow calls
+        # Step Functions manually after archiving old data + resetting
+        # DynamoDB.  This avoids duplicate ETL runs when multiple CSVs
+        # are uploaded in quick succession via presigned URLs.
 
         # ── Expose for cross-stack references ─────────────────────────
         self.data_bucket = data_bucket

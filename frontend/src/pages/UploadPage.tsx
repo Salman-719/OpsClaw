@@ -2,19 +2,23 @@ import { useState, useRef, useCallback } from 'react'
 import Card from '../components/Card'
 import { api } from '../api'
 
-type Stage = 'idle' | 'uploading' | 'uploaded' | 'running' | 'succeeded' | 'failed'
+type Stage = 'idle' | 'preparing' | 'prepared' | 'uploading' | 'uploaded' | 'running' | 'succeeded' | 'failed'
 
 const STAGE_LABELS: Record<Stage, string> = {
-  idle: 'Ready to upload',
+  idle: 'Select CSV files to begin',
+  preparing: 'Archiving old data & resetting tables...',
+  prepared: 'Old data archived — ready to upload new files',
   uploading: 'Uploading to S3...',
-  uploaded: 'File uploaded — ready to run pipeline',
+  uploaded: 'Files uploaded — ready to run pipeline',
   running: 'Pipeline running...',
   succeeded: 'Pipeline completed successfully!',
-  failed: 'Pipeline failed',
+  failed: 'An error occurred',
 }
 
 const STAGE_COLORS: Record<Stage, string> = {
   idle: 'text-gray-500',
+  preparing: 'text-amber-600',
+  prepared: 'text-brand-600',
   uploading: 'text-blue-600',
   uploaded: 'text-brand-600',
   running: 'text-blue-600',
@@ -29,6 +33,7 @@ export default function UploadPage() {
   const [uploadedKeys, setUploadedKeys] = useState<string[]>([])
   const [executionArn, setExecutionArn] = useState('')
   const [pipelineStatus, setPipelineStatus] = useState('')
+  const [archiveInfo, setArchiveInfo] = useState<{ archived: number; cleared: Record<string, number>; path: string } | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -45,6 +50,7 @@ export default function UploadPage() {
     setUploadedKeys([])
     setExecutionArn('')
     setPipelineStatus('')
+    setArchiveInfo(null)
   }, [])
 
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -52,18 +58,30 @@ export default function UploadPage() {
     handleFiles(e.dataTransfer.files)
   }, [handleFiles])
 
-  const uploadAll = async () => {
+  // Step 1: Archive old data + reset DynamoDB
+  const prepareAndUpload = async () => {
     setError('')
-    setStage('uploading')
-    const keys: string[] = []
+    setStage('preparing')
 
     try {
+      // Archive old S3 data and clear DynamoDB tables
+      const prep = await api.prepareForUpload()
+      setArchiveInfo({
+        archived: prep.archived_files,
+        cleared: prep.cleared_tables,
+        path: prep.archive_path,
+      })
+      setStage('prepared')
+
+      // Immediately proceed to upload
+      setStage('uploading')
+      const keys: string[] = []
+
       for (const file of files) {
-        // Get presigned URL
         const presign = await api.presignUpload(file.name)
-        // Upload to S3
         await api.uploadFileToS3(presign.upload_url, file)
         keys.push(presign.s3_key)
+        setUploadedKeys(prev => [...prev, presign.s3_key])
       }
       setUploadedKeys(keys)
       setStage('uploaded')
@@ -73,6 +91,7 @@ export default function UploadPage() {
     }
   }
 
+  // Step 2: Trigger pipeline
   const triggerPipeline = async () => {
     setError('')
     setStage('running')
@@ -111,18 +130,21 @@ export default function UploadPage() {
     setUploadedKeys([])
     setExecutionArn('')
     setPipelineStatus('')
+    setArchiveInfo(null)
   }
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Data Upload</h1>
-        <p className="text-sm text-gray-500 mt-1">Upload CSV files to S3 and trigger the analytics pipeline</p>
+        <p className="text-sm text-gray-500 mt-1">
+          Upload new CSV files. Old data is archived automatically before ingestion.
+        </p>
       </div>
 
       {/* Status bar */}
       <div className={`text-sm font-medium ${STAGE_COLORS[stage]} flex items-center gap-2`}>
-        {(stage === 'uploading' || stage === 'running') && (
+        {(stage === 'preparing' || stage === 'uploading' || stage === 'running') && (
           <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
@@ -185,10 +207,10 @@ export default function UploadPage() {
       <div className="flex gap-3">
         {stage === 'idle' && files.length > 0 && (
           <button
-            onClick={uploadAll}
+            onClick={prepareAndUpload}
             className="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-medium text-sm transition-colors"
           >
-            Upload {files.length} file{files.length > 1 ? 's' : ''} to S3
+            🔄 Archive Old Data & Upload {files.length} file{files.length > 1 ? 's' : ''}
           </button>
         )}
 
@@ -211,6 +233,34 @@ export default function UploadPage() {
         )}
       </div>
 
+      {/* Archive info */}
+      {archiveInfo && (
+        <Card title="Archive Summary">
+          <div className="space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-500">Files archived:</span>
+              <span className="font-medium text-gray-800">{archiveInfo.archived}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-500">Archive location:</span>
+              <span className="font-mono text-xs text-gray-600">{archiveInfo.path}</span>
+            </div>
+            <div>
+              <span className="text-gray-500">DynamoDB tables cleared:</span>
+              <div className="mt-1 space-y-1">
+                {Object.entries(archiveInfo.cleared).map(([table, count]) => (
+                  <div key={table} className="flex items-center gap-2 text-xs ml-4">
+                    <span className="font-mono text-gray-600">{table}</span>
+                    <span className="text-gray-400">—</span>
+                    <span className="text-amber-600 font-medium">{count} items deleted</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Card>
+      )}
+
       {/* Pipeline details */}
       {executionArn && (
         <Card title="Pipeline Execution">
@@ -231,6 +281,10 @@ export default function UploadPage() {
       {/* Pipeline flow diagram */}
       <Card title="Pipeline Flow">
         <div className="flex items-center gap-2 text-xs text-gray-500 flex-wrap">
+          <span className="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-lg font-medium">Archive Old Data</span>
+          <span>→</span>
+          <span className="bg-red-100 text-red-700 px-3 py-1.5 rounded-lg font-medium">Reset DynamoDB</span>
+          <span>→</span>
           <span className="bg-brand-100 text-brand-700 px-3 py-1.5 rounded-lg font-medium">CSV Upload</span>
           <span>→</span>
           <span className="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg font-medium">S3 Bucket</span>
