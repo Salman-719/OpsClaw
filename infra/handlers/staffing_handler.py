@@ -48,10 +48,11 @@ def _download_processed(bucket: str, prefix: str, local_dir: Path) -> list[Path]
     s3 = _s3_client()
     paginator = s3.get_paginator("list_objects_v2")
     needed = {
-        "time_and_attendance_logs.csv",
-        "customer_orders_delivery.csv",
-        "average_sales_by_menu.csv",
-        "monthly_sales_by_branch.csv",
+        "attendance.csv",
+        "customer_orders.csv",
+        "avg_sales_menu.csv",
+        "monthly_sales.csv",
+        "dim_branch.csv",
     }
     downloaded: list[Path] = []
 

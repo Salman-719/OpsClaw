@@ -11,6 +11,19 @@ import {
 
 const BRANCHES = ['', 'batroun', 'bliss', 'jnah', 'tyre']
 
+interface ExpansionRecommendation {
+  explanation?: string
+  recommended_region?: string
+  best_branch_to_replicate?: string
+  feasibility_tier?: string
+  overall_feasibility?: number
+  candidate_locations?: string
+  region_scores?: string
+  growth_summary?: string
+  pk?: string
+  sk?: string
+}
+
 export default function ExpansionPage() {
   const [branch, setBranch] = useState('')
   const { data, loading, error } = useFetch<DashboardSection>(
@@ -21,7 +34,7 @@ export default function ExpansionPage() {
 
   // All-branches view
   const ranking = Array.isArray(payload?.ranking) ? payload!.ranking as Record<string, unknown>[] : []
-  const recommendation = payload?.recommendation as Record<string, unknown> | null
+  const recommendation = (payload?.recommendation as ExpansionRecommendation) ?? null
 
   // Single branch view
   const kpis = payload?.kpis as Record<string, unknown> | null
@@ -75,8 +88,42 @@ export default function ExpansionPage() {
 
           {recommendation && (
             <Card title="Expansion Recommendation">
-              <div className="prose prose-sm max-w-none">
-                <p className="text-gray-700">{String(recommendation.summary ?? recommendation.recommendation ?? JSON.stringify(recommendation))}</p>
+              <div className="space-y-3">
+                {recommendation.explanation && (
+                  <p className="text-gray-700">{String(recommendation.explanation)}</p>
+                )}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {recommendation.recommended_region && (
+                    <div className="p-3 bg-blue-50 rounded-lg">
+                      <div className="text-xs text-blue-600">Recommended Region</div>
+                      <div className="font-bold text-blue-900 mt-1">{String(recommendation.recommended_region)}</div>
+                    </div>
+                  )}
+                  {recommendation.best_branch_to_replicate && (
+                    <div className="p-3 bg-green-50 rounded-lg">
+                      <div className="text-xs text-green-600">Best Branch to Replicate</div>
+                      <div className="font-bold text-green-900 mt-1">{String(recommendation.best_branch_to_replicate)}</div>
+                    </div>
+                  )}
+                  {recommendation.feasibility_tier && (
+                    <div className="p-3 bg-amber-50 rounded-lg">
+                      <div className="text-xs text-amber-600">Feasibility Tier</div>
+                      <div className="font-bold text-amber-900 mt-1">{String(recommendation.feasibility_tier)}</div>
+                    </div>
+                  )}
+                  {recommendation.overall_feasibility != null && (
+                    <div className="p-3 bg-purple-50 rounded-lg">
+                      <div className="text-xs text-purple-600">Overall Score</div>
+                      <div className="font-bold text-purple-900 mt-1">{Number(recommendation.overall_feasibility).toFixed(4)}</div>
+                    </div>
+                  )}
+                  {recommendation.candidate_locations && (
+                    <div className="p-3 bg-gray-50 rounded-lg col-span-2">
+                      <div className="text-xs text-gray-500">Candidate Locations</div>
+                      <div className="font-bold text-gray-900 mt-1">{String(recommendation.candidate_locations)}</div>
+                    </div>
+                  )}
+                </div>
               </div>
             </Card>
           )}

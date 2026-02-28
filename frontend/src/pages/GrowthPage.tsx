@@ -11,6 +11,25 @@ import {
 
 const BRANCHES = ['', 'Conut - Tyre', 'Conut Jnah', 'Main Street Coffee']
 
+interface BranchAction {
+  branch: string
+  potential_score: number
+  current_attachment_rate: number
+  beverage_gap_to_best: number
+  recommended_bundle: string
+  action: string
+}
+
+interface GrowthRecommendation {
+  strategy?: string
+  objective?: string
+  explanation?: string
+  key_findings?: string | string[]
+  branch_actions?: string | BranchAction[]
+  pk?: string
+  sk?: string
+}
+
 export default function GrowthPage() {
   const [branch, setBranch] = useState('')
   const { data, loading, error } = useFetch<DashboardSection>(
@@ -21,7 +40,7 @@ export default function GrowthPage() {
 
   // All branches
   const ranking = Array.isArray(payload?.ranking) ? payload!.ranking as Record<string, unknown>[] : []
-  const recommendation = payload?.recommendation as Record<string, unknown> | null
+  const recommendation = (payload?.recommendation as GrowthRecommendation) ?? null
 
   // Single branch
   const kpis = payload?.kpis as Record<string, unknown> | null
@@ -76,8 +95,55 @@ export default function GrowthPage() {
 
           {recommendation && (
             <Card title="Growth Strategy Recommendation">
-              <div className="prose prose-sm max-w-none text-gray-700">
-                <p>{String(recommendation.summary ?? recommendation.recommendation ?? JSON.stringify(recommendation))}</p>
+              <div className="space-y-3">
+                {recommendation.strategy && (
+                  <p className="font-semibold text-gray-900">{String(recommendation.strategy)}</p>
+                )}
+                {recommendation.objective && (
+                  <p className="text-sm text-gray-600">{String(recommendation.objective)}</p>
+                )}
+                {recommendation.explanation && (
+                  <p className="text-gray-700">{String(recommendation.explanation)}</p>
+                )}
+                {recommendation.key_findings && (() => {
+                  const findings = typeof recommendation.key_findings === 'string'
+                    ? (() => { try { return JSON.parse(recommendation.key_findings as string) } catch { return [recommendation.key_findings] } })()
+                    : Array.isArray(recommendation.key_findings) ? recommendation.key_findings : [];
+                  return findings.length > 0 ? (
+                    <div>
+                      <p className="text-xs font-medium text-gray-500 uppercase mb-1">Key Findings</p>
+                      <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        {findings.map((f: string, i: number) => <li key={i}>{f}</li>)}
+                      </ul>
+                    </div>
+                  ) : null;
+                })()}
+                {recommendation.branch_actions && (() => {
+                  const actions = typeof recommendation.branch_actions === 'string'
+                    ? (() => { try { return JSON.parse(recommendation.branch_actions as string) } catch { return [] } })()
+                    : Array.isArray(recommendation.branch_actions) ? recommendation.branch_actions : [];
+                  return actions.length > 0 ? (
+                    <div>
+                      <p className="text-xs font-medium text-gray-500 uppercase mb-1">Branch Actions</p>
+                      <div className="space-y-2">
+                        {actions.map((a: BranchAction, i: number) => (
+                          <div key={i} className="p-3 bg-green-50 rounded-lg">
+                            <div className="flex justify-between items-start">
+                              <span className="font-medium text-green-900">{String(a.branch ?? '')}</span>
+                              {a.potential_score != null && (
+                                <span className="text-xs bg-green-200 text-green-800 px-2 py-0.5 rounded-full">Score: {Number(a.potential_score).toFixed(2)}</span>
+                              )}
+                            </div>
+                            <p className="text-sm text-green-800 mt-1">{String(a.action ?? '')}</p>
+                            {a.recommended_bundle && (
+                              <p className="text-xs text-green-600 mt-1">Bundle: {String(a.recommended_bundle)}</p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null;
+                })()}
               </div>
             </Card>
           )}
