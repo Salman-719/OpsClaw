@@ -1,0 +1,4 @@
+average sales: for 2025 average # costumers, and sales, take away and dine in.
+monthly sales: for months, and branch total, no dine in take away separation,
+
+the totals slightly differ between both of the above.
