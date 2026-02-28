@@ -12,6 +12,7 @@ import json, logging
 from datetime import datetime, timezone
 
 import boto3
+from botocore.config import Config as BotoConfig
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
@@ -31,7 +32,12 @@ _dynamo_resource = None
 def _s3():
     global _s3_client
     if _s3_client is None:
-        _s3_client = boto3.client("s3", region_name=config.AWS_REGION)
+        _s3_client = boto3.client(
+            "s3",
+            region_name=config.AWS_REGION,
+            endpoint_url=f"https://s3.{config.AWS_REGION}.amazonaws.com",
+            config=BotoConfig(signature_version="s3v4"),
+        )
     return _s3_client
 
 
