@@ -1,0 +1,35 @@
+branch,antecedents,consequents,support,confidence,lift
+Conut - Tyre,conut the one,mocha frappe,0.11111,1.0,9.0
+Conut - Tyre,strawberry.,mocha frappe,0.11111,0.5,4.5
+Conut - Tyre,classic chimney,mocha frappe,0.11111,0.3333,3.0
+Conut - Tyre,delivery charge,mocha frappe,0.11111,0.1667,1.5
+Conut Jnah,hot chocolate combo,oreo milkshake,0.0102,1.0,98.0
+Conut Jnah,cherry jam dip.(p),strawberry milkshake,0.0102,1.0,98.0
+Conut Jnah,nutella spread chimney,double chocolate milkshake,0.0102,0.5,49.0
+Conut Jnah,caramel machiato,double chocolate milkshake,0.0102,0.5,49.0
+Conut Jnah,tiramisu chimney,oreo milkshake,0.0102,0.5,49.0
+Conut Jnah,"pistachio sauce ,(p)",fruit loops milkshake,0.0102,0.5,49.0
+Conut Jnah,brownies.,double chocolate milkshake,0.0102,0.5,49.0
+Conut Jnah,blueberries.,double chocolate milkshake,0.0102,0.3333,32.6667
+Conut Jnah,mini boston cheesecake,strawberry milkshake,0.0102,0.3333,32.6667
+Conut Jnah,conut bites,strawberry milkshake,0.0102,0.25,24.5
+Main Street Coffee,hot chocolate,double chocolate milkshake,0.07143,1.0,14.0
+Main Street Coffee,hot chocolate,vanilla milkshake,0.07143,1.0,14.0
+Main Street Coffee,nutella sauce.,caffe americano,0.07143,1.0,14.0
+Main Street Coffee,conut the original,single espresso,0.07143,1.0,7.0
+Main Street Coffee,water,double espresso,0.07143,0.3333,4.6667
+Main Street Coffee,conut the one,caffe americano,0.07143,0.3333,4.6667
+Main Street Coffee,water,caffe americano,0.07143,0.3333,4.6667
+Main Street Coffee,ice cream bowl,double espresso,0.07143,0.3333,4.6667
+Main Street Coffee,conut berry mix,single espresso,0.07143,0.5,3.5
+Main Street Coffee,mini the original,single espresso,0.07143,0.5,3.5
+ALL,hot chocolate combo,oreo milkshake,0.00826,1.0,121.0
+ALL,hot chocolate,vanilla milkshake,0.00826,1.0,121.0
+ALL,cherry jam dip.(p),strawberry milkshake,0.00826,1.0,121.0
+ALL,tiramisu chimney,oreo milkshake,0.00826,0.5,60.5
+ALL,hot chocolate,double chocolate milkshake,0.00826,1.0,60.5
+ALL,"pistachio sauce ,(p)",fruit loops milkshake,0.00826,0.5,60.5
+ALL,mini boston cheesecake,strawberry milkshake,0.00826,0.3333,40.3333
+ALL,brownies.,double chocolate milkshake,0.00826,0.5,30.25
+ALL,nutella spread chimney,double chocolate milkshake,0.00826,0.5,30.25
+ALL,caramel machiato,double chocolate milkshake,0.00826,0.5,30.25
