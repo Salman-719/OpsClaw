@@ -27,3 +27,7 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+
+# CDK
+cdk.out/
+.cdk.staging/
