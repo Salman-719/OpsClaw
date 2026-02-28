@@ -24,6 +24,10 @@ analytics/growth/output/
 # CDK build artifacts
 cdk.out/
 
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
 # OS
 .DS_Store
 Thumbs.db
