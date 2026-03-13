@@ -128,7 +128,7 @@ curl -X POST https://<FrontendURL>/api/chat \
 | AWS_REGION             | eu-west-1                             | AWS region               |
 | ENV_NAME               | dev                                   | Environment suffix       |
 | LOCAL_MODE             | false                                 | Use local CSVs (testing) |
-| BEDROCK_MODEL_ID       | anthropic.claude-haiku-4-5-20251001-v1:0 | Bedrock model         |
+| BEDROCK_MODEL_ID       | eu.anthropic.claude-haiku-4-5-20251001-v1:0 | Bedrock model      |
 | BEDROCK_MAX_TOKENS     | 4096                                  | Max response tokens      |
 | BEDROCK_TEMPERATURE    | 0.1                                   | LLM temperature          |
 | PORT                   | 8000                                  | API port                 |

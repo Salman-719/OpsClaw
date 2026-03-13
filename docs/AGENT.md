@@ -82,7 +82,7 @@ User Message
 | Env Variable | Default | Description |
 |-------------|---------|-------------|
 | `AWS_REGION` | `eu-west-1` | AWS region for all services |
-| `BEDROCK_MODEL_ID` | `anthropic.claude-haiku-4-5-20251001-v1:0` | Claude model to use |
+| `BEDROCK_MODEL_ID` | `eu.anthropic.claude-haiku-4-5-20251001-v1:0` | Claude model to use |
 | `BEDROCK_MAX_TOKENS` | `4096` | Max response tokens |
 | `BEDROCK_TEMPERATURE` | `0.1` | Low temperature for factual accuracy |
 | `LOCAL_MODE` | `true` | If true, reads from local CSVs |
@@ -217,7 +217,7 @@ Read-only GET endpoints for the frontend:
 GET /api/health
 ```
 
-Returns `{"status": "ok", "local_mode": false, "model": "anthropic.claude-haiku-4-5-20251001-v1:0"}`.
+Returns `{"status": "ok", "local_mode": false, "model": "eu.anthropic.claude-haiku-4-5-20251001-v1:0"}`.
 
 ---
 

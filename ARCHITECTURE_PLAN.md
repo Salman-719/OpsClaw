@@ -74,7 +74,7 @@ The container receives:
 - `ENV_NAME`
 - `S3_DATA_BUCKET`
 - `STATE_MACHINE_ARN`
-- `BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0`
+- `BEDROCK_MODEL_ID=eu.anthropic.claude-haiku-4-5-20251001-v1:0`
 - `ORIGIN_VERIFY_HEADER_NAME`
 - `ORIGIN_VERIFY_HEADER_VALUE`
 
