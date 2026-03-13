@@ -35,7 +35,7 @@ app = FastAPI(
     version="1.0.0",
     description=(
         "AI-powered Chief of Operations agent for the Conut bakery chain. "
-        "Provides a chatbot API backed by AWS Bedrock (Claude) and "
+        "Provides a chatbot API backed by AWS Bedrock (Claude Haiku 4.5) and "
         "dashboard data endpoints for the frontend."
     ),
 )

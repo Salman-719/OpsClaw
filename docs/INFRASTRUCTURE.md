@@ -160,7 +160,7 @@ The instance bootstraps itself:
    - `LOCAL_MODE=false`
    - `S3_DATA_BUCKET=conut-ops-data-dev`
    - `STATE_MACHINE_ARN=<from pipeline stack>`
-   - `BEDROCK_MODEL_ID=eu.amazon.nova-pro-v1:0`
+   - `BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0`
    - `ORIGIN_VERIFY_HEADER_*` for CloudFront-to-origin protection
 
 ### Exports

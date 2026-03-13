@@ -2,7 +2,7 @@
 
 > **Conut AI Engineering Hackathon (AUB)** — An end-to-end cloud-native AI agent that acts as a Chief of Operations for the Conut bakery-café chain in Lebanon.
 >
-> **Live demo:** <https://d3gi59n7jefbjs.cloudfront.net/>
+> **Live demo:** <https://d26zmavsj04ya3.cloudfront.net/>
 
 ---
 
@@ -58,7 +58,7 @@ OpsClaw takes a **full-pipeline** approach — from raw data ingestion to AI-pow
    - *Expansion Feasibility* — multi-KPI scoring normalised to 0–1 with weighted composite
    - *Shift Staffing* — hourly demand vs. supply gap detection per branch/day
    - *Growth Strategy* — beverage attachment rates, growth potential scores, and data-driven bundle rules
-3. **AI Agent** — AWS Bedrock (Claude) with 7 tool definitions. The agent calls DynamoDB-backed query functions to answer questions with real data, not hallucinations.
+3. **AI Agent** — AWS Bedrock (Claude Haiku 4.5) with 7 tool definitions. The agent calls DynamoDB-backed query functions to answer questions with real data, not hallucinations.
 4. **React Dashboard** — 7 pages (overview + one per feature + upload) with charts, KPI cards, and a persistent chat panel.
 5. **Live Upload** — Users can upload new CSV data through the UI, which triggers the full pipeline via Step Functions, re-populates DynamoDB, and surfaces fresh insights immediately.
 
@@ -91,7 +91,7 @@ OpsClaw takes a **full-pipeline** approach — from raw data ingestion to AI-pow
 │               (HTTPS + SPA routing + /api/* proxy)              │
 ├───────────────────┬─────────────────────────────────────────────┤
 │   S3 (frontend)   │      Public EC2 Origin (Agent)              │
-│   React Dashboard │     FastAPI + Bedrock Claude                │
+│   React Dashboard │   FastAPI + Bedrock Claude Haiku 4.5        │
 └───────────────────┴──────────────┬──────────────────────────────┘
                                    │
                     ┌──────────────┴──────────────┐
@@ -155,7 +155,7 @@ cd frontend && npm install && npm run dev  # http://localhost:5173
 
 ```bash
 # Prerequisites: AWS CLI configured, CDK installed, Docker running
-./deploy.sh
+./deploy.sh --profile standard --env dev
 # Deploys 3 CDK stacks → prints CloudFront URL
 ```
 
@@ -188,8 +188,8 @@ See the [Local Development Setup](#local-development-setup) and [Deployment](#de
 
 - **ETL Pipeline:** 6 parsers handle 9 messy report-style CSVs → 15 clean normalised tables, 100% automated
 - **Analytics:** 5 features run in parallel via Step Functions (< 2 min end-to-end)
-- **Agent:** Claude answers business questions using 7 tools backed by DynamoDB — zero hallucination on data queries
-- **Test Suite:** 29 tests across ETL, agent API, and CDK infrastructure
+- **Agent:** Claude Haiku 4.5 answers business questions using 7 tools backed by DynamoDB
+- **Test Suite:** Pytest coverage spans ETL, agent API, and CDK infrastructure
 - **CI/CD:** GitHub Actions with OIDC → fully automated deploy on push to `main`
 
 ---
@@ -204,7 +204,7 @@ OpsClaw/
 │   ├── Dockerfile           # Agent Docker image
 │   ├── requirements.txt     # Agent Python dependencies
 │   ├── core/
-│   │   ├── __init__.py      # System prompt for Claude
+│   │   ├── __init__.py      # System prompt for the Bedrock model
 │   │   └── agent.py         # Bedrock Converse API + tool-calling loop
 │   ├── dynamo/              # DynamoDB query layer (5 modules)
 │   │   ├── __init__.py      # Shared helpers + local CSV fallback
@@ -385,7 +385,7 @@ The deploying user/role needs:
 - **CloudFront** — create distributions, invalidations
 - **IAM** — create roles and policies
 - **Step Functions** — create state machines
-- **Bedrock** — invoke models (Claude)
+- **Bedrock** — invoke models
 - **SSM** — manage EC2 instances
 
 > **Tip:** For hackathon/dev, `AdministratorAccess` policy works. For production, use least-privilege.
@@ -397,7 +397,7 @@ The deploying user/role needs:
 ### One-Command Deploy
 
 ```bash
-./deploy.sh
+./deploy.sh --profile standard --env dev
 ```
 
 This runs a **4-phase deployment**:
@@ -409,11 +409,22 @@ This runs a **4-phase deployment**:
 
 After deployment, the script prints all stack outputs including the **CloudFront URL**.
 
+Supported profiles:
+
+- `standard` — 2 public subnets / 2 AZs, `t3.micro`, 30 GB root disk
+- `budget` — 1 public subnet / 1 AZ, `t3.micro`, 20 GB root disk
+
+Notes:
+
+- both profiles are public-only
+- both remove NAT and ALB
+- CloudFront proxies `/api/*` directly to the EC2 origin
+
 ### Get the Frontend URL
 
 ```bash
-./get_url.sh
-# Output: https://d3gi59n7jefbjs.cloudfront.net
+ENV_NAME=dev ./get_url.sh
+# Output: https://d26zmavsj04ya3.cloudfront.net
 ```
 
 ### Deploy Individual Stacks
@@ -423,20 +434,28 @@ After deployment, the script prints all stack outputs including the **CloudFront
 source .venv/bin/activate
 
 # Deploy only the pipeline
-cdk deploy ConutPipeline-dev --require-approval never --app "python3 infra/app.py"
+cdk deploy ConutPipeline-dev --require-approval never \
+  --app "bash infra/run_cdk_app.sh" \
+  --context env=dev \
+  --context deployment_profile=standard
 
 # Deploy only the agent
-cdk deploy ConutAgent-dev --require-approval never --app "python3 infra/app.py"
+cdk deploy ConutAgent-dev --require-approval never \
+  --app "bash infra/run_cdk_app.sh" \
+  --context env=dev \
+  --context deployment_profile=standard
 
 # Deploy only the frontend
-cd frontend && npm run build && cd ..
-cdk deploy ConutFrontend-dev --require-approval never --app "python3 infra/app.py"
+cdk deploy ConutFrontend-dev --require-approval never \
+  --app "bash infra/run_cdk_app.sh" \
+  --context env=dev \
+  --context deployment_profile=standard
 ```
 
 ### Tear Down
 
 ```bash
-./deploy.sh --destroy
+./deploy.sh --destroy --env dev
 ```
 
 ---

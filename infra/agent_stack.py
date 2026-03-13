@@ -187,7 +187,7 @@ class AgentStack(Stack):
             f'  -e LOCAL_MODE=false \\',
             f'  -e S3_DATA_BUCKET={bucket_name} \\',
             f'  -e STATE_MACHINE_ARN={sfn_arn_str} \\',
-            f'  -e BEDROCK_MODEL_ID=eu.amazon.nova-pro-v1:0 \\',
+            f'  -e BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0 \\',
             f'  -e ORIGIN_VERIFY_HEADER_NAME={origin_header_name} \\',
             f'  -e ORIGIN_VERIFY_HEADER_VALUE={origin_header_value} \\',
             "  opsclaw-agent",

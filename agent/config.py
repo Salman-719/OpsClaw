@@ -25,7 +25,7 @@ S3_DATA_BUCKET = os.getenv("S3_DATA_BUCKET", f"{PROJECT}-data-{ENV_NAME}")
 S3_INPUT_PREFIX = os.getenv("S3_INPUT_PREFIX", "input/")
 STATE_MACHINE_ARN = os.getenv("STATE_MACHINE_ARN", "")
 # ── Bedrock ──────────────────────────────────────────────────────────────
-BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "eu.amazon.nova-pro-v1:0")
+BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "anthropic.claude-haiku-4-5-20251001-v1:0")
 BEDROCK_MAX_TOKENS = int(os.getenv("BEDROCK_MAX_TOKENS", "4096"))
 BEDROCK_TEMPERATURE = float(os.getenv("BEDROCK_TEMPERATURE", "0.1"))
 

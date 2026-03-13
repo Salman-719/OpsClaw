@@ -20,7 +20,7 @@
          │   DynamoDB    │    HTTP /api/*        │
          │   read        │    ◄─────────────────┘
          │               │
-    CSV upload      Bedrock Claude
+    CSV upload      Bedrock Claude Haiku 4.5
     triggers         tool-calling
     pipeline
 ```
@@ -32,7 +32,7 @@
 3. **Python 3.13+** with venv
 4. **Node.js 18+** (for CDK and frontend build)
 5. **Docker** running locally (CDK builds Lambda images)
-6. **AWS Bedrock** — Claude model access enabled in your region
+6. **AWS Bedrock** — Claude Haiku 4.5 model access enabled in your region
 
 ## Quick Deploy (One Command)
 
@@ -128,7 +128,7 @@ curl -X POST https://<FrontendURL>/api/chat \
 | AWS_REGION             | eu-west-1                             | AWS region               |
 | ENV_NAME               | dev                                   | Environment suffix       |
 | LOCAL_MODE             | false                                 | Use local CSVs (testing) |
-| BEDROCK_MODEL_ID       | eu.amazon.nova-pro-v1:0               | Bedrock model            |
+| BEDROCK_MODEL_ID       | anthropic.claude-haiku-4-5-20251001-v1:0 | Bedrock model         |
 | BEDROCK_MAX_TOKENS     | 4096                                  | Max response tokens      |
 | BEDROCK_TEMPERATURE    | 0.1                                   | LLM temperature          |
 | PORT                   | 8000                                  | API port                 |

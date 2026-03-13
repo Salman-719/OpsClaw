@@ -1,6 +1,6 @@
 # AI Agent Service
 
-> FastAPI service that provides an AI-powered operations agent backed by AWS Bedrock (Claude) with tool-calling capabilities and DynamoDB data access.
+> FastAPI service that provides an AI-powered operations agent backed by AWS Bedrock (Claude Haiku 4.5) with tool-calling capabilities and DynamoDB data access.
 
 ---
 
@@ -9,7 +9,7 @@
 The agent service (`agent/`) is a **FastAPI** application that:
 
 1. Receives natural-language questions via REST API
-2. Routes them to **AWS Bedrock** (Claude Sonnet) with a system prompt and tool definitions
+2. Routes them to **AWS Bedrock** (Claude Haiku 4.5) with a system prompt and tool definitions
 3. Executes **tool calls** against DynamoDB to fetch real data
 4. Returns grounded, data-backed answers with source tracing
 5. Also serves **dashboard endpoints** for the React frontend
@@ -56,7 +56,7 @@ User Message
      ▼
 ┌──────────────────┐
 │  Bedrock Converse│ ← System prompt + tool specs
-│  (Claude Sonnet) │
+│ (Claude Haiku 4.5) │
 └────────┬─────────┘
          │
     ┌────┴────┐
@@ -82,7 +82,7 @@ User Message
 | Env Variable | Default | Description |
 |-------------|---------|-------------|
 | `AWS_REGION` | `eu-west-1` | AWS region for all services |
-| `BEDROCK_MODEL_ID` | `anthropic.claude-sonnet-4-20250514` | Claude model to use |
+| `BEDROCK_MODEL_ID` | `anthropic.claude-haiku-4-5-20251001-v1:0` | Claude model to use |
 | `BEDROCK_MAX_TOKENS` | `4096` | Max response tokens |
 | `BEDROCK_TEMPERATURE` | `0.1` | Low temperature for factual accuracy |
 | `LOCAL_MODE` | `true` | If true, reads from local CSVs |
@@ -217,7 +217,7 @@ Read-only GET endpoints for the frontend:
 GET /api/health
 ```
 
-Returns `{"status": "ok", "local_mode": false, "model": "anthropic.claude-sonnet-4-20250514"}`.
+Returns `{"status": "ok", "local_mode": false, "model": "anthropic.claude-haiku-4-5-20251001-v1:0"}`.
 
 ---
 
