@@ -6,7 +6,7 @@ Entry point for ``cdk deploy``.
 
 Stacks:
   1. ConutPipeline   — S3 + DynamoDB + Lambdas + Step Functions
-  2. ConutAgent      — EC2 + ALB for the FastAPI agent service
+  2. ConutAgent      — public EC2 origin for the FastAPI agent service
   3. ConutFrontend   — S3 + CloudFront for the React dashboard
 
 Usage:
@@ -37,6 +37,12 @@ from infra.frontend_stack import FrontendStack
 app = cdk.App()
 
 env_name = app.node.try_get_context("env") or "dev"
+deployment_profile = app.node.try_get_context("deployment_profile") or "standard"
+origin_header_name = app.node.try_get_context("origin_header_name") or "X-Origin-Verify"
+origin_header_value = (
+    app.node.try_get_context("origin_header_value")
+    or f"conut-origin-{env_name}-{deployment_profile}"
+)
 
 aws_env = cdk.Environment(
     # Uses your configured AWS CLI profile / env vars automatically.
@@ -53,11 +59,14 @@ pipeline_stack = ConutPipelineStack(
     env=aws_env,
 )
 
-# Stack 2 — Agent Service (EC2 + ALB)
+# Stack 2 — Agent Service (public EC2 origin)
 agent_stack = AgentStack(
     app,
     f"ConutAgent-{env_name}",
     env_name=env_name,
+    deployment_profile=deployment_profile,
+    origin_header_name=origin_header_name,
+    origin_header_value=origin_header_value,
     data_bucket=pipeline_stack.data_bucket,
     state_machine=pipeline_stack.state_machine,
     env=aws_env,
@@ -70,8 +79,9 @@ frontend_stack = FrontendStack(
     app,
     f"ConutFrontend-{env_name}",
     env_name=env_name,
-    api_url=agent_stack.api_url,
-    alb=agent_stack.alb,
+    api_origin_domain=agent_stack.api_origin_domain,
+    origin_header_name=origin_header_name,
+    origin_header_value=origin_header_value,
     env=aws_env,
 )
 frontend_stack.add_dependency(agent_stack)

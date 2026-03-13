@@ -8,23 +8,58 @@ NOTE: Run ``cd frontend && npm install && npm run build`` before
 """
 
 from __future__ import annotations
-
 import os
+import shutil
+import subprocess
 from pathlib import Path
 
 import aws_cdk as cdk
+import jsii
 from aws_cdk import (
     RemovalPolicy,
     Stack,
-    aws_s3 as s3,
-    aws_s3_deployment as s3deploy,
     aws_cloudfront as cloudfront,
     aws_cloudfront_origins as origins,
-    aws_elasticloadbalancingv2 as elbv2,
+    aws_s3 as s3,
+    aws_s3_deployment as s3deploy,
 )
 from constructs import Construct
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+FRONTEND_ROOT = PROJECT_ROOT / "frontend"
+
+
+def _copy_directory_contents(source_dir: Path, output_dir: str) -> None:
+    output_path = Path(output_dir)
+    for child in source_dir.iterdir():
+        destination = output_path / child.name
+        if child.is_dir():
+            shutil.copytree(child, destination, dirs_exist_ok=True)
+        else:
+            shutil.copy2(child, destination)
+
+
+@jsii.implements(cdk.ILocalBundling)
+class _FrontendLocalBundling:
+    def try_bundle(self, output_dir: str, *args, **_kwargs) -> bool:
+        dist_dir = FRONTEND_ROOT / "dist"
+        if dist_dir.is_dir():
+            _copy_directory_contents(dist_dir, output_dir)
+            return True
+
+        if shutil.which("npm") is None:
+            return False
+
+        env = os.environ.copy()
+        env.setdefault("CI", "true")
+        subprocess.run(["npm", "ci"], cwd=FRONTEND_ROOT, check=True, env=env)
+        subprocess.run(["npm", "run", "build"], cwd=FRONTEND_ROOT, check=True, env=env)
+
+        if not dist_dir.is_dir():
+            raise RuntimeError(f"Frontend build did not produce {dist_dir}")
+
+        _copy_directory_contents(dist_dir, output_dir)
+        return True
 
 
 class FrontendStack(Stack):
@@ -36,8 +71,9 @@ class FrontendStack(Stack):
         construct_id: str,
         *,
         env_name: str = "dev",
-        api_url: str = "",
-        alb: elbv2.IApplicationLoadBalancer | None = None,
+        api_origin_domain: str = "",
+        origin_header_name: str = "X-Origin-Verify",
+        origin_header_value: str = "",
         **kwargs,
     ) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -48,7 +84,6 @@ class FrontendStack(Stack):
         site_bucket = s3.Bucket(
             self,
             "FrontendBucket",
-            bucket_name=f"{project}-frontend-{env_name}",
             website_index_document="index.html",
             website_error_document="index.html",  # SPA fallback
             public_read_access=False,
@@ -57,12 +92,16 @@ class FrontendStack(Stack):
             auto_delete_objects=(env_name != "prod"),
         )
 
-        # ── API origin (ALB) — CloudFront proxies /api/* to ALB ─────────
+        # ── API origin (public EC2 origin) — CloudFront proxies /api/* ──
         additional_behaviors = {}
-        if alb is not None:
+        if api_origin_domain:
             api_origin = origins.HttpOrigin(
-                alb.load_balancer_dns_name,
+                api_origin_domain,
                 protocol_policy=cloudfront.OriginProtocolPolicy.HTTP_ONLY,
+                http_port=80,
+                custom_headers={
+                    origin_header_name: origin_header_value,
+                },
             )
             additional_behaviors["/api/*"] = cloudfront.BehaviorOptions(
                 origin=api_origin,
@@ -102,26 +141,30 @@ class FrontendStack(Stack):
             ],
         )
 
-        # ── Deploy built frontend to S3 ────────────────────────────────
-        dist_path = PROJECT_ROOT / "frontend" / "dist"
-        if dist_path.is_dir():
-            s3deploy.BucketDeployment(
-                self,
-                "DeployFrontend",
-                sources=[
-                    s3deploy.Source.asset(str(dist_path)),
-                ],
-                destination_bucket=site_bucket,
-                distribution=distribution,
-                distribution_paths=["/*"],
-            )
-        else:
-            import warnings
-            warnings.warn(
-                f"frontend/dist not found at {dist_path}. "
-                "Run 'cd frontend && npm install && npm run build' before deploying.",
-                stacklevel=2,
-            )
+        # ── Build and deploy frontend to S3 during synth/deploy ────────
+        s3deploy.BucketDeployment(
+            self,
+            "DeployFrontend",
+            sources=[
+                s3deploy.Source.asset(
+                    str(FRONTEND_ROOT),
+                    exclude=["dist", "node_modules", ".vite", ".cache"],
+                    bundling=cdk.BundlingOptions(
+                        image=cdk.DockerImage.from_registry("public.ecr.aws/docker/library/node:20"),
+                        local=_FrontendLocalBundling(),
+                        command=[
+                            "bash",
+                            "-lc",
+                            "npm ci && npm run build && cp -r dist/* /asset-output/",
+                        ],
+                    ),
+                ),
+            ],
+            destination_bucket=site_bucket,
+            distribution=distribution,
+            distribution_paths=["/*"],
+            wait_for_distribution_invalidation=True,
+        )
 
         # ── Outputs ─────────────────────────────────────────────────────
         cdk.CfnOutput(

@@ -28,6 +28,17 @@ from constructs import Construct
 
 # Path to project root (parent of infra/)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DOCKER_ASSET_EXCLUDES = [
+    ".git",
+    ".pytest_cache",
+    ".tmp",
+    ".tmp-home",
+    ".venv",
+    "__pycache__",
+    "cdk.out",
+    "frontend/dist",
+    "frontend/node_modules",
+]
 
 
 class ConutPipelineStack(Stack):
@@ -45,10 +56,20 @@ class ConutPipelineStack(Stack):
 
         project = "conut-ops"
 
+        def docker_code(target: str) -> _lambda.DockerImageCode:
+            return _lambda.DockerImageCode.from_image_asset(
+                directory=str(PROJECT_ROOT),
+                file="infra/Dockerfile",
+                target=target,
+                exclude=DOCKER_ASSET_EXCLUDES,
+            )
+
         # ── S3 Bucket ────────────────────────────────────────────────────
         data_bucket = s3.Bucket(
             self,
             "DataBucket",
+            # Keep a stable physical bucket name so existing deployments do not
+            # trigger a cross-stack export replacement into ConutAgent.
             bucket_name=f"{project}-data-{env_name}",
             versioned=True,
             removal_policy=RemovalPolicy.RETAIN if env_name == "prod" else RemovalPolicy.DESTROY,
@@ -166,11 +187,7 @@ class ConutPipelineStack(Stack):
             self,
             "EtlFunction",
             function_name=f"{project}-etl-{env_name}",
-            code=_lambda.DockerImageCode.from_image_asset(
-                directory=str(PROJECT_ROOT),
-                file="infra/Dockerfile",
-                target="etl",
-            ),
+            code=docker_code("etl"),
             timeout=Duration.minutes(15),
             memory_size=1024,
             environment=common_env,
@@ -181,11 +198,7 @@ class ConutPipelineStack(Stack):
             self,
             "ForecastFunction",
             function_name=f"{project}-forecast-{env_name}",
-            code=_lambda.DockerImageCode.from_image_asset(
-                directory=str(PROJECT_ROOT),
-                file="infra/Dockerfile",
-                target="forecast",
-            ),
+            code=docker_code("forecast"),
             timeout=Duration.minutes(15),
             memory_size=1024,
             environment=common_env,
@@ -196,11 +209,7 @@ class ConutPipelineStack(Stack):
             self,
             "ComboFunction",
             function_name=f"{project}-combo-{env_name}",
-            code=_lambda.DockerImageCode.from_image_asset(
-                directory=str(PROJECT_ROOT),
-                file="infra/Dockerfile",
-                target="combo",
-            ),
+            code=docker_code("combo"),
             timeout=Duration.minutes(15),
             memory_size=1024,
             environment=common_env,
@@ -211,11 +220,7 @@ class ConutPipelineStack(Stack):
             self,
             "ExpansionFunction",
             function_name=f"{project}-expansion-{env_name}",
-            code=_lambda.DockerImageCode.from_image_asset(
-                directory=str(PROJECT_ROOT),
-                file="infra/Dockerfile",
-                target="expansion",
-            ),
+            code=docker_code("expansion"),
             timeout=Duration.minutes(15),
             memory_size=1024,
             environment=common_env,
@@ -226,11 +231,7 @@ class ConutPipelineStack(Stack):
             self,
             "StaffingFunction",
             function_name=f"{project}-staffing-{env_name}",
-            code=_lambda.DockerImageCode.from_image_asset(
-                directory=str(PROJECT_ROOT),
-                file="infra/Dockerfile",
-                target="staffing",
-            ),
+            code=docker_code("staffing"),
             timeout=Duration.minutes(15),
             memory_size=1024,
             environment=common_env,
@@ -241,11 +242,7 @@ class ConutPipelineStack(Stack):
             self,
             "GrowthFunction",
             function_name=f"{project}-growth-{env_name}",
-            code=_lambda.DockerImageCode.from_image_asset(
-                directory=str(PROJECT_ROOT),
-                file="infra/Dockerfile",
-                target="growth",
-            ),
+            code=docker_code("growth"),
             timeout=Duration.minutes(15),
             memory_size=1024,
             environment=common_env,

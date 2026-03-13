@@ -7,8 +7,10 @@ Run locally:
 
 from __future__ import annotations
 import logging
+import secrets
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from agent import config
@@ -51,6 +53,32 @@ app.add_middleware(
 app.include_router(chat_router)
 app.include_router(dashboard_router)
 app.include_router(upload_router)
+
+
+def _is_loopback_request(request: Request) -> bool:
+    client_host = request.client.host if request.client else ""
+    return client_host in {"127.0.0.1", "::1", "localhost"}
+
+
+@app.middleware("http")
+async def require_cloudfront_origin_header(request: Request, call_next):
+    if not request.url.path.startswith("/api/"):
+        return await call_next(request)
+
+    if not config.origin_protection_enabled() or _is_loopback_request(request):
+        return await call_next(request)
+
+    header_value = request.headers.get(config.ORIGIN_VERIFY_HEADER_NAME)
+    if header_value and secrets.compare_digest(
+        header_value,
+        config.ORIGIN_VERIFY_HEADER_VALUE,
+    ):
+        return await call_next(request)
+
+    return JSONResponse(
+        status_code=403,
+        content={"detail": "Forbidden"},
+    )
 
 
 @app.get("/api/health")

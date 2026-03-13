@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 
 import boto3
 from botocore.config import Config as BotoConfig
+from botocore.exceptions import ClientError
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
@@ -299,6 +300,14 @@ async def pipeline_status(req: StatusRequest):
             started_at=resp["startDate"].isoformat() if "startDate" in resp else None,
             stopped_at=resp["stopDate"].isoformat() if "stopDate" in resp else None,
         )
+    except ClientError as exc:
+        error_code = exc.response.get("Error", {}).get("Code", "")
+        log.exception("Status check failed: %s", error_code)
+        if error_code == "ExecutionDoesNotExist":
+            raise HTTPException(404, "Pipeline execution not found")
+        if error_code in {"AccessDeniedException", "UnrecognizedClientException"}:
+            raise HTTPException(502, "Pipeline status lookup is not permitted")
+        raise HTTPException(502, f"Pipeline status lookup failed: {error_code or 'unknown'}")
     except Exception as exc:
         log.exception("Status check failed")
         raise HTTPException(500, str(exc))

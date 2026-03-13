@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import Card from '../components/Card'
 import { api } from '../api'
 
@@ -36,6 +36,17 @@ export default function UploadPage() {
   const [archiveInfo, setArchiveInfo] = useState<{ archived: number; cleared: Record<string, number>; path: string } | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const pollFailuresRef = useRef(0)
+
+  const clearPolling = useCallback(() => {
+    if (pollRef.current) {
+      clearInterval(pollRef.current)
+      pollRef.current = null
+    }
+    pollFailuresRef.current = 0
+  }, [])
+
+  useEffect(() => clearPolling, [clearPolling])
 
   const handleFiles = useCallback((selected: FileList | null) => {
     if (!selected) return
@@ -96,6 +107,7 @@ export default function UploadPage() {
     setError('')
     setStage('running')
     try {
+      clearPolling()
       const resp = await api.triggerPipeline()
       setExecutionArn(resp.execution_arn)
       setPipelineStatus(resp.status)
@@ -104,16 +116,23 @@ export default function UploadPage() {
       pollRef.current = setInterval(async () => {
         try {
           const status = await api.pipelineStatus(resp.execution_arn)
+          pollFailuresRef.current = 0
           setPipelineStatus(status.status)
           if (status.status === 'SUCCEEDED') {
             setStage('succeeded')
-            if (pollRef.current) clearInterval(pollRef.current)
+            clearPolling()
           } else if (status.status === 'FAILED' || status.status === 'TIMED_OUT' || status.status === 'ABORTED') {
             setStage('failed')
-            if (pollRef.current) clearInterval(pollRef.current)
+            clearPolling()
           }
-        } catch {
-          // Keep polling
+        } catch (err) {
+          pollFailuresRef.current += 1
+          if (pollFailuresRef.current >= 3) {
+            clearPolling()
+            setStage('failed')
+            setPipelineStatus('STATUS_ERROR')
+            setError(err instanceof Error ? err.message : 'Unable to fetch pipeline status')
+          }
         }
       }, 5000)
     } catch (err) {
@@ -123,7 +142,7 @@ export default function UploadPage() {
   }
 
   const reset = () => {
-    if (pollRef.current) clearInterval(pollRef.current)
+    clearPolling()
     setFiles([])
     setStage('idle')
     setError('')

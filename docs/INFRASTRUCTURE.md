@@ -1,6 +1,6 @@
 # Infrastructure (AWS CDK)
 
-> Three CDK stacks deploying the complete OpsClaw platform on AWS with S3, DynamoDB, Lambda, Step Functions, EC2, ALB, and CloudFront.
+> Three CDK stacks deploying the complete OpsClaw platform on AWS with S3, DynamoDB, Lambda, Step Functions, public EC2 origins, and CloudFront.
 
 ---
 
@@ -20,7 +20,7 @@ ConutPipeline-dev  ←──  ConutAgent-dev  ←──  ConutFrontend-dev
 infra/
 ├── app.py               # CDK entry point — wires 3 stacks
 ├── cdk_stack.py         # Stack 1: Pipeline (S3, DynamoDB, Lambda, StepFunctions)
-├── agent_stack.py       # Stack 2: Agent (VPC, EC2, ALB, IAM)
+├── agent_stack.py       # Stack 2: Agent (VPC, EC2, EIP, IAM)
 ├── frontend_stack.py    # Stack 3: Frontend (S3, CloudFront)
 ├── Dockerfile           # Multi-stage Lambda Dockerfile (6 targets)
 ├── local_test.py        # Local testing utilities
@@ -132,12 +132,11 @@ The Pipeline stack exports for use by other stacks:
 
 | Resource | Type | Description |
 |----------|------|-------------|
-| **VPC** | `aws_ec2.Vpc` | 2 AZs, 1 NAT gateway, public + private subnets |
-| **Security Group** | `aws_ec2.SecurityGroup` | Ports 80 (ALB) and 8000 (direct) |
+| **VPC** | `aws_ec2.Vpc` | Public-only; 2 AZs in `standard`, 1 AZ in `budget`; no NAT |
+| **Security Group** | `aws_ec2.SecurityGroup` | Port 80 public ingress |
 | **IAM Role** | `aws_iam.Role` | EC2 role with DynamoDB, Bedrock, S3, StepFunctions, SSM |
-| **EC2 Instance** | `aws_ec2.Instance` | t3.small, Amazon Linux 2023 |
-| **ALB** | `aws_elasticloadbalancingv2` | Application Load Balancer on port 80 |
-| **Target Group** | | Routes ALB → EC2:8000 |
+| **EC2 Instance** | `aws_ec2.Instance` | t3.micro, Amazon Linux 2023 |
+| **Elastic IP** | `aws_ec2.CfnEIP` | Stable public API origin |
 
 ### IAM Permissions
 
@@ -161,14 +160,14 @@ The instance bootstraps itself:
    - `LOCAL_MODE=false`
    - `S3_DATA_BUCKET=conut-ops-data-dev`
    - `STATE_MACHINE_ARN=<from pipeline stack>`
-   - `BEDROCK_MODEL_ID=anthropic.claude-sonnet-4-20250514`
+   - `BEDROCK_MODEL_ID=eu.amazon.nova-pro-v1:0`
+   - `ORIGIN_VERIFY_HEADER_*` for CloudFront-to-origin protection
 
 ### Exports
 
 | Export | Type | Usage |
 |--------|------|-------|
-| `api_url` | string | Frontend stack (legacy) |
-| `alb` | `elbv2.ApplicationLoadBalancer` | Frontend stack (CloudFront origin) |
+| `api_origin_domain` | string | Frontend stack (CloudFront origin) |
 
 ---
 
@@ -187,7 +186,7 @@ The instance bootstraps itself:
 | Path | Origin | Cache | Methods |
 |------|--------|-------|---------|
 | `/*` (default) | S3 (OAC) | CACHING_OPTIMIZED | GET, HEAD |
-| `/api/*` | ALB (HTTP) | CACHING_DISABLED | ALL (GET, POST, PUT, DELETE, etc.) |
+| `/api/*` | Public EC2 origin (HTTP:80) | CACHING_DISABLED | ALL (GET, POST, PUT, DELETE, etc.) |
 
 ### SPA Error Handling
 
@@ -214,10 +213,10 @@ CloudFront
     │
     ├── Static assets → S3 (OAC)
     │
-    └── /api/* → ALB (HTTP)
+    └── /api/* → EC2 origin (HTTP)
                   │
                   ▼
-              EC2 (port 8000)
+              EC2 (Docker 80 → 8000)
                   │
                   ├── DynamoDB (5 tables)
                   ├── Bedrock (Claude)
@@ -234,10 +233,10 @@ CloudFront
 source .venv/bin/activate
 
 # Synthesize CloudFormation templates
-cdk synth --app "python3 infra/app.py"
+cdk synth --app "python3 infra/app.py" --context deployment_profile=standard
 
 # Preview changes
-cdk diff --app "python3 infra/app.py"
+cdk diff --app "python3 infra/app.py" --context deployment_profile=standard
 
 # Deploy all stacks
 cdk deploy --all --require-approval never --app "python3 infra/app.py"

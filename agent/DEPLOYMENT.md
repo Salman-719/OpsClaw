@@ -10,8 +10,8 @@
 │  Stack        │  Stack            │  Stack                       │
 │               │                   │                              │
 │  S3 Bucket    │  VPC + Subnets    │  S3 Bucket (static)          │
-│  5 DynamoDB   │  EC2 (t3.medium)  │  CloudFront CDN              │
-│  6 Lambdas    │  ALB              │  React Dashboard             │
+│  5 DynamoDB   │  EC2 (t3.micro)   │  CloudFront CDN              │
+│  6 Lambdas    │  Elastic IP       │  React Dashboard             │
 │  Step Funcs   │  IAM Roles        │  Chatbot Interface           │
 │               │  (Bedrock + Dyn.) │                              │
 └───────────────┴───────────────────┴──────────────────────────────┘
@@ -44,7 +44,7 @@ source .venv/bin/activate
 cd frontend && npm install && npm run build && cd ..
 
 # Deploy everything
-cdk deploy --all --require-approval never
+cdk deploy --all --require-approval never --context deployment_profile=standard
 ```
 
 ## Step-by-Step Deploy
@@ -72,8 +72,8 @@ cd ..
 # Deploy pipeline first (S3 + DynamoDB + Lambdas + Step Functions)
 cdk deploy ConutPipeline-dev
 
-# Deploy agent service (EC2 + ALB)
-cdk deploy ConutAgent-dev
+# Deploy agent service (public EC2 origin)
+cdk deploy ConutAgent-dev --context deployment_profile=standard
 
 # Deploy frontend (S3 + CloudFront)
 cdk deploy ConutFrontend-dev
@@ -88,15 +88,15 @@ After deploy, CDK prints outputs:
 
 | Output              | Description                          |
 |---------------------|--------------------------------------|
-| AgentALBUrl         | Agent API base URL (ALB)             |
+| AgentOriginUrl      | Agent API origin URL                 |
 | FrontendURL         | Dashboard URL (CloudFront HTTPS)     |
 | DataBucketName      | S3 bucket for CSV uploads            |
 | StateMachineArn     | Step Functions pipeline ARN          |
 
 Test the agent:
 ```bash
-curl <AgentALBUrl>/api/health
-curl -X POST <AgentALBUrl>/api/chat \
+curl https://<FrontendURL>/api/health
+curl -X POST https://<FrontendURL>/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "Give me an overview"}'
 ```
@@ -110,9 +110,9 @@ curl -X POST <AgentALBUrl>/api/chat \
 - **Step Functions**: ETL → 5 analytics Lambdas in parallel
 
 ### ConutAgent Stack
-- **VPC**: 2-AZ, public + private subnets, 1 NAT gateway
-- **EC2 Instance**: t3.medium, Amazon Linux 2023, runs agent Docker container
-- **ALB**: Internet-facing Application Load Balancer, routes to port 8000
+- **VPC**: public-only; 2 AZs in `standard`, 1 AZ in `budget`; no NAT gateway
+- **EC2 Instance**: t3.micro, Amazon Linux 2023, runs agent Docker container
+- **Elastic IP**: stable public origin for CloudFront `/api/*`
 - **IAM Role**: DynamoDB read (5 tables) + Bedrock InvokeModel
 - **User Data**: Auto-clones repo, builds Docker image, starts container
 
@@ -128,10 +128,11 @@ curl -X POST <AgentALBUrl>/api/chat \
 | AWS_REGION             | eu-west-1                             | AWS region               |
 | ENV_NAME               | dev                                   | Environment suffix       |
 | LOCAL_MODE             | false                                 | Use local CSVs (testing) |
-| BEDROCK_MODEL_ID       | anthropic.claude-sonnet-4-20250514    | Bedrock model            |
+| BEDROCK_MODEL_ID       | eu.amazon.nova-pro-v1:0               | Bedrock model            |
 | BEDROCK_MAX_TOKENS     | 4096                                  | Max response tokens      |
 | BEDROCK_TEMPERATURE    | 0.1                                   | LLM temperature          |
 | PORT                   | 8000                                  | API port                 |
+| ORIGIN_VERIFY_HEADER_* | set by CDK deploy                     | CloudFront origin guard  |
 
 ## API Endpoints
 

@@ -5,9 +5,10 @@ Unit tests — FastAPI agent service (routes, models, config).
 import os
 import sys
 from pathlib import Path
-from unittest.mock import patch
 
+import httpx
 import pytest
+from botocore.exceptions import ClientError
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
@@ -15,10 +16,29 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Force LOCAL_MODE before importing anything
 os.environ["LOCAL_MODE"] = "true"
 
-from fastapi.testclient import TestClient
 from agent.main import app
 
-client = TestClient(app)
+pytestmark = pytest.mark.anyio
+
+
+@pytest.fixture
+async def async_client():
+    transport = httpx.ASGITransport(app=app)
+    async with httpx.AsyncClient(
+        transport=transport,
+        base_url="http://testserver",
+    ) as client:
+        yield client
+
+
+@pytest.fixture
+async def remote_async_client():
+    transport = httpx.ASGITransport(app=app, client=("203.0.113.10", 12345))
+    async with httpx.AsyncClient(
+        transport=transport,
+        base_url="http://testserver",
+    ) as client:
+        yield client
 
 
 # ---------------------------------------------------------------------------
@@ -26,17 +46,43 @@ client = TestClient(app)
 # ---------------------------------------------------------------------------
 
 class TestHealth:
-    def test_health_returns_ok(self):
-        resp = client.get("/api/health")
+    async def test_health_returns_ok(self, async_client):
+        resp = await async_client.get("/api/health")
         assert resp.status_code == 200
         body = resp.json()
         assert body["status"] == "ok"
         assert isinstance(body["local_mode"], bool)
         assert "model" in body
 
-    def test_health_reports_local_mode(self):
-        resp = client.get("/api/health")
+    async def test_health_reports_local_mode(self, async_client):
+        resp = await async_client.get("/api/health")
         assert resp.json()["local_mode"] is True
+
+    async def test_local_mode_bypasses_origin_guard(self, async_client):
+        resp = await async_client.get("/api/health")
+        assert resp.status_code == 200
+
+    async def test_cloud_mode_rejects_missing_origin_header(self, monkeypatch, remote_async_client):
+        from agent import config
+
+        monkeypatch.setattr(config, "LOCAL_MODE", False)
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_VALUE", "test-secret")
+
+        resp = await remote_async_client.get("/api/health")
+        assert resp.status_code == 403
+
+    async def test_cloud_mode_accepts_valid_origin_header(self, monkeypatch, remote_async_client):
+        from agent import config
+
+        monkeypatch.setattr(config, "LOCAL_MODE", False)
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_NAME", "X-Origin-Verify")
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_VALUE", "test-secret")
+
+        resp = await remote_async_client.get(
+            "/api/health",
+            headers={"X-Origin-Verify": "test-secret"},
+        )
+        assert resp.status_code == 200
 
 
 # ---------------------------------------------------------------------------
@@ -44,16 +90,16 @@ class TestHealth:
 # ---------------------------------------------------------------------------
 
 class TestChat:
-    def test_chat_requires_message(self):
-        resp = client.post("/api/chat", json={})
+    async def test_chat_requires_message(self, async_client):
+        resp = await async_client.post("/api/chat", json={})
         assert resp.status_code == 422  # validation error
 
-    def test_chat_empty_message_rejected(self):
-        resp = client.post("/api/chat", json={"message": ""})
+    async def test_chat_empty_message_rejected(self, async_client):
+        resp = await async_client.post("/api/chat", json={"message": ""})
         assert resp.status_code == 422
 
-    def test_chat_returns_answer(self):
-        resp = client.post("/api/chat", json={"message": "hello"})
+    async def test_chat_returns_answer(self, async_client):
+        resp = await async_client.post("/api/chat", json={"message": "hello"})
         assert resp.status_code == 200
         body = resp.json()
         assert "answer" in body
@@ -66,36 +112,36 @@ class TestChat:
 # ---------------------------------------------------------------------------
 
 class TestDashboard:
-    def test_overview(self):
-        resp = client.get("/api/dashboard/overview")
+    async def test_overview(self, async_client):
+        resp = await async_client.get("/api/dashboard/overview")
         assert resp.status_code == 200
         body = resp.json()
         for key in ("forecast", "top_combos", "expansion_ranking",
                      "staffing_summary", "growth_ranking"):
             assert key in body
 
-    def test_forecast(self):
-        resp = client.get("/api/dashboard/forecast")
+    async def test_forecast(self, async_client):
+        resp = await async_client.get("/api/dashboard/forecast")
         assert resp.status_code == 200
         assert resp.json()["feature"] == "forecast"
 
-    def test_combo(self):
-        resp = client.get("/api/dashboard/combo")
+    async def test_combo(self, async_client):
+        resp = await async_client.get("/api/dashboard/combo")
         assert resp.status_code == 200
         assert resp.json()["feature"] == "combo"
 
-    def test_expansion(self):
-        resp = client.get("/api/dashboard/expansion")
+    async def test_expansion(self, async_client):
+        resp = await async_client.get("/api/dashboard/expansion")
         assert resp.status_code == 200
         assert resp.json()["feature"] == "expansion"
 
-    def test_staffing(self):
-        resp = client.get("/api/dashboard/staffing")
+    async def test_staffing(self, async_client):
+        resp = await async_client.get("/api/dashboard/staffing")
         assert resp.status_code == 200
         assert resp.json()["feature"] == "staffing"
 
-    def test_growth(self):
-        resp = client.get("/api/dashboard/growth")
+    async def test_growth(self, async_client):
+        resp = await async_client.get("/api/dashboard/growth")
         assert resp.status_code == 200
         assert resp.json()["feature"] == "growth"
 
@@ -105,22 +151,81 @@ class TestDashboard:
 # ---------------------------------------------------------------------------
 
 class TestUpload:
-    def test_presign_blocked_in_local_mode(self):
-        resp = client.post("/api/upload/presign", json={"filename": "test.csv"})
+    async def test_presign_blocked_in_local_mode(self, async_client):
+        resp = await async_client.post("/api/upload/presign", json={"filename": "test.csv"})
         assert resp.status_code == 400
 
-    def test_trigger_blocked_in_local_mode(self):
-        resp = client.post("/api/upload/trigger", json={"s3_key": ""})
+    async def test_trigger_blocked_in_local_mode(self, async_client):
+        resp = await async_client.post("/api/upload/trigger", json={"s3_key": ""})
         assert resp.status_code == 400
 
-    def test_status_blocked_in_local_mode(self):
-        resp = client.post("/api/upload/status",
-                           json={"execution_arn": "arn:aws:states:eu-west-1:123:test"})
+    async def test_status_blocked_in_local_mode(self, async_client):
+        resp = await async_client.post(
+            "/api/upload/status",
+            json={"execution_arn": "arn:aws:states:eu-west-1:123:test"},
+        )
         assert resp.status_code == 400
 
-    def test_prepare_blocked_in_local_mode(self):
-        resp = client.post("/api/upload/prepare")
+    async def test_prepare_blocked_in_local_mode(self, async_client):
+        resp = await async_client.post("/api/upload/prepare")
         assert resp.status_code == 400
+
+    async def test_status_returns_execution_state_in_cloud_mode(self, monkeypatch, remote_async_client):
+        from agent import config
+        from agent.routes import upload
+
+        class FakeSfn:
+            def describe_execution(self, executionArn):
+                assert executionArn.endswith(":upload-1")
+                from datetime import datetime, timezone
+
+                return {
+                    "executionArn": executionArn,
+                    "status": "SUCCEEDED",
+                    "startDate": datetime.now(timezone.utc),
+                    "stopDate": datetime.now(timezone.utc),
+                }
+
+        monkeypatch.setattr(config, "LOCAL_MODE", False)
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_NAME", "X-Origin-Verify")
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_VALUE", "test-secret")
+        monkeypatch.setattr(upload, "_sfn", lambda: FakeSfn())
+
+        resp = await remote_async_client.post(
+            "/api/upload/status",
+            json={"execution_arn": "arn:aws:states:eu-west-1:123:execution:conut-ops-pipeline-dev:upload-1"},
+            headers={"X-Origin-Verify": "test-secret"},
+        )
+        assert resp.status_code == 200
+        assert resp.json()["status"] == "SUCCEEDED"
+
+    async def test_status_maps_stepfunctions_access_denied(self, monkeypatch, remote_async_client):
+        from agent import config
+        from agent.routes import upload
+
+        class FakeSfn:
+            def describe_execution(self, executionArn):
+                raise ClientError(
+                    {
+                        "Error": {
+                            "Code": "AccessDeniedException",
+                            "Message": "not allowed",
+                        }
+                    },
+                    "DescribeExecution",
+                )
+
+        monkeypatch.setattr(config, "LOCAL_MODE", False)
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_NAME", "X-Origin-Verify")
+        monkeypatch.setattr(config, "ORIGIN_VERIFY_HEADER_VALUE", "test-secret")
+        monkeypatch.setattr(upload, "_sfn", lambda: FakeSfn())
+
+        resp = await remote_async_client.post(
+            "/api/upload/status",
+            json={"execution_arn": "arn:aws:states:eu-west-1:123:execution:conut-ops-pipeline-dev:upload-1"},
+            headers={"X-Origin-Verify": "test-secret"},
+        )
+        assert resp.status_code == 502
 
 
 # ---------------------------------------------------------------------------

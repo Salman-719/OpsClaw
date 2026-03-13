@@ -1,33 +1,26 @@
 """
-CDK Stack — OpsClaw Agent Service (EC2 + ALB)
-==============================================
-Deploys the FastAPI agent on an EC2 instance behind an ALB,
+CDK Stack — OpsClaw Agent Service (public EC2 origin)
+=====================================================
+Deploys the FastAPI agent on a public EC2 instance with a stable Elastic IP,
 with IAM roles for DynamoDB + Bedrock + S3 + Step Functions access.
 """
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import aws_cdk as cdk
 from aws_cdk import (
-    Duration,
-    RemovalPolicy,
+    ArnFormat,
     Stack,
     aws_ec2 as ec2,
     aws_iam as iam,
-    aws_elasticloadbalancingv2 as elbv2,
-    aws_elasticloadbalancingv2_targets as targets,
     aws_s3 as s3,
     aws_stepfunctions as sfn,
 )
 from constructs import Construct
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-
 
 class AgentStack(Stack):
-    """EC2-based agent service behind an ALB."""
+    """EC2-based agent service with a direct public origin."""
 
     def __init__(
         self,
@@ -35,6 +28,9 @@ class AgentStack(Stack):
         construct_id: str,
         *,
         env_name: str = "dev",
+        deployment_profile: str = "standard",
+        origin_header_name: str = "X-Origin-Verify",
+        origin_header_value: str = "",
         data_bucket: s3.IBucket | None = None,
         state_machine: sfn.IStateMachine | None = None,
         **kwargs,
@@ -42,22 +38,26 @@ class AgentStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         project = "conut-ops"
+        stack_region = Stack.of(self).region
+        if deployment_profile not in {"standard", "budget"}:
+            raise ValueError(
+                f"Unsupported deployment_profile={deployment_profile!r}. "
+                "Expected 'standard' or 'budget'."
+            )
+
+        max_azs = 2 if deployment_profile == "standard" else 1
+        root_volume_size = 30 if deployment_profile == "standard" else 20
 
         # ── VPC ──────────────────────────────────────────────────────────
         vpc = ec2.Vpc(
             self,
             "AgentVpc",
-            max_azs=2,
-            nat_gateways=1,
+            max_azs=max_azs,
+            nat_gateways=0,
             subnet_configuration=[
                 ec2.SubnetConfiguration(
                     name="Public",
                     subnet_type=ec2.SubnetType.PUBLIC,
-                    cidr_mask=24,
-                ),
-                ec2.SubnetConfiguration(
-                    name="Private",
-                    subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
                     cidr_mask=24,
                 ),
             ],
@@ -74,12 +74,7 @@ class AgentStack(Stack):
         agent_sg.add_ingress_rule(
             ec2.Peer.any_ipv4(),
             ec2.Port.tcp(80),
-            "ALB HTTP",
-        )
-        agent_sg.add_ingress_rule(
-            ec2.Peer.any_ipv4(),
-            ec2.Port.tcp(8000),
-            "Agent API direct",
+            "CloudFront and public HTTP",
         )
 
         # ── IAM Role ────────────────────────────────────────────────────
@@ -144,8 +139,14 @@ class AgentStack(Stack):
 
         # Step Functions — start + describe executions
         sfn_arn = state_machine.state_machine_arn if state_machine else f"arn:aws:states:*:*:stateMachine:{project}-pipeline-{env_name}"
-        # Execution ARNs use a different format: arn:aws:states:REGION:ACCOUNT:execution:SM_NAME:EXEC_NAME
-        exec_arn_pattern = sfn_arn.replace(":stateMachine:", ":execution:") if state_machine else f"arn:aws:states:*:*:execution:{project}-pipeline-{env_name}"
+        # Execution ARNs use a different resource type and cannot be derived
+        # reliably by string replacement once the state machine ARN is tokenized.
+        exec_arn_pattern = Stack.of(self).format_arn(
+            service="states",
+            resource="execution",
+            resource_name=f"{project}-pipeline-{env_name}:*",
+            arn_format=ArnFormat.COLON_RESOURCE_NAME,
+        )
         agent_role.add_to_policy(
             iam.PolicyStatement(
                 actions=[
@@ -153,7 +154,7 @@ class AgentStack(Stack):
                     "states:DescribeExecution",
                     "states:ListExecutions",
                 ],
-                resources=[sfn_arn, f"{sfn_arn}:*", f"{exec_arn_pattern}:*"],
+                resources=[sfn_arn, exec_arn_pattern],
             )
         )
 
@@ -180,13 +181,15 @@ class AgentStack(Stack):
             f"# Run the agent container",
             "docker run -d --name opsclaw-agent \\",
             "  --restart always \\",
-            "  -p 8000:8000 \\",
-            f'  -e AWS_REGION=eu-west-1 \\',
+            "  -p 80:8000 \\",
+            f'  -e AWS_REGION={stack_region} \\',
             f'  -e ENV_NAME={env_name} \\',
             f'  -e LOCAL_MODE=false \\',
             f'  -e S3_DATA_BUCKET={bucket_name} \\',
             f'  -e STATE_MACHINE_ARN={sfn_arn_str} \\',
             f'  -e BEDROCK_MODEL_ID=eu.amazon.nova-pro-v1:0 \\',
+            f'  -e ORIGIN_VERIFY_HEADER_NAME={origin_header_name} \\',
+            f'  -e ORIGIN_VERIFY_HEADER_VALUE={origin_header_value} \\',
             "  opsclaw-agent",
             "",
             "echo 'OpsClaw Agent started successfully'",
@@ -196,7 +199,7 @@ class AgentStack(Stack):
         instance = ec2.Instance(
             self,
             "AgentInstance",
-            instance_type=ec2.InstanceType("t3.small"),
+            instance_type=ec2.InstanceType("t3.micro"),
             machine_image=ec2.AmazonLinuxImage(
                 generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2023,
             ),
@@ -209,47 +212,66 @@ class AgentStack(Stack):
                 ec2.BlockDevice(
                     device_name="/dev/xvda",
                     volume=ec2.BlockDeviceVolume.ebs(
-                        30,
+                        root_volume_size,
                         volume_type=ec2.EbsDeviceVolumeType.GP3,
                     ),
                 ),
             ],
         )
 
-        # ── Application Load Balancer ───────────────────────────────────
-        alb = elbv2.ApplicationLoadBalancer(
+        eip = ec2.CfnEIP(
             self,
-            "AgentALB",
-            vpc=vpc,
-            internet_facing=True,
-            security_group=agent_sg,
+            "AgentEip",
+            domain="vpc",
+        )
+        ec2.CfnEIPAssociation(
+            self,
+            "AgentEipAssociation",
+            allocation_id=eip.attr_allocation_id,
+            instance_id=instance.instance_id,
         )
 
-        listener = alb.add_listener(
-            "HttpListener",
-            port=80,
-            protocol=elbv2.ApplicationProtocol.HTTP,
-        )
-
-        listener.add_targets(
-            "AgentTarget",
-            port=8000,
-            protocol=elbv2.ApplicationProtocol.HTTP,
-            targets=[targets.InstanceTarget(instance, port=8000)],
-            health_check=elbv2.HealthCheck(
-                path="/api/health",
-                interval=Duration.seconds(30),
-                healthy_threshold_count=2,
-                unhealthy_threshold_count=5,
-                timeout=Duration.seconds(10),
-            ),
-        )
-
-        # ── Store ALB URL + object for the frontend stack ────────────
-        self.alb = alb
-        self.api_url = f"http://{alb.load_balancer_dns_name}"
+        self.api_origin_domain = instance.instance_public_dns_name
+        self.api_origin_port = 80
+        self.api_origin_protocol = "http"
 
         # ── Outputs ─────────────────────────────────────────────────────
-        cdk.CfnOutput(self, "AgentALBUrl", value=self.api_url,
-                       description="Agent API URL (ALB)")
+        cdk.CfnOutput(
+            self,
+            "AgentOriginUrl",
+            value=f"http://{self.api_origin_domain}",
+            description="Agent API origin URL",
+        )
+        cdk.CfnOutput(
+            self,
+            "AgentOriginDomain",
+            value=self.api_origin_domain,
+            description="Public DNS origin for CloudFront",
+        )
+        # Temporary compatibility export so existing frontend stacks that still
+        # import the old ALB DNS output can migrate without blocking this stack
+        # update. Once the frontend has been redeployed on the EC2 origin, this
+        # compatibility output can be removed in a later cleanup pass.
+        legacy_alb_dns_output = cdk.CfnOutput(
+            self,
+            "LegacyAgentAlbDnsExport",
+            value=self.api_origin_domain,
+            export_name=f"{self.stack_name}:ExportsOutputFnGetAttAgentALB66702F0FDNSNameB72FA1CB",
+            description="Compatibility export for legacy frontend ALB origin import",
+        )
+        legacy_alb_dns_output.override_logical_id(
+            "ExportsOutputFnGetAttAgentALB66702F0FDNSNameB72FA1CB"
+        )
+        cdk.CfnOutput(
+            self,
+            "AgentElasticIp",
+            value=eip.ref,
+            description="Elastic IP attached to the agent instance",
+        )
+        cdk.CfnOutput(
+            self,
+            "DeploymentProfile",
+            value=deployment_profile,
+            description="Deployment profile used for the agent stack",
+        )
         cdk.CfnOutput(self, "AgentInstanceId", value=instance.instance_id)

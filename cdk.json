@@ -1,6 +1,7 @@
 {
-  "app": "python3 infra/app.py",
+  "app": "bash infra/run_cdk_app.sh",
   "context": {
-    "env": "dev"
+    "env": "dev",
+    "deployment_profile": "standard"
   }
 }

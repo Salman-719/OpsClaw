@@ -9,7 +9,7 @@ import os
 
 
 # ── AWS ──────────────────────────────────────────────────────────────────
-AWS_REGION = os.getenv("AWS_REGION", "eu-west-1")
+AWS_REGION = os.getenv("AWS_REGION") or os.getenv("AWS_DEFAULT_REGION") or "eu-west-1"
 
 # ── DynamoDB table names ─────────────────────────────────────────────────
 ENV_NAME = os.getenv("ENV_NAME", "dev")
@@ -33,7 +33,16 @@ BEDROCK_TEMPERATURE = float(os.getenv("BEDROCK_TEMPERATURE", "0.1"))
 HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", "8000"))
 
+# ── Origin protection ─────────────────────────────────────────────────────
+ORIGIN_VERIFY_HEADER_NAME = os.getenv("ORIGIN_VERIFY_HEADER_NAME", "X-Origin-Verify")
+ORIGIN_VERIFY_HEADER_VALUE = os.getenv("ORIGIN_VERIFY_HEADER_VALUE", "")
+
 # ── Local / offline mode ─────────────────────────────────────────────────
 # When True, DynamoDB queries read from local CSV files instead of AWS.
 LOCAL_MODE = os.getenv("LOCAL_MODE", "true").lower() in ("1", "true", "yes")
 LOCAL_DATA_ROOT = os.getenv("LOCAL_DATA_ROOT", "")  # set at runtime
+
+
+def origin_protection_enabled() -> bool:
+    """Return True when cloud-mode API requests must include the origin header."""
+    return (not LOCAL_MODE) and bool(ORIGIN_VERIFY_HEADER_VALUE)

@@ -90,7 +90,7 @@ OpsClaw takes a **full-pipeline** approach — from raw data ingestion to AI-pow
 │                         CloudFront CDN                          │
 │               (HTTPS + SPA routing + /api/* proxy)              │
 ├───────────────────┬─────────────────────────────────────────────┤
-│   S3 (frontend)   │         ALB → EC2 (Agent)                   │
+│   S3 (frontend)   │      Public EC2 Origin (Agent)              │
 │   React Dashboard │     FastAPI + Bedrock Claude                │
 └───────────────────┴──────────────┬──────────────────────────────┘
                                    │
@@ -122,8 +122,8 @@ OpsClaw takes a **full-pipeline** approach — from raw data ingestion to AI-pow
 | Stack | Resources |
 |-------|-----------|
 | **ConutPipeline-dev** | S3 bucket, 5 DynamoDB tables, 6 Docker Lambda functions, Step Functions state machine |
-| **ConutAgent-dev** | VPC, EC2 (t3.small), ALB, IAM roles (DynamoDB + Bedrock + S3 + StepFunctions) |
-| **ConutFrontend-dev** | S3 (static hosting), CloudFront (CDN + `/api/*` proxy to ALB) |
+| **ConutAgent-dev** | Public-only VPC, EC2 (t3.micro), Elastic IP, IAM roles (DynamoDB + Bedrock + S3 + StepFunctions) |
+| **ConutFrontend-dev** | S3 (static hosting), CloudFront (CDN + `/api/*` proxy to EC2 origin) |
 
 ---
 
@@ -238,7 +238,7 @@ OpsClaw/
 ├── infra/                    # AWS CDK infrastructure
 │   ├── app.py               # CDK entry point (3 stacks)
 │   ├── cdk_stack.py         # Pipeline stack (S3+DynamoDB+Lambda+StepFunctions)
-│   ├── agent_stack.py       # Agent stack (EC2+ALB+IAM)
+│   ├── agent_stack.py       # Agent stack (EC2+EIP+IAM)
 │   ├── frontend_stack.py    # Frontend stack (S3+CloudFront)
 │   ├── Dockerfile           # Multi-stage Lambda Dockerfile (6 targets)
 │   └── handlers/            # Lambda handler functions
@@ -382,7 +382,6 @@ The deploying user/role needs:
 - **Lambda** — create/update functions
 - **ECR** — push Docker images
 - **EC2** — create instances, VPCs, security groups
-- **ELB** — create load balancers
 - **CloudFront** — create distributions, invalidations
 - **IAM** — create roles and policies
 - **Step Functions** — create state machines
@@ -403,7 +402,7 @@ The deploying user/role needs:
 
 This runs a **4-phase deployment**:
 
-1. **Phase 1** — Deploy `ConutPipeline-dev` + `ConutAgent-dev` (S3, DynamoDB, Lambda, EC2, ALB)
+1. **Phase 1** — Deploy `ConutPipeline-dev` + `ConutAgent-dev` (S3, DynamoDB, Lambda, EC2, Elastic IP)
 2. **Phase 2** — Build the React frontend (`npm run build`)
 3. **Phase 3** — Deploy `ConutFrontend-dev` (S3 + CloudFront, uploads built files)
 4. **Phase 4** — Invalidate CloudFront cache
@@ -680,8 +679,8 @@ Detailed documentation for each module is in the `docs/` directory:
 # Check agent health
 curl https://<cloudfront-url>/api/health
 
-# Check EC2 agent directly
-curl http://<alb-dns>/api/health
+# Check EC2 agent directly (requires the origin header in cloud mode)
+curl http://<agent-origin>/api/health -H "X-Origin-Verify: <value>"
 
 # View EC2 logs via SSM
 aws ssm send-command \
